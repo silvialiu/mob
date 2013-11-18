@@ -1,0 +1,56 @@
+.webapp{
+  html&,body{
+    height:100%;
+  }
+}
+body{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: stretch;
+ 
+	display: -moz-box;
+	-moz-box-orient: vertical;
+	-moz-box-align: stretch;
+ 
+	display: box;
+	box-orient: vertical;
+	box-align: stretch;
+
+}
+
+body > * {
+	-webkit-box-flex: 0;
+	-moz-box-flex: 0;
+	box-flex: 0;
+}
+//@TODO remove container
+.container,.content{ 
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	box-flex: 1;
+}
+
+// Images  
+// -------------------------
+      
+// Rounded corners
+.img-rounded {
+    width:54px;
+    .border-radius(6px);
+}    
+      
+// Add polaroid-esque trim
+.img-polaroid {
+    width:54px;
+    padding: 4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.2);
+    .box-shadow(0 1px 3px rgba(0,0,0,.1));
+}
+
+// Perfect circle
+.img-circle {
+    width:54px;
+    .border-radius(500px); // crank the border-radius so it works with most reasonably sized images
+}

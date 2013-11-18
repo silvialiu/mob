@@ -1,0 +1,14 @@
+{
+  "name": "mob",
+  "version": "0.0.1",
+  "description": "mobile web front-end framewprk",
+  "homepage": "https://github.com/mobframe/mob",
+  "author": "xyz",
+  "contributors": [
+    "xyz"
+  ],
+  "keywords": [
+    "mob",
+    "mobile front-end framework"
+  ]
+}

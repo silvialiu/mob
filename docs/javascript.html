@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mob - Mobile Front-end Framework</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="css/google-code-prettify/prettify.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="./index.html"><b>Mob</b></a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li>
+              <a href="./index.html">Home</a>
+              </li>
+              <li class="">
+              <a href="./getting-started.html">Get started</a>
+              </li>
+              <li class="">
+              <a href="./scaffolding.html">Scaffolding</a>
+              </li>
+              <li>
+              <a href="./base-css.html" >Base CSS</a>
+              </li>
+              <li >
+              <a href="./components.html">Components</a>
+              </li>
+              <li class="active">
+              <a href="./javascript.html" >JavaScript</a>
+              </li>
+              <li class="">
+              <a href="./example.html">Example</a>
+              </li>
+              <li class="">
+              <a href="./customize.html">Customize</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header>
+    <div class="container">
+      <h1>Javascript</h1>
+      <p>
+      ...
+      </p>
+    </div>
+    </header>
+    <div id="container" class="container">
+      <div id="siderbar" class="row">
+        <div class="span2">
+          <ul class="nav nav-list affix">
+            <li><a href=""><i class="icon-chevron-right"></i> Overview</a></li>
+            <li><a href=""><i class="icon-chevron-right"></i> Transitions</a></li>
+            <li><a href=""><i class="icon-chevron-right"></i> Modal</a></li>
+            <li><a href=""><i class="icon-chevron-right"></i> Scrollspy</a></li>
+            <li><a href=""><i class="icon-chevron-right"></i> Page</a></li>
+            <li><a href="#tab-doc"><i class="icon-chevron-right"></i> Tab</a></li>
+            <li><a href=""><i class="icon-chevron-right"></i> Button</a></li>
+            <li><a href=""><i class="icon-chevron-right"></i> Carousel</a></li>
+            <li><a href=""><i class="icon-chevron-right"></i> Typeahead</a></li>
+            <li><a href=""><i class="icon-chevron-right"></i> Affix</a></li>
+            <li><a href="#gesture"><i class="icon-chevron-right"></i> Gesture</a></li>
+            <li><a href=""><i class="icon-chevron-right"></i> Webapp</a></li>
+            <li><a href=""><i class="icon-chevron-right"></i> Pinboard-style layout</a></li>
+          </ul>
+        </div>
+        <div class="article">
+
+
+
+
+
+
+
+
+            <div id="modal-doc">
+                <h2> Modal </h2>
+                <h3>示例</h3>
+
+
+                <div id="offlineTipsDialog" class="modal">
+                    <h1>离线提醒</h1>
+                    <p>本书共1200章，预计<span class="data-size"></span></p>
+                    <button>立即下载</button><button>取消</button>
+                </div>
+
+                <div id="downloadSearchboxDialog" class="modal">
+                    <span>X</span>
+                    <h1>使用百度客户端</h1>
+                    <p>提升阅读体验，直达海量小说</p>
+                    <p>请安装最新版</p>
+                    <button>立即下载</button>
+                </div>
+
+
+
+
+
+                    <button onclick='$("modal").modal()'>Modal</button>
+
+                <code>
+                    <button onclick='$("modal").modal()'>Modal</button>
+                </code>
+                <h3>用法</h3>
+                <code>
+                
+                </code>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <div id="tab-doc">
+                <h2>tab</h2>
+                <h3>示例</h3>
+                <code class="showDemo">
+                     <nav class="navbar">
+                        <a href="#tab-1" data-toggle="tab"> tab 1 </a>
+                        <a href="#tab-2" data-toggle="tab"> tab 2 </a>
+                        <a href="#tab-3" data-toggle="tab"> tab 3 </a>
+                        <a href="#tab-4" data-toggle="tab"> tab 4 </a>
+                        <a href="#tab-5" data-toggle="tab"> tab 5 </a>
+                    </nav>
+                    <div class="tab-content">
+                        <section id="tab-1" class="tab-pane">
+                            tab 1
+                        </section>
+                        <section id="tab-2" class="tab-pane">
+                            tab 2
+                        </section>
+                        <section id="tab-3" class="tab-pane">
+                            tab 3
+                        </section>
+                        <section id="tab-4" class="tab-pane">
+                            tab 4
+                        </section>
+                        <section id="tab-5" class="tab-pane">
+                            tab 5
+                        </section>
+                    </div>
+                </code>
+                <h3>用法</h3>
+                <code></code>
+
+                <h3>HTML 标签</h3>
+                你可以仅使用HTML代码来实现tab切换效果，不需要写一行js代码。你只需要在html标签里
+                标记<b>data-toggle="tab"</b>就能显示 mob样式的tab。                
+                <code>
+                    <nav class="navbar">
+                        <a href="#tab-1" data-toggle="tab"> tab 1 </a>
+                        <a href="#tab-2" data-toggle="tab"> tab 2 </a>
+                        <a href="#tab-3" data-toggle="tab"> tab 3 </a>
+                        <a href="#tab-4" data-toggle="tab"> tab 4 </a>
+                        <a href="#tab-5" data-toggle="tab"> tab 5 </a>
+                    </nav>
+                    <div class="tab-content">
+                        <section id="tab-1" class="tab-pane">
+                            tab 1
+                        </section>
+                        <section id="tab-2" class="tab-pane">
+                            tab 2
+                        </section>
+                        <section id="tab-3" class="tab-pane">
+                            tab 3
+                        </section>
+                        <section id="tab-4" class="tab-pane">
+                            tab 4
+                        </section>
+                        <section id="tab-5" class="tab-pane">
+                            tab 5
+                        </section>
+                    </div>
+                </code>
+                <h3>可调用的方法</h3>
+                    $().tab
+                <h3>事件</h3>
+                <table>
+                    <tr>
+                        <td>.show</td><td></td>
+                    </tr>
+                    <tr>
+                        <td>.shown</td><td></td>
+                    </tr>
+                </table>
+                <code>
+                    $('a[data-toggle="tab"]').on('shown', function (e) {
+                        e.target // activated tab
+                        e.relatedTarget // previous tab
+                    })
+                </code>
+                <h3>最佳实践</h3>
+                <div class="fold">
+                    你也可以配合url routers来使用tab.
+                </div>
+            </div>
+            <div id="tmpl-doc">
+                <h2>Template</h2>
+                mob 框架不内置 template 功能，推荐你使用其它框架的相关功能，如  backbones的template功能。
+            </div>
+            <div id="router-doc">
+                <h2>Router</h2>
+                mob 框架不内置 Router 功能，推荐你使用其它框架的相关功能，如  backbones的 Router功能。
+            </div>
+        </div>
+        <!--
+          Carousel:
+            - 首页新功能介绍的滚动
+          Web app:
+            - 载入时向上滚动
+        -->
+      </div>
+    </div>
+
+
+
+
+  </body>
+  <footer>
+  Producted by axu. <br>
+  Code licensed under Free BSD, documentation under CC BY 3.0.
+  </footer>
+  <script type="text/javascript" charset="utf-8" src="js/jquery-1.9.0.min.js" ></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/google-code-prettify/prettify.js"></script>
+  <script src="js/docs.js"></script>
+</body>
+</html>
+

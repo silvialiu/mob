@@ -1,0 +1,35 @@
+// Box Model
+.box-model(@orient){
+    display: -webkit-box;
+    -webkit-box-orient: @orient;
+    -webkit-box-align: stretch;
+     
+    display: -moz-box;
+    -moz-box-orient: @orient;
+     -moz-box-align: stretch;
+     
+    display: box;
+    box-orient: @orient;
+    box-align: stretch;
+}
+
+//Box Model Flex
+.box-flex(@flex){
+    -webkit-box-flex: @flex;
+    -moz-box-flex: @flex;
+    box-flex: @flex;
+}
+
+// Border Radius
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+// Drop shadows
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+}

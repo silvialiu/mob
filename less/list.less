@@ -1,0 +1,14 @@
+.list{
+    padding: 0;
+    margin: 0;
+    .box-flex(1);
+    .item,li{
+        .box-model(horizontal);
+        span, div{
+            .box-flex(0);
+            &.main{
+                .box-flex(1);
+            }
+        }
+    }
+}
