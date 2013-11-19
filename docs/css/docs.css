@@ -1,0 +1,36 @@
+header{
+  padding-top:40px;
+}
+footer{
+  text-align:center;
+  font-size:12px;
+}
+#example{
+  background:#eee;
+}
+#phone{
+  position:relative;
+  float:right;
+  width:386px;
+  height:760px;
+  background:url('../img/phone.png') no-repeat; /* 482 * 950*/
+  background-position:0px -50px;
+  background-size:386px 760px;
+}
+#phone.index{
+  position:static;
+}
+#index-descript{
+  width:664px;
+  float:left;
+}
+code {
+  display:none;
+}
+.article{
+  padding-left:210px;
+}
+iframe{
+  border:0;
+  width:320px;
+}

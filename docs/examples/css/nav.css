@@ -1,0 +1,45 @@
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav.nav-pills {
+  text-align: center;
+}
+.nav.nav-pills .active {
+  background: #33c1cb;
+}
+.nav.nav-pills li,
+.nav.nav-pills .nav-tab {
+  float: left;
+}
+.nav.nav-pills.nav-justified {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+}
+.nav.nav-pills.nav-justified li,
+.nav.nav-pills.nav-justified .nav-tab {
+  float: none;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+}
+.nav li,
+.nav .nav-tab {
+  text-align: center;
+  font-size: 18px;
+}
+.nav li a,
+.nav .nav-tab a {
+  text-decoration: none;
+}
+.tab-content .tab-pane {
+  display: none;
+}
+.tab-content .tab-pane.active {
+  display: block;
+}
