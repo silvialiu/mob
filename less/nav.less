@@ -16,14 +16,6 @@
     margin: 0;
     padding: 0; // Override default ul/ol
     list-style: none;
-    
-    display: -webkit-box;
-    -webkit-box-orient: horizontal;
-    -webkit-box-align: stretch;
-
-    display: box;
-    box-orient: horizontal;
-    box-align: stretch;
 
     &.nav-pills{
         // inactive
@@ -31,9 +23,24 @@
         .active{
             background: @active-background-color;
         }
+        li, .nav-tab{
+            float: left;
+        }
         &.nav-justified{
-            -webkit-box-flex: 1;
-            box-flex: 1;
+            width: 100%;
+            display: -webkit-box;
+            -webkit-box-orient: horizontal;
+            -webkit-box-align: stretch;
+
+            display: box;
+            box-orient: horizontal;
+            box-align: stretch;         
+
+            li, .nav-tab{
+                float: none;
+                -webkit-box-flex: 1;
+                box-flex: 1;
+            }
         }
     }
 
