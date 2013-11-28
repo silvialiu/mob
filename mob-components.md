@@ -29,17 +29,18 @@
 
 
 ##icons 
-   	<span class="glyphicon glyphicon-chevron-down"></span>
-	<span class="glyphicon glyphicon-chevron-up"></span>
-	<span class="glyphicon glyphicon-chevron-left"></span>
-	<span class="glyphicon glyphicon-chevron-right"></span>
+   	<span class="icon icon-chevron-down"></span> 向下标签 <br>
+	<span class="icon glyphicon-chevron-up"></span> 向上标签 <br>
+	<span class="icon icon-chevron-left"></span> 向左标签 <br>
+	<span class="icon icon-chevron-right"></span> 向右标签 <br>
 
-	<span class="glyphicon glyphicon-separator"></span>
+	<span class="icon icon-separator"></span> 分割线 <br>
 
-	<span class="glyphicon glyphicon-check"></span>
-	<span class="glyphicon glyphicon-uncheck"></span>
+	<span class="icon icon-check"></span>  圆形按钮 <br>
+	<span class="icon icon-uncheck"></span> 圆形未选中按钮 <br>
 
-	<span class="glyphicon glyphicon-search"></span>
+	<span class="icon icon-search"></span> 搜索图片 <br>
+    <span class="icon icon-ribbon"></span> 绸缎(2.jpg) <br>
 
 ##buttons 
    	<button type="button" class="btn btn-default">button</button>
