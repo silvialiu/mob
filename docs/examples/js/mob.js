@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ;(function (window, document) {
     $(".aside").on("tap",function(){
 
@@ -12,16 +11,6 @@
      *      $(".tips").modal();
      */
     $.fn.Modal = function(options){
-        
-=======
-//  Partly lines from Zepto.js
-;(function($){
-  if ($.os.ios) {
-    var gesture = {}, gestureTimeout;
-
-    function parentIfText(node){
-      return 'tagName' in node ? node : node.parentNode;
->>>>>>> f7fe83b0f25004c25002de1633ddf729eed65599
     }
     /**
      * 对话框
