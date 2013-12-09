@@ -89,23 +89,23 @@
 
 
 ##九宫格
-<div class="grids">
-    <div class="row">
-         <div class="grid">第一格</div>
-         <div class="grid">第二格</div>
-         <div class="grid">第三格</div>
-    </div>
-    <div class="row">
-         <div class="grid">第四格</div>
-         <div class="grid">第五格</div>
-         <div class="grid">第六格</div>
-    </div>
-	<div class="row">
-         <div class="grid">第七格</div>
-         <div class="grid">第八格</div>
-         <div class="grid">第九格</div>
-    </div>
-</div>
+	<div class="grids">
+	    <div class="row">
+	         <div class="grid">第一格</div>
+	         <div class="grid">第二格</div>
+	         <div class="grid">第三格</div>
+	    </div>
+	    <div class="row">
+	         <div class="grid">第四格</div>
+	         <div class="grid">第五格</div>
+	         <div class="grid">第六格</div>
+	    </div>
+		<div class="row">
+	         <div class="grid">第七格</div>
+	         <div class="grid">第八格</div>
+	         <div class="grid">第九格</div>
+	    </div>
+	</div>
 
 
 
