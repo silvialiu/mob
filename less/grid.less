@@ -1,7 +1,18 @@
-.grids .row{
+.grids{
 	display: -webkit-box;
-	display: box
-}
-.grids .grid{
-	-webkit-box-flex: 1
+	-webkit-box-orient: vertical;
+	display: box;
+	box-orient: vertical;
+	.row{
+		display: -webkit-box;
+		display: box;
+		-webkit-box-orient: horizontal;
+		-webkit-box-flex: 1;
+		box-orient: horizontal;
+		box-flex: 1;
+	}
+	.grid{
+		-webkit-box-flex: 1;
+		box-flex: 1
+	}
 }
