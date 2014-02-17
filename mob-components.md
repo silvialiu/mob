@@ -110,9 +110,9 @@
 
 ##百度搜索框
 	<form>
-		<div class="se_box">
-			<input type="search" class="se_input" value="">
-			<button type="submit" class="se_btn">百度一下</button>
+		<div class="se-box">
+			<input type="search" class="se-input" value="">
+			<button type="submit" class="se-btn">百度一下</button>
 		</div>
 	</form>
 
