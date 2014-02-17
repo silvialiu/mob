@@ -1,4 +1,4 @@
-.se_box {
+.se-box {
   position: relative;
   display: box;
   display: -webkit-box;
@@ -7,7 +7,7 @@
   line-height: 39px;
   background: #fff;
 }
-.se_box .se_input {
+.se-box .se-input {
   display: box;
   display: -webkit-box;
   box-flex: 1;
@@ -23,7 +23,7 @@
   -webkit-border-radius: 0;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-.se_box .se_btn {
+.se-box .se-btn {
   position: absolute;
   right: 0;
   top: 0;
