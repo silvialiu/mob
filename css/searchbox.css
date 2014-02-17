@@ -1,0 +1,44 @@
+.se_box {
+  position: relative;
+  display: box;
+  display: -webkit-box;
+  border: 1px solid #ccc;
+  height: 39px;
+  line-height: 39px;
+  background: #fff;
+}
+.se_box .se_input {
+  display: box;
+  display: -webkit-box;
+  box-flex: 1;
+  -webkit-box-flex: 1;
+  height: 39px;
+  padding: 0 10px;
+  margin: 0;
+  margin-right: 73px;
+  border: 0;
+  font-size: 16px;
+  color: #262626;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.se_box .se_btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 73px;
+  color: #262626;
+  font-size: 15px;
+  border: 0;
+  padding: 0;
+  border-left: 1px solid #CCC;
+  height: 39px;
+  line-height: 41px;
+  background: #f6f6f6;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8f8f8), color-stop(100%, #f1f1f1));
+  background: gradient(linear, left top, left bottom, color-stop(0%, #f8f8f8), color-stop(100%, #f1f1f1));
+  background: -webkit-linear-gradient(top, #f8f8f8 0, #f1f1f1 100%);
+  background: linear-gradient(to bottom, #f8f8f8 0, #f1f1f1 100%);
+  text-align: center;
+}
