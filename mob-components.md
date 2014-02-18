@@ -116,6 +116,60 @@
 		</div>
 	</form>
 
+##小说书籍通用排版
+	<div class="com-book-lis">
+		<ul>
+			<li>
+				<a href="" class="book-lis-link">
+					<div class="book-img"><img src="http://m.baidu.com/static/wapbook/novel/nocover.png"></div>
+					<div class="book-cont">
+						<div class="book-info">
+							<div class="bname ellipsis">美女总裁俏佳人</div>
+							<div class="book-detail">
+								<div class="book-detail-left">
+									<span class="penname ellipsis">醉酒望明月</span>
+								</div>
+								<div class="book-detail-right">
+									<span class="cate ellipsis">都市传奇</span>
+									<span class="sep">|</span>
+									<span class="status ellipsis">完结</span>
+								</div>
+							</div>
+							<div class="read-detail clr">
+								<span class="read-ico">荐</span>
+								<span class="read-cont">杀手头子偶遇绝色俏佳人，不占便宜不是人。</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="" class="book-lis-link">
+					<div class="book-img"><img src="http://m.baidu.com/static/wapbook/novel/nocover.png"></div>
+					<div class="book-cont">
+						<div class="book-info">
+							<div class="bname ellipsis">美女总裁俏佳人</div>
+							<div class="book-detail">
+								<div class="book-detail-left">
+									<span class="penname ellipsis">醉酒望明月</span>
+								</div>
+								<div class="book-detail-right">
+									<span class="cate ellipsis">都市传奇</span>
+									<span class="sep">|</span>
+									<span class="status ellipsis">完结</span>
+								</div>
+							</div>
+							<div class="read-detail clr">
+								<span class="read-ico">荐</span>
+								<span class="read-cont">杀手头子偶遇绝色俏佳人，不占便宜不是人。</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+
 
 ##toolbar
 
