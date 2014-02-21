@@ -146,13 +146,11 @@
 		</ul>
 	</div>
 
-##loading组件
-1. page loading 组件
-
+##loading-page组件 
 <div class="load_ing"><img src="http://m.baidu.com/static/wapbook/genuine/loading.png" title="loading" class="loading_ico">加载中...</div>
 <div class="load_fail">网络不给力 <a href="javascript:history.go(0)" class="load_retry">重试</a></div>
 
-2. 加载更多组件
+##loading-加载更多组件
 <div class="load_status">
 	<div class="load_cont">
 		<div class="load_more ">点击加载更多<span class="load_down_ico"></span></div>
