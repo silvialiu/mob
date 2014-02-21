@@ -146,15 +146,15 @@
 		</ul>
 	</div>
 
-##loading-page组件 
-<div class="load_ing"><img src="http://m.baidu.com/static/wapbook/genuine/loading.png" title="loading" class="loading_ico">加载中...</div>
+##loading-page组件
+<div class="load_ing">&lt;img src="http://m.baidu.com/static/wapbook/genuine/loading.png" title="loading" class="loading_ico"&gt;加载中...</div>
 <div class="load_fail">网络不给力 <a href="javascript:history.go(0)" class="load_retry">重试</a></div>
 
 ##loading-加载更多组件
 <div class="load_status">
 	<div class="load_cont">
 		<div class="load_more ">点击加载更多<span class="load_down_ico"></span></div>
-		<div class="load_ing " style="display:none"><span class="load_ing_txt">加载中</span><img src="http://m.baidu.com/static/wapbook/genuine/loading.png" title="loading" class="loading_ico"></div>
+		<div class="load_ing " style="display:none"><span class="load_ing_txt">加载中</span>&lt;img src="http://m.baidu.com/static/wapbook/genuine/loading.png" title="loading" class="loading_ico"&gt;</div>
 		<div class="load_fail " style="display:none">网络不稳定，请重新加载</div>
 		<div class="load_end " style="display:none">已经到底了</div>
 	</div>
