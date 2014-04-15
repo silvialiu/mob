@@ -14,6 +14,7 @@
  *  动画 
  *  绑定 data-api 
  *  nav-tab 不在 tab-pane中时 nav-tab的切换
+ *  滑动切换
  */
 ;(function ($, window, document) {
     
@@ -70,6 +71,10 @@
   }
 
  /*
+  * SWIPE PLUGIN
+  */
+
+ /*
   * TAB DATA-API
   */
 
@@ -79,4 +84,5 @@
   });
 
 }($, window, document));
+
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */

@@ -22,3 +22,7 @@ dev:
 
 love:
 	@./tools/dev.sh
+
+update:
+	git commit -a -m 'auto update'
+	git update ~/Codes/mob

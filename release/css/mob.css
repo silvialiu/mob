@@ -66,6 +66,24 @@ body > * {
   color: #292929;
   background: none;
 }
+.grids {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  display: box;
+  box-orient: vertical;
+}
+.grids .row {
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-flex: 1;
+  box-orient: horizontal;
+  box-flex: 1;
+}
+.grids .grid {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+}
 .header {
   -webkit-box-flex: 0;
   box-flex: 0;

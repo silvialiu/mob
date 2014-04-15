@@ -1,14 +1,9 @@
 #!/bin/bash
 PWD=`pwd`
-echo $PWD
-if [ ${$PWD#*tools}x == "x" ]; then
-    cd ..
-fi
-
-for i in less/*
+for lessFile in less/*
 do
-    cssFileName=${i/\.less/.css}
+    cssFileName=${lessFile/\.less/.css}
     cssFileName=${cssFileName/less/css}
-    echo "lessc $i $cssFileName"
-	lessc $i $cssFileName
+    echo "lessc $lessFile $cssFileName"
+	lessc $lessFile $cssFileName
 done
