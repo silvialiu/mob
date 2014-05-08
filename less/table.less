@@ -1,18 +1,23 @@
 .table{
+    border: 0;
+    width: 100%;
     th{
         line-height: 20px;
         height: 20px;
-        /* color: */ 
-        text-align:center;
     }
     td{
         line-height: 28px;
         height: 28px;
-        &.left{
+    }
+    th, td{
+        text-align:center;
+        &:first-child{
+            padding-left:20px;
             text-align: left;
-        };
-        &.middle, &.right{
+        }
+        &:last-child{
+            padding-right:20px;
             text-align: right;
-        };
+        } 
     }
 }

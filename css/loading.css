@@ -22,7 +22,6 @@
   -moz-animation-timing-function: linear;
   -moz-animation-iteration-count: infinite;
 }
-
 /*loading page*/
 .load_ing {
   text-align: center;
@@ -52,7 +51,6 @@
 /*loading more*/
 .load_status {
   border: 1px solid #e7e1e0;
-  margin: 0 12px 20px;
   font-size: 14px;
   text-align: center;
 }
