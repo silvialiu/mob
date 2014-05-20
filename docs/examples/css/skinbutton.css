@@ -27,6 +27,6 @@
   border: 1px solid #1c2021;
   background-color: #32373b;
 }
-.skinbutton.current {
+.skinbutton.active {
   border: 3px solid #f6b396;
 }

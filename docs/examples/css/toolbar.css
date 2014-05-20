@@ -8,11 +8,11 @@
   -webkit-box-pack: justify;
   padding: 5px;
 }
-.toolbar ul {
+.toolbar .nav {
   list-style: none;
   overflow: hidden;
 }
-.toolbar li {
+.toolbar .nav li {
   float: left;
   height: 30px;
   padding: 0 5px;
@@ -21,6 +21,6 @@
   -webkit-box-align: center;
   -webkit-box-pack: center;
 }
-.toolbar li.current {
+.toolbar .nav li.active {
   border-bottom: 2px solid #f5682b;
 }

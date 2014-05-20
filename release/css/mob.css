@@ -1335,7 +1335,7 @@ select {
   border: 1px solid #1c2021;
   background-color: #32373b;
 }
-.skinbutton.current {
+.skinbutton.active {
   border: 3px solid #f6b396;
 }
 .subtoolbar {
@@ -1354,11 +1354,11 @@ select {
   -webkit-box-pack: justify;
   padding: 5px;
 }
-.toolbar ul {
+.toolbar .nav {
   list-style: none;
   overflow: hidden;
 }
-.toolbar li {
+.toolbar .nav li {
   float: left;
   height: 30px;
   padding: 0 5px;
@@ -1367,6 +1367,6 @@ select {
   -webkit-box-align: center;
   -webkit-box-pack: center;
 }
-.toolbar li.current {
+.toolbar .nav li.active {
   border-bottom: 2px solid #f5682b;
 }

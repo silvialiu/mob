@@ -7,21 +7,22 @@
 	-webkit-box-align: center;
 	-webkit-box-pack: justify;
 	padding:5px;
-	ul{
+	.nav{
 		list-style:none;
 		overflow:hidden;
+		li{
+			float:left;
+			height:30px;
+			padding:0 5px;
+			display: -webkit-box;
+			-webkit-box-orient: horizontal;
+			-webkit-box-align: center;
+			-webkit-box-pack: center;
+		}
+		li.active{
+			border-bottom:2px solid #f5682b;	
+		}
 	}
-	li{
-		float:left;
-		height:30px;
-		padding:0 5px;
-		display: -webkit-box;
-		-webkit-box-orient: horizontal;
-		-webkit-box-align: center;
-		-webkit-box-pack: center;
-	}
-	li.current{
-		border-bottom:2px solid #f5682b;	
-	}
+	
 }
 
