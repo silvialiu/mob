@@ -15,10 +15,12 @@
 .fontbutton .first {
   float: left;
   width: 49%;
+  font-size: 12px;
   height: 100%;
 }
 .fontbutton .last {
   float: left;
   height: 100%;
   width: 50%;
+  font-size: 14px;
 }
