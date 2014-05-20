@@ -1308,10 +1308,8 @@ select {
   border-radius: 50px;
   width: 52px;
   height: 52px;
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
+  line-height: 52px;
+  text-align: center;
   float: left;
   margin: 0 5px;
 }
