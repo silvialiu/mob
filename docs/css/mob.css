@@ -274,6 +274,21 @@ body > * {
   background: url("../img/setting.png");
   background-size: 22px 22px;
 }
+.list-group {
+  margin: 0 18px;
+  color: #262626;
+}
+.list-group .list-group-item {
+  border-bottom: 1px solid #f2f1ed;
+  height: 40px;
+  display: box;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: center;
+}
+.list-group .list-group-item.active {
+  height: 62px;
+}
 .list {
   padding: 0;
   margin: 0;
@@ -1339,13 +1354,15 @@ select {
   border: 3px solid #f6b396;
 }
 .subtoolbar {
-  height: 150px;
   background-color: #fffdf9;
   border-bottom: 1px solid #dadde1;
   box-shadow: 0 2px 5px #999896;
 }
 .toolbar {
   background-color: #3a3a3a;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #262626;
   overflow: hidden;
   color: #fff;
   display: -webkit-box;

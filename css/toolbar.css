@@ -1,5 +1,8 @@
 .toolbar {
   background-color: #3a3a3a;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #262626;
   overflow: hidden;
   color: #fff;
   display: -webkit-box;

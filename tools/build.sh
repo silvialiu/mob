@@ -16,4 +16,4 @@ mkdir -p release/img
 cp -r img release/
 cp -r img docs/
 
-lessc config.less mobnovel.css
+lessc config.less mob.css

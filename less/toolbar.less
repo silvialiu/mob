@@ -1,5 +1,8 @@
 .toolbar{
 	background-color:#3a3a3a;
+	border-width:1px 0;
+	border-style:solid;
+	border-color:#262626;
 	overflow:hidden;
 	color:#fff;
 	display: -webkit-box;
@@ -17,10 +20,10 @@
 			display: -webkit-box;
 			-webkit-box-orient: horizontal;
 			-webkit-box-align: center;
-			-webkit-box-pack: center;
-		}
-		li.active{
-			border-bottom:2px solid #f5682b;	
+			-webkit-box-pack: center;		
+			&.active{
+				border-bottom:2px solid #f5682b;	
+			}
 		}
 	}
 	
