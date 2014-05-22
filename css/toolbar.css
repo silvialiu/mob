@@ -1,29 +1,20 @@
-.toolbar {
+.toolbar .nav {
   background-color: #3a3a3a;
-  border-width: 1px 0;
-  border-style: solid;
-  border-color: #262626;
-  overflow: hidden;
+  border-bottom: 1px solid #262626;
   color: #fff;
   display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-align: center;
   -webkit-box-pack: justify;
   padding: 5px;
-}
-.toolbar .nav {
   list-style: none;
   overflow: hidden;
 }
-.toolbar .nav li {
-  float: left;
+.toolbar .nav .nav-item {
   height: 30px;
   padding: 0 5px;
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
+  line-height: 30px;
 }
-.toolbar .nav li.active {
+.toolbar .nav .nav-item.active {
   border-bottom: 2px solid #f5682b;
 }

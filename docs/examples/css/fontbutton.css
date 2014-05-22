@@ -14,13 +14,13 @@
 }
 .fontbutton .first {
   float: left;
-  width: 49%;
+  width: 140px;
   font-size: 12px;
   height: 100%;
 }
 .fontbutton .last {
   float: left;
   height: 100%;
-  width: 50%;
+  width: 140px;
   font-size: 14px;
 }
