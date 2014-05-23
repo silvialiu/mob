@@ -25,7 +25,7 @@
 	  <li class="item">Morbi leo risus</li>
 	  <li class="item">Porta ac consectetur ac</li>
 	  <li class="item">Vestibulum at eros</li>
-	</ul>>	
+	</ul>	
 
 
 ##icons 

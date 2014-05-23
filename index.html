@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="white">
+<link rel="stylesheet" href="./release/css/mob.css" type="text/css">
+<style type='text/css'>
+body{background:#FAF7EF}
+.title{font-size:24px;font-weight:bold;margin:40px 0 20px;color:green;border-bottom:2px dotted #000;}
+</style>
+</head>
+<body>
+<h2 class='title'>toolbar</h2>
+<div class='toolbar'>
+	<ul class='nav'>
+		<li class='nav-item'>list</li>
+		<li class='nav-item'>offline</li>
+		<li class='nav-item'>font</li>
+		<li class='nav-item'>bag</li>
+	</ul>
+</div>
+
+
+<h2 class='title'>subtoolbar</h2>
+<div class='toolbar'>
+	<ul class='nav'>
+		<li class='nav-item'>list</li>
+		<li class='nav-item'>offline</li>
+		<li class='nav-item active'>font</li>
+		<li class='nav-item'>bag</li>
+	</ul>
+	<div class='subtoolbar'>
+		subtoolbar	
+	</div>
+</div>
+
+<h2 class='title'>skinbutton</h2>
+<div class='toolbar'> 
+	<ul class='nav'>
+		<li class='nav-item'>list</li>
+		<li class='nav-item'>offline</li>
+		<li class='nav-item active'>font</li>
+		<li class='nav-item'>bag</li>
+	</ul>
+	<div class='subtoolbar'>
+		<div class='skinbutton sun'>sun</div>		
+		<div class='skinbutton eyes'>eyes</div>		
+		<div class='skinbutton paper'>paper</div>		
+		<div class='skinbutton night'>night</div>		
+		<div class='skinbutton active eyes'>eyes</div>
+	</div>
+
+</div>
+
+<h2 class='title'>fontbutton</h2>
+<div class='toolbar'>    
+	<ul class='nav'>
+		<li class='nav-item'>list</li>
+		<li class='nav-item'>offline</li>
+		<li class='nav-item active'>font</li>
+		<li class='nav-item'>bag</li>
+	</ul>
+	<div class='subtoolbar'>
+		<div class='fontbutton'>
+			<div class='small active disable'>A-</div>
+			<div class='big'>A+</div>
+		</div>
+	</div>
+</div>
+
+<h2 class='title'>list group</h2>
+<div class='toolbar'>    
+	<ul class='nav'>
+		<li class='nav-item'>list</li>
+		<li class='nav-item'>offline</li>
+		<li class='nav-item active'>font</li>
+		<li class='nav-item'>bag</li>
+	</ul>
+	<div class='subtoolbar'>
+		<ul class="list-group">
+			<li class="list-group-item active">大主宰www.baidu.com</li>
+			<li class="list-group-item">大主宰www.baidu.com</li>
+			<li class="list-group-item">大主宰www.baidu.com</li>
+			<li class="list-group-item">大主宰www.baidu.com</li>
+			<li class="list-group-item">大主宰www.baidu.com</li>
+		</ul>
+	</div>
+
+</div>  
+
+<h2 class='title'>九宫格</h2>
+<div class="grids">
+	<div class="row">
+		<div class="grid">第一格</div>
+		<div class="grid">第二格</div>
+		<div class="grid">第三格</div>
+	</div>
+	<div class="row">
+		<div class="grid">第四格</div>
+		<div class="grid">第五格</div>
+		<div class="grid">第六格</div>
+	</div>
+	<div class="row">
+		<div class="grid">第七格</div>
+		<div class="grid">第八格</div>
+		<div class="grid">第九格</div>
+	</div>
+</div>
+
+<h2 class='title'>百度搜索框</h2>
+<form>
+	<div class="se-box">
+		<input type="search" class="se-input" value="">
+		<button type="submit" class="se-btn">百度一下</button>
+	</div>
+</form>
+
+
+<h2 class='title'>小说书籍通用排版</h2>
+<div class="com-book-lis">
+	<ul>
+		<li>
+		<a href="" class="book-lis-link">
+			<div class="book-img"><img src="http://m.baidu.com/static/wapbook/novel/nocover.png"></div>
+			<div class="book-cont">
+				<div class="book-info">
+					<div class="bname ellipsis">美女总裁俏佳人</div>
+					<div class="book-detail">
+						<div class="book-detail-left">
+							<span class="penname ellipsis">醉酒望明月</span>
+						</div>
+						<div class="book-detail-right">
+							<span class="cate ellipsis">都市传奇</span>
+							<span class="sep">|</span>
+							<span class="status ellipsis">完结</span>
+						</div>
+					</div>
+					<div class="read-detail clr">
+						<span class="read-ico">荐</span>
+						<span class="read-cont">杀手头子偶遇绝色俏佳人，不占便宜不是人。</span>
+					</div>
+				</div>
+			</div>
+		</a>
+		</li>
+	</ul>
+</div>
+
+<h2 class='title'>loading-page组件</h2>
+<div class="load_ing"><img src="http://m.baidu.com/static/wapbook/genuine/loading.png" title="loading" class="loading_ico">加载中...</div>
+<div class="load_fail">网络不给力 <a href="javascript:history.go(0)" class="load_retry">重试</a></div>
+
+<h2 class='title'>loading-加载更多组件</h2>
+<div class="load_status">
+	<div class="load_cont">
+		<div class="load_more ">点击加载更多<span class="load_down_ico"></span></div>
+		<div class="load_ing " style="display:none"><span class="load_ing_txt">加载中</span><img src="http://m.baidu.com/static/wapbook/genuine/loading.pn
+			g" title="loading" class="loading_ico"></div>
+		<div class="load_fail " style="display:none">网络不稳定，请重新加载</div>
+		<div class="load_end " style="display:none">已经到底了</div>
+	</div>
+</div>
+</body>
+</html>
