@@ -3,12 +3,18 @@ HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\
 
 all:
 	@echo "${HR}"
-	@echo "Build separately."
-	sh ./tools/build_separate.sh
 	
 	@echo "Building Mob..."
 	sh ./tools/build.sh
 	
+	@echo "Mob successfully built at ${DATE}."
+	@echo "${HR}"
+
+sep:
+	@echo "${HR}"
+	@echo "Build separately."
+	sh ./tools/build_separate.sh
+
 	@echo "Mob successfully built at ${DATE}."
 	@echo "${HR}"
 
