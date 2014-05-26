@@ -228,3 +228,23 @@ select {
 .fontbutton .disable {
   color: #aaa;
 }
+.alert {
+  height: 38px;
+  padding: 0 12px;
+  line-height: 38px;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 3px;
+  background: #666;
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.8;
+}
+.alert strong {
+  font-weight: bold;
+}
+.alert_success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
