@@ -1,3 +1,23 @@
+.alert {
+  height: 38px;
+  padding: 0 12px;
+  line-height: 38px;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 3px;
+  background: #666;
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.8;
+}
+.alert strong {
+  font-weight: bold;
+}
+.alert_success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
 html.webapp,
 .webapp body {
   height: 100%;
@@ -311,6 +331,31 @@ body > * {
   background: url("../img/setting.png");
   background-size: 22px 22px;
 }
+.list-group {
+  padding: 0 18px;
+}
+.list-group .list-group-item {
+  border-top: 1px solid #dfdcd1;
+  padding: 10px 0;
+}
+.list-group .list-group-item:first-child {
+  border-top: none;
+}
+.list-group {
+  margin: 0 18px;
+  color: #262626;
+}
+.list-group .list-group-item {
+  border-bottom: 1px solid #f2f1ed;
+  height: 40px;
+  display: box;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: center;
+}
+.list-group .list-group-item.active {
+  height: 62px;
+}
 .list {
   padding: 0;
   margin: 0;
@@ -345,21 +390,6 @@ body > * {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   box-flex: 1;
-}
-.list-group {
-  margin: 0 18px;
-  color: #262626;
-}
-.list-group .list-group-item {
-  border-bottom: 1px solid #f2f1ed;
-  height: 40px;
-  display: box;
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: center;
-}
-.list-group .list-group-item.active {
-  height: 62px;
 }
 /*public loading circle*/
 @-webkit-keyframes loading {
@@ -541,51 +571,6 @@ body > * {
 .modal-footer .btn-block + .btn-block {
   margin-left: 0;
 }
-.nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.nav.nav-pills {
-  text-align: center;
-}
-.nav.nav-pills .active {
-  background: #33c1cb;
-}
-.nav.nav-pills li,
-.nav.nav-pills .nav-tab {
-  float: left;
-}
-.nav.nav-pills.nav-justified {
-  width: 100%;
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-}
-.nav.nav-pills.nav-justified li,
-.nav.nav-pills.nav-justified .nav-tab {
-  float: none;
-  -webkit-box-flex: 1;
-  box-flex: 1;
-}
-.nav li,
-.nav .nav-tab {
-  text-align: center;
-  font-size: 18px;
-}
-.nav li a,
-.nav .nav-tab a {
-  text-decoration: none;
-}
-.tab-content .tab-pane {
-  display: none;
-}
-.tab-content .tab-pane.active {
-  display: block;
-}
 .navbar {
   -webkit-box-flex: 0;
   box-flex: 0;
@@ -638,6 +623,51 @@ body > * {
   background: -webkit-linear-gradient(#aaaaaa, #ffffff);
 }
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav.nav-pills {
+  text-align: center;
+}
+.nav.nav-pills .active {
+  background: #33c1cb;
+}
+.nav.nav-pills li,
+.nav.nav-pills .nav-tab {
+  float: left;
+}
+.nav.nav-pills.nav-justified {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+}
+.nav.nav-pills.nav-justified li,
+.nav.nav-pills.nav-justified .nav-tab {
+  float: none;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+}
+.nav li,
+.nav .nav-tab {
+  text-align: center;
+  font-size: 18px;
+}
+.nav li a,
+.nav .nav-tab a {
+  text-decoration: none;
+}
+.tab-content .tab-pane {
+  display: none;
+}
+.tab-content .tab-pane.active {
+  display: block;
+}
 /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -694,6 +724,8 @@ html {
   /* 1 */
 
   -webkit-text-size-adjust: 100%;
+  /* 2 */
+
   -ms-text-size-adjust: 100%;
   /* 2 */
 
@@ -1436,13 +1468,12 @@ select {
   -webkit-box-orient: horizontal;
   -webkit-box-align: center;
   -webkit-box-pack: justify;
-  padding: 5px;
+  padding: 5px 12px;
   list-style: none;
   overflow: hidden;
 }
 .toolbar .nav .nav-item {
   height: 30px;
-  padding: 0 5px;
   line-height: 30px;
 }
 .toolbar .nav .nav-item.active {
