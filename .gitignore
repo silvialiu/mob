@@ -23,12 +23,4 @@ Thumbs.db
 .hg
 .svn
 .CVS
-
 .build
-
-<<<<<<< HEAD
-#dev filed
-=======
-#dev file
->>>>>>> 852391615595b8318e2f1fab5d442bbdbd3f53bf
-config.less
