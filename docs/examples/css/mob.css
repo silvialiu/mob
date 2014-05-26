@@ -18,16 +18,6 @@
   background-color: #dff0d8;
   border-color: #d6e9c6;
 }
-.badge {
-  display: inline-block;
-  border-radius: 2px;
-  background-color: #65B12C;
-  color: #fff;
-  padding: 0 3px;
-  line-height: 15px;
-  height: 15px;
-  font-size: 12px;
-}
 html.webapp,
 .webapp body {
   height: 100%;
@@ -184,14 +174,6 @@ body > * {
 .com-book-lis .read-detail .read-ico {
   float: left;
   margin-top: 3px;
-}
-.box {
-  display: -webkit-box;
-  -webkit-box-align: center;
-}
-.box .box-flex1 {
-  -webkit-box-flex: 1.0;
-  display: block;
 }
 .breadcrumb {
   line-height: 40px;
@@ -1486,13 +1468,12 @@ select {
   -webkit-box-orient: horizontal;
   -webkit-box-align: center;
   -webkit-box-pack: justify;
-  padding: 5px;
+  padding: 5px 12px;
   list-style: none;
   overflow: hidden;
 }
 .toolbar .nav .nav-item {
   height: 30px;
-  padding: 0 5px;
   line-height: 30px;
 }
 .toolbar .nav .nav-item.active {
