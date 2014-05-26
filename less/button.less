@@ -1,6 +1,6 @@
 .btn, button{
-
-    .btn-circle, &.circle {
+    &.btn-circle, &.circle {
+        display: inline-block;
 	    border-radius:50px;
 	    width:52px;
 	    height:52px;
@@ -15,18 +15,25 @@
 		}
     }
 
-    .btn-square, &.square {
+    &.btn-square, &.square {
+        display: inline-block;
     	margin:0 18px;
 	    height:32px;
 	    line-height:32px;
 	    text-align:center;
 	    color:#262626;
-		border-style:solid;
 		width:140px;
-		position:relative;
-	    .disable{
+		border:1px solid #dfdcd1;
+		font-size:16px;
+    	&.active{
+			border-color:#f5682b;	
+		}
+	    &.disable{
 		    color:#aaa;	
 	    }
     }
 }
 
+button.square{
+    background: white;
+}
