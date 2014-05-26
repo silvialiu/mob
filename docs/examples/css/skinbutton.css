@@ -4,29 +4,38 @@
   height: 52px;
   line-height: 52px;
   text-align: center;
-  float: left;
   margin: 0 5px;
+  display: block;
 }
 .skinbutton.eyes {
   color: #3b6058;
   border: 1px solid #97b998;
   background-color: #e2f0da;
 }
+.skinbutton.eyes.active {
+  border: 3px solid #f6b396;
+}
 .skinbutton.sun {
   color: #262626;
   border: 1px solid #d9d6ca;
   background-color: #f6f6f6;
+}
+.skinbutton.sun.active {
+  border: 3px solid #f6b396;
 }
 .skinbutton.paper {
   color: #754531;
   border: 1px solid #cabb9e;
   background-color: #f4eee1;
 }
+.skinbutton.paper.active {
+  border: 3px solid #f6b396;
+}
 .skinbutton.night {
   color: #7e7f80;
   border: 1px solid #1c2021;
   background-color: #32373b;
 }
-.skinbutton.active {
+.skinbutton.night.active {
   border: 3px solid #f6b396;
 }

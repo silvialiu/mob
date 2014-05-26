@@ -1,0 +1,15 @@
+.list-group {
+  margin: 0 18px;
+  color: #262626;
+}
+.list-group .list-group-item {
+  border-bottom: 1px solid #f2f1ed;
+  height: 40px;
+  display: box;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: center;
+}
+.list-group .list-group-item.active {
+  height: 62px;
+}
