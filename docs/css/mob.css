@@ -1,3 +1,13 @@
+.badge {
+  display: inline-block;
+  border-radius: 2px;
+  background-color: #65B12C;
+  color: #fff;
+  padding: 0 3px;
+  line-height: 15px;
+  height: 15px;
+  font-size: 12px;
+}
 html.webapp,
 .webapp body {
   height: 100%;
@@ -275,19 +285,14 @@ body > * {
   background-size: 22px 22px;
 }
 .list-group {
-  margin: 0 18px;
-  color: #262626;
+  padding: 0 18px;
 }
-.list-group .list-group-item {
-  border-bottom: 1px solid #f2f1ed;
-  height: 40px;
-  display: box;
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: center;
+.list-group .item {
+  border-top: 1px solid #dfdcd1;
+  padding: 10px 0;
 }
-.list-group .list-group-item.active {
-  height: 62px;
+.list-group .item:first-child {
+  border-top: none;
 }
 .list {
   padding: 0;

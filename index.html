@@ -74,6 +74,19 @@
 				<li>bag</li>
 			</ul>
 		</div>  
+		<style type="text/css">
+.list-group{
+	padding: 0 18px;
+}
+.list-group-item{
+	border-top:1px solid #dfdcd1;
+	padding: 10px 0;
+}
+.list-group-item:first-child{
+	border-top:none;
+}
+		</style>
+
 		<div class='subtoolbar'>
 			<ul class="list-group">
 				<li class="list-group-item active">大主宰www.baidu.com</li>
@@ -83,8 +96,18 @@
 				<li class="list-group-item">大主宰www.baidu.com</li>
 			</ul>
 		</div>
-
-
+<style type="text/css">
+	.badge{
+		display: inline-block;
+		border-radius:2px;
+		background-color: #65B12C;
+		color:#fff;
+		padding:0 3px;
+		line-height: 15px;
+		height: 15px;
+		font-size:12px;
+	}
+</style>
 		<h2 class='title'>badge</h2>
 		<div class='toolbar'>
 			<ul class='nav'>
@@ -171,6 +194,42 @@
 				<div class="load_fail " style="display:none">网络不稳定，请重新加载</div>
 				<div class="load_end " style="display:none">已经到底了</div>
 			</div>
+		</div>
+		<style>
+		.alert{
+			height: 38px;
+			padding: 0 12px;
+			line-height: 38px;
+			text-align: center;
+			border: 1px solid #000;
+			border-radius: 3px;
+			background: #666;
+			color:#fff;
+			font-size: 14px;
+			opacity: 0.8;
+		}
+		.alert strong{
+			font-weight: bold;
+		}
+		.alert_success{
+			color:#3c763d;
+			background-color: #dff0d8;
+			border-color:#d6e9c6;
+		}
+		</style>
+		<h2 class='title'>alert组件</h2>
+		<div class="alert alert_success">
+			<strong>success</strong>
+			text
+		</div>
+		<div class="alert alert_info">
+			<strong>info</strong>
+		</div>
+		<div class="alert alert_warning">
+			<strong>warning</strong>
+		</div>
+		<div class="alert alert_danger">
+			<strong>danger</strong>
 		</div>
 	</body>
 </html>
