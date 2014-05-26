@@ -25,3 +25,6 @@ Thumbs.db
 .CVS
 
 .build
+
+#dev file
+config.less

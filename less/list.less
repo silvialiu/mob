@@ -1,3 +1,24 @@
+// Box Model
+.box-model(@orient){
+    display: -webkit-box;
+             -webkit-box-orient: @orient;
+             -webkit-box-align: stretch;
+
+    display: -moz-box;
+             -moz-box-orient: @orient;
+             -moz-box-align: stretch;
+
+    display: box;
+             box-orient: @orient;
+             box-align: stretch;
+}
+
+.box-flex( @value:0 ){
+    -webkit-box-flex: @value;
+    -moz-box-flex: @value;
+    box-flex: @value;
+}
+
 .list{
     padding: 0;
     margin: 0;
