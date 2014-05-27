@@ -8,17 +8,27 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link href="css/mob.css" rel="stylesheet" type="text/css" >
+    <style>
+        .toolbar nav{
+            height:30px;
+        }
+    </style>
 </head>
 <body>
     <div class="page">
-        <button class="btn circle">圆</button>
-        <br>
-        <div class="btn btn-circle">圆2</div>
-        <br>
-        <button class="btn square">方</button>
-        <br>
-        <div class="btn btn-square">方2</div>
-        <br>
+        <div class='toolbar'>
+            <nav><span class='icon-setting'></nav>
+            <div class='subtoolbar'>
+                <div class='row'>
+                    <button class="btn circle">圆</button>
+                    <div class="btn btn-circle">圆2</div>
+                </div>
+                <div class='row'>
+                    <button class="btn square">方</button>
+                    <div class="btn btn-square">方2</div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script type="text/javascript" src="js/zepto.js" charset="utf-8"></script>
