@@ -24,3 +24,5 @@ Thumbs.db
 .svn
 .CVS
 .build
+docs/bak
+mob_consult/
