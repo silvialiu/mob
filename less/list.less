@@ -4,10 +4,6 @@
              -webkit-box-orient: @orient;
              -webkit-box-align: stretch;
 
-//    display: -moz-box;
-//             -moz-box-orient: @orient;
-//             -moz-box-align: stretch;
-
     display: box;
              box-orient: @orient;
              box-align: stretch;
@@ -19,6 +15,43 @@
     box-flex: @value;
 }
 
+
+// Components Start
+
+.list{
+    padding: 0;
+    margin: 0;
+    .box-flex(1);
+
+    .item,li{
+        .box-model(horizontal);
+        span, div{
+            .box-flex(0);
+            &.main{
+                .box-flex(1);
+            }
+        }
+    }
+
+    .img-row-item{
+        img, .img-block{
+		    display: inline-block;
+		    width:56px;
+		    height:80px;
+		    vertical-align: middle;
+		    box-shadow: 0px 0px 4px #ddd;-webkit-box-shadow: 0px 0px 4px #ddd;
+		    border-radius:1px;-webkit-border-radius:1px;
+        }
+        .content{
+        	box-flex: 1;
+            -webkit-box-flex: 1;
+            height: 80px;
+            padding-bottom:12px;
+		    overflow: hidden;
+		    line-height: 21px;
+        }
+    }
+}
 
 .list-group {
     padding: 0 18px;
@@ -38,18 +71,28 @@
     }
 }
 
+// Table is another list style
 
-.list{
-    padding: 0;
-    margin: 0;
-    .box-flex(1);
-    .item,li{
-        .box-model(horizontal);
-        span, div{
-            .box-flex(0);
-            &.main{
-                .box-flex(1);
-            }
+.table{
+    border: 0;
+    width: 100%;
+    th{
+        line-height: 20px;
+        height: 20px;
+    }
+    td{
+        line-height: 28px;
+        height: 28px;
+    }
+    th, td{
+        text-align:center;
+        &:first-child{
+            padding-left:20px;
+            text-align: left;
         }
+        &:last-child{
+            padding-right:20px;
+            text-align: right;
+        } 
     }
 }
