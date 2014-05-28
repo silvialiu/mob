@@ -5,7 +5,7 @@
   text-align: center;
   font-size: 14px;
   opacity: 0.8;
-  border-radius: 5px;
+  border-radius: 2px;
   width: 200px;
   margin: 0 auto;
 }
@@ -102,7 +102,6 @@ button.circle {
   height: 52px;
   line-height: 52px;
   text-align: center;
-  margin: 0 5px;
   color: #3b6058;
   border: 1px solid #97b998;
   background-color: #e2f0da;
@@ -118,12 +117,12 @@ button.btn-square,
 .btn.square,
 button.square {
   display: inline-block;
-  margin: 0 18px;
   height: 32px;
   line-height: 32px;
   text-align: center;
   color: #262626;
   width: 140px;
+  border-radius: 2px;
   border: 1px solid #dfdcd1;
   font-size: 16px;
 }
@@ -417,7 +416,7 @@ button.square {
   outline: none;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 .modal p {
   padding: 0;
@@ -451,7 +450,7 @@ button.square {
 }
 .modal-footer .btn-confirm {
   background: #4a8be6;
-  border-radius: 5px;
+  border-radius: 2px;
   color: #fff;
   width: 145px;
   height: 35px;
@@ -477,7 +476,7 @@ button.btn-confirm {
   color: #555;
   background: #fff;
   border: 1px #dbdee3 solid;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 0;
 }
 .modal-backdrop {
@@ -1278,8 +1277,10 @@ select {
 .toolbar .nav .nav-item {
   height: 30px;
   line-height: 30px;
+  padding-bottom: 2px;
 }
 .toolbar .nav .nav-item.active {
+  padding-bottom: 0;
   border-bottom: 2px solid #f5682b;
 }
 .toolbar .subtoolbar {
