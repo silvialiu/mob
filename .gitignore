@@ -26,3 +26,4 @@ Thumbs.db
 .build
 docs/bak
 mob_consult/
+node_modules/
