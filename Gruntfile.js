@@ -62,19 +62,19 @@ module.exports = function(grunt) {
           'release/css/<%= pkg.name %>.css': 'less/mob.less'
         }
       },
-      /*
-      compileTheme: {
+      compileNovelTheme: {
         options: {
           strictMath: true,
           sourceMap: true,
           outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>-theme.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>-theme.css.map'
+          sourceMapURL: 'novel.css.map',
+          sourceMapFilename: 'release/css/novel.css.map'
         },
         files: {
-          'dist/css/<%= pkg.name %>-theme.css': 'less/theme.less'
+          'release/css/novel.css': 'less/novel.less'
         }
       },
+	  /*
       minify: {
         options: {
           cleancss: true,
@@ -165,7 +165,9 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', ['dist-js', 'dist-css', 'copy']);
 
-    grunt.registerTask('default', ['build']);
+    grunt.registerTask('novel', ['dist-css']);
+    
+	grunt.registerTask('default', ['build']);
 
     grunt.registerTask('dev', 'Start a developing envirment', [
         'open',
