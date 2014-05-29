@@ -90,24 +90,16 @@
 
 ###示例2
 
-        <div id="offlineTipsDialog" class="modal">
-            <h1>离线提醒</h1>
-            <p>本书共1200章，预计<span class="data-size"></span></p>
-            <button>立即下载</button><button>取消</button>
+        <div class="modal-wrapper">
+            <div id="offlineTipsDialog" class="modal">
+                <div class="modal-body">
+                    <p class="hilight offline-tip-title">离线提醒</p>
+                    <p class="subscript offline-tip-text" >本书共1200章，预计<span class="data-size">3M</span></p>
+                <div class="btn-confirm"><span class="download-icon"></span>立即下载</div><div class="btn-cancel">取消</div>
+            </div>
         </div>
-
-        <div id="downloadSearchboxDialog" class="modal">
-            <span>X</span>
-            <h1>使用百度客户端</h1>
-            <p>提升阅读体验，直达海量小说</p>
-            <p>请安装最新版</p>
-            <button>立即下载</button>
+        <div class="modal-backdrop"></div>
         </div>
-        <button onclick='$("modal").modal()'>Modal</button>
-
-
-
-
 
 ##Carousel
     首页新功能介绍的滚动
