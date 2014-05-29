@@ -1,14 +1,7 @@
 DATE=$(shell date +%I:%M%p)
-HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
 
 all:
-	@echo "${HR}"
-	
-	@echo "Building Mob..."
-	sh ./tools/build.sh
-	
-	@echo "Mob successfully built at ${DATE}."
-	@echo "${HR}"
+	grunt
 
 sep:
 	@echo "${HR}"
@@ -24,10 +17,7 @@ clean:
 	@rm -rf .build;
 
 dev:
-	@./tools/dev.sh
-
-love:
-	@./tools/dev.sh
+	grunt dev
 
 update:
 	git commit -a -m 'auto update'

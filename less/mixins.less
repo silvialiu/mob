@@ -14,16 +14,14 @@
 }
 
 //Box Model Flex
-.box-flex(@flex){
+.box-flex(@flex:0){
     -webkit-box-flex: @flex;
-    -moz-box-flex: @flex;
     box-flex: @flex;
 }
 
 // Border Radius
 .border-radius(@radius) {
   -webkit-border-radius: @radius;
-     -moz-border-radius: @radius;
           border-radius: @radius;
 }
 
@@ -33,3 +31,6 @@
      -moz-box-shadow: @shadow;
           box-shadow: @shadow;
 }
+
+@black: #000;
+@white: #fff;

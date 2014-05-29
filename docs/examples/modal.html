@@ -8,44 +8,27 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link href="../css/mob.min.css" rel="stylesheet" type="text/css" >
-    <style type="text/css" >
-        .hide{display:none}
-        .show{display:inline-block;}
-        * {
-            margin: 0;
-            padding: 0;
-        }
+    <style type="text/css">
+        .example{
+            padding:50px;
+            }
     </style>
 </head>
 <body>
-    <div id="offlineTipsDialog" class="modal hide">
-        <div class="modal-dialog">
-            <div class="modal-body">
-                <p class="hilight offline-tip-title">离线提醒</p>
-                <p class="subscript offline-tip-text" >本书共1200章，预计<span class="data-size">3M</span></p>
-                <div class="btn btn-confirm btn-primary"><span class="download-icon"></span>立即下载</div><div class="btn btn-cancel">取消</div>
+    <div id="page">
+        <div class='example'>
+            <div class='btn btn-primary' onclick='dialog1.show()'>打开示例1</div>
+        </div>
+        <div id="offlineTipsDialog" class="modal hide">
+            <div class="modal-dialog">
+                <div class="modal-body">
+                    <p class="hilight offline-tip-title">离线提醒</p>
+                    <p class="subscript offline-tip-text" >本书共1200章，预计<span class="data-size">3M</span></p>
+                    <div class="btn btn-confirm btn-primary"><span class="download-icon"></span>立即下载</div><div class="btn btn-cancel">取消</div>
+                </div>
             </div>
         </div>
     </div>
-
-    <p>
-        <button class='btn' onclick='dialog1.show()'>打开示例1</button>
-    </p>
-
-    <div id="downloadSearchboxDialog" class="modal hide">
-        <span class="close-x-btn btn-close x-icon"></span>
-        <div class="modal-body">
-            <p>使用百度客户端</p>
-            <p class="hilight">提升阅读体验，直达海量小说</p>
-            <p class="subscript">请安装最新版(<span class="app-size">6.7M</span>)</p>
-        </div>
-        <div class="modal-footer">
-            <div class="btn-confirm"><span class="download-icon"></span>立即下载</div>
-        </div>
-        <div style="clear:both"></div>
-        <div class="modal-backdrop"></div>
-    </div>
-</div>
 
 <script type="text/javascript" src="../js/zepto.js" charset="utf-8"></script>
 <script src="../js/mob.min.js"></script> 

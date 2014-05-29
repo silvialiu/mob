@@ -119,7 +119,7 @@ module.exports = function(grunt) {
             */
             less: {
                 files: 'less/*.less',
-                tasks: ['less','copy:docs']
+                tasks: ['dist-css','copy:docs']
             }
         },
         open: { // open the url through browser
@@ -129,7 +129,7 @@ module.exports = function(grunt) {
             },
             */
             "examples" : {
-                path: 'http://localhost:3000/docs/examples'
+                path: 'http://localhost:<%= connect.webserver.options.port %>/docs/examples'
             }
         },
         connect: { // start httpserver to view examples and docs through browser.
@@ -146,8 +146,7 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: './release',
                 src: [
-                  '{css,js}/*.min.*',
-                  //'css/*.map',
+                  '{css,js}/*',
                   //'fonts/*'
                 ],
                 dest: 'docs/'
