@@ -165,8 +165,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', ['dist-js', 'dist-css', 'copy']);
 
-    grunt.registerTask('novel', ['dist-css']);
-    
 	grunt.registerTask('default', ['build']);
 
     grunt.registerTask('dev', 'Start a developing envirment', [
