@@ -1,15 +1,5 @@
 #MOB框架组件模版
 
-Dozens of reusable components built to provide navigation, alerts, popovers, and more.
-
-##Page
-
-page 用来显示一个满屏页面的架子.
-
-    <section class="page"></section>
-
-也可用div元素实现
-
 ##Header
 
 header指页面顶部横栏。
@@ -139,7 +129,7 @@ timeline
 
 #以下为组合Demo
 
-##pager 
+##Pager 
 <div class="panel panel-default">
 <div class="panel-body">
 <button type="button" class="btn btn-default">
@@ -202,12 +192,6 @@ setting
 </ul>
 </div>
 
-
-##loading-page组件
-<div class="load_ing"><img src="http://m.baidu.com/static/wapbook/genuine/loading.png" title="loading" class="loading_ico">加载中...</div>
-<div class="load_fail">网络不给力 <a href="javascript:history.go(0)" class="load_retry">重试</a></div>
-
-
 ##loading-加载更多组件
 <div class="load_status">
 <div class="load_cont">
@@ -217,3 +201,13 @@ setting
 <div class="load_end " style="display:none">已经到底了</div>
 </div>
 </div>
+
+
+##Loading
+
+	<div class="loading">加载中</div>
+
+加载出错
+
+	<div class="loading loading-fail">网络不给力 <a href="javascript:history.go(0)" class="load_retry">重试</a></div>
+

@@ -2,15 +2,25 @@
 
 ##Global Styles
 
+###Page
+
+page 用来显示一个满屏页面的架子.
+
+    <section class="page"></section>
+
+也可用div元素实现
+
+    <div class="page"></div>
+
 ##Typography
 
 ##Tables
 
 ##Forms
 
-###Contact User
-
 ##Grids (九宫格)
+> @TODO 更新 row 为 grids-row
+> @TODO 更新 grid 为 grids-grid
 
     <div class="grids">
         <div class="row">
@@ -32,11 +42,11 @@
 
 ##Buttons
 
-###default button:
+###Default button:
 
    	<button type="button" class="btn btn-default">button</button>
     
-###circle button:
+###Circle button:
     
    	<div class="btn btn-circle">circle</div>
 
@@ -44,7 +54,7 @@ or
 
    	<button class="circle">circle</button>
 
-###square button:
+###Square button:
 
    	<div class="btn btn-square">square</div>
 
@@ -52,27 +62,29 @@ or
 
     <button class="square">square</button>
 
-###sizes
+###Sizes
 
 	<button type="button" class="btn btn-default btn-lg btn-block">Block level button</button>
 
-###active state
+###Active state
 
 	<button type="button" class="btn btn-default btn-lg active">Button</button>
 
 
-###tags
+
+
+###ON/OFF button:
+
+##Tips / Alert
+
+    <div class="alert">This is a tips.</div>
+
+##Tags
 
 	<a class="btn btn-default" href="#" role="button">Link</a>
 	<button class="btn btn-default" type="submit">Button</button>
 	<input class="btn btn-default" type="button" value="Input">
 	<input class="btn btn-default" type="submit" value="Submit">
-
-###ON/OFF button:
-
-##Tips
-
-    <div class="tips">This is a tips.</div>
 
 ##Images
 circle img, polaroid img, rounded img
@@ -108,7 +120,6 @@ circle img, polaroid img, rounded img
 	<div class="pull-left">...</div>
 	<div class="pull-right">...</div>
 
-
 ##Clearfix
 
 	<div class="clearfix">...</div>
@@ -126,9 +137,6 @@ circle img, polaroid img, rounded img
 	  </div>
 	</div>
 
-##loading
-	<div class="loading"></div>
 
-##badge
+##Badge
 	<span class="badge">read</span>
-
