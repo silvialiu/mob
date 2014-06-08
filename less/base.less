@@ -7,14 +7,8 @@
 }
 
 body{
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-box-align: stretch;
-	display: box;
-	box-orient: vertical;
-	box-align: stretch;
+    .box-model('vertical');
 }
-
 
 body > * {
 	.box-flex(0);
@@ -58,4 +52,20 @@ body > * {
 
 .well{
     padding: 16px;
+}
+
+.box{
+    .box-model('horizontal');
+}
+.box-vertical{
+    .box-model('vertical');
+}
+.flex0 {
+    .box-flex(0);
+}
+.flex {
+    .box-flex(1);
+}
+.flex2 {
+    .box-flex(2);
 }

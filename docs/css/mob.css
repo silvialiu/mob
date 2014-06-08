@@ -33,11 +33,14 @@ html.webapp,
   height: 100%;
 }
 body {
+  display: -moz-box;
+  -moz-box-orient: 'vertical';
+  -moz-box-align: stretch;
   display: -webkit-box;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: 'vertical';
   -webkit-box-align: stretch;
   display: box;
-  box-orient: vertical;
+  box-orient: 'vertical';
   box-align: stretch;
 }
 body > * {
@@ -75,6 +78,43 @@ body > * {
 }
 .well {
   padding: 16px;
+}
+.box {
+  display: -moz-box;
+  -moz-box-orient: 'horizontal';
+  -moz-box-align: stretch;
+  display: -webkit-box;
+  -webkit-box-orient: 'horizontal';
+  -webkit-box-align: stretch;
+  display: box;
+  box-orient: 'horizontal';
+  box-align: stretch;
+}
+.box-vertical {
+  display: -moz-box;
+  -moz-box-orient: 'vertical';
+  -moz-box-align: stretch;
+  display: -webkit-box;
+  -webkit-box-orient: 'vertical';
+  -webkit-box-align: stretch;
+  display: box;
+  box-orient: 'vertical';
+  box-align: stretch;
+}
+.flex0 {
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  box-flex: 0;
+}
+.flex {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+}
+.flex2 {
+  -webkit-box-flex: 2;
+  -moz-box-flex: 2;
+  box-flex: 2;
 }
 .breadcrumb {
   line-height: 40px;
