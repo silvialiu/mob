@@ -102,6 +102,22 @@ Tap
 
 ##Labels and Badges
 
+Badges 的例子
+
+<a href="#">Inbox <span class="badge">42</span></a>
+
+另一个例子
+
+<ul class="nav nav-pills nav-stacked">
+  <li class="active">
+    <a href="#">
+      <span class="badge pull-right">42</span>
+      Home
+    </a>
+  </li>
+  ...
+</ul>
+
 ##Typography
 
 ##Thumbnails

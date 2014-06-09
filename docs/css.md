@@ -2,6 +2,8 @@
 
 ##Global Styles
 
+###Container
+
 ###Page
 
 page 用来显示一个满屏页面的架子.
@@ -11,6 +13,17 @@ page 用来显示一个满屏页面的架子.
 也可用div元素实现
 
     <div class="page"></div>
+
+###Content
+content 用来表示page中navbar, topbar,aside以外的主要内容
+
+###Aside
+
+
+###Topbar
+
+###Bottombar
+
 
 ##Typography
 
