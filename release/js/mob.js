@@ -343,3 +343,135 @@
 }($, window, document));
 
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
+
+// webkit tap highlight color
+// -webkit-tap-highlight-color:
+// Overrides the highlight color shown when the user taps a link or a JavaScript clickable element in Safari on iPhone.
+//
+// This property obeys the alpha value, if specified. If you don’t specify an alpha value, Safari on iPhone applies a default alpha value to the color. To disable tap highlighting, set the alpha value to 0 (invisible). If you set the alpha value to 1.0 (opaque), the element is not visible when tapped.
+// http://stackoverflow.com/questions/2851663/how-do-i-simulate-a-hover-with-a-touch-in-touch-enabled-browsers
+// http://phonegap-tips.com/articles/essential-phonegap-css-webkit-tap-highlight-color.html
+
+;(function(){
+    //tap 点击延时
+    var tap = function(){
+        if (S.now() - this._lastClickTime < 200) {
+            return true;
+        }
+        this._lastClickTime = S.now();
+        return false;
+    }
+
+    //tap 点击态
+    var tapHighlight = function(){
+        if (!options.selector) throw Error('Anchor Contructor requires "selector" option.');
+
+        this.options = S.tool.extend({
+            context : $('body'),
+            hoverClass : '',
+            fn : function () {}
+        }, options);
+
+        this.timeBeforeStylize  = 15;
+        this.timeBeforeTouchEnd = 400;
+        this.timer              = null;
+        this.startX             = 0;
+        this.startY             = 0;
+        this.diffX              = 0;
+        this.diffY              = 0;
+        this.startTime          = 0;
+        this.anchor             = null;
+        this.lastAnchor         = null;
+        this._isFinish          = false;
+
+        this.initialize();
+    };
+
+    S.tool.extend(Anchor.prototype, {
+        initialize : function () {
+            var t = this,
+            selector = t.options.selector,
+            context = t.options.context,
+            hoverClass = t.options.hoverClass;
+            // android2.1.x的手机用click模拟
+            if (($.os && $.os.android && Number($.os.version)<2.3) || (!S.support.touch && !$.os.ios)){
+                context.delegate(selector, 'click', function (e) {
+                var anchor = $(this);
+                if (hoverClass) {
+                    anchor.addClass(hoverClass);
+                    setTimeout(function () {
+                    t.options.fn.call(anchor[0], e, anchor);
+                }, 30);
+                setTimeout(function () {
+                    anchor.removeClass(hoverClass);
+                }, 100);
+                } else {
+                    t.options.fn.call(anchor[0], e, anchor);
+                }
+                });
+            } else {
+                context.delegate(selector, 'touchstart', S.tool.bind(t._touchStart, t));
+            }
+        },
+        _touchStart : function (e) {
+            var t = this, hoverClass = t.options.hoverClass;
+            // 重新赋值
+            t.anchor = $(e.target).closest(t.options.selector);
+            t._isFinish = false;
+            t.startX = e.touches[0].pageX;
+            t.startY = e.touches[0].pageY;
+            t.startTime = S.now();
+            // 添加样式
+            if (hoverClass) {
+                t.lastAnchor && t.lastAnchor.removeClass(hoverClass);
+                t.lastAnchor = t.anchor;
+                t.timer = setTimeout(function () {
+                    t.anchor.addClass(hoverClass);
+                }, t.timeBeforeStylize);
+            }
+            t.anchor.on('touchmove', S.tool.bind(t._touchMove, t))
+              .on('touchend', S.tool.bind(t._touchEnd, t));
+        },
+        _touchMove : function (e) {
+            var t = this, hoverClass = t.options.hoverClass;
+            t.diffX = Math.abs(e.changedTouches[0].pageX - t.startX);
+            t.diffY = Math.abs(e.changedTouches[0].pageY - t.startY);
+                         if (t.diffX > 10 || t.diffY > 10 ) {
+                             t.finish();
+                             // 去除样式
+                             if (hoverClass) {
+                                 t.anchor.removeClass(hoverClass);
+                                 clearTimeout(t.timer);
+                             }
+                         }
+                     },
+        _touchEnd : function (e) {
+                        var t = this;
+                        t.diffX = Math.abs(e.changedTouches[0].pageX - t.startX);
+                        t.diffY = Math.abs(e.changedTouches[0].pageY - t.startY);
+                        t.finish();
+                        t.options.hoverClass && t.anchor.removeClass(t.options.hoverClass);
+                        if (t.diffX < 10 && t.diffY < 10 && S.now() - t.startTime < t.timeBeforeTouchEnd) {
+                            setTimeout(function () {
+                                t.options.fn.call(t.anchor[0], e, t.anchor);
+                                t.anchor.removeClass(t.options.hoverClass);//补充
+                            }, 600);
+                        }
+                    },
+        finish : function () {
+                     var t = this;
+                     if (t._isFinish) return;
+                     t._isFinish = true;
+                     t.anchor.off('touchmove').off('touchend');
+                 },
+        destroy : function () {
+                      this.options.context.undelegate(this.options.selector, 'touchstart');
+                  },
+        clearHover : function () {
+            var t = this;
+            t.options.hoverClass && t.lastAnchor.removeClass(t.options.hoverClass);
+        }
+    });
+
+}($, window, document));
+/* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */

@@ -1,8 +1,6 @@
 #CSS
 
-##Global Styles
-
-###Container
+##页面布局
 
 ###Page
 
@@ -14,16 +12,18 @@ page 用来显示一个满屏页面的架子.
 
     <div class="page"></div>
 
+###Container
+
+###Topbar
+
+###Header
+
 ###Content
 content 用来表示page中navbar, topbar,aside以外的主要内容
 
 ###Aside
 
-
-###Topbar
-
 ###Bottombar
-
 
 ##Typography
 
@@ -82,9 +82,6 @@ or
 ###Active state
 
 	<button type="button" class="btn btn-default btn-lg active">Button</button>
-
-
-
 
 ###ON/OFF button:
 
