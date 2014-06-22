@@ -1053,6 +1053,49 @@ a.list-group-item.active > .badge,
   padding-right: 20px;
   text-align: right;
 }
+.label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+.label:empty {
+  display: none;
+}
+.btn .label {
+  position: relative;
+  top: -1px;
+}
+.label-default {
+  background-color: #999999;
+  -webkit-tap-highlight-color: #808080;
+}
+.label-primary {
+  background-color: #428bca;
+  -webkit-tap-highlight-color: #3071a9;
+}
+.label-success {
+  background-color: #5cb85c;
+  -webkit-tap-highlight-color: #449d44;
+}
+.label-info {
+  background-color: #5bc0de;
+  -webkit-tap-highlight-color: #31b0d5;
+}
+.label-warning {
+  background-color: #f0ad4e;
+  -webkit-tap-highlight-color: #ec971f;
+}
+.label-danger {
+  background-color: #d9534f;
+  -webkit-tap-highlight-color: #c9302c;
+}
 /*public loading circle*/
 @-webkit-keyframes loading {
   0% {
@@ -1216,6 +1259,48 @@ body > * {
   -webkit-box-flex: 2;
   box-flex: 2;
 }
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+.affix {
+  position: fixed;
+}
 .nav {
   margin: 0;
   padding: 0;
@@ -1295,21 +1380,22 @@ body > * {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABsCAIAAAFTGn/MAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIxJREFUeNpiYAICS0tLpl+/foHx79+/mX7+BLF/MoDkGBgY0DEzAwMjQAAx2NnZoegB0T9//gSxcekDCCCGtLQ0Zi4uLqa/f/+C8Z8/f+Dsf//+YYhDxXCZhxX/B9H/GQACDKzH3d2d6evXr2Bz/v//D6aR2dhoXHL//oHk/mFTzwxkk+RGUjDUPzA+AFfkmbVAuC0WAAAAAElFTkSuQmCC);
   background-repeat: repeat-x;
 }
-.navbar.white {
+.navbar.navbar-white,
+.navbar.navbar-invert {
   border-top: 1px solid #e0dede;
   background-color: #f7f7f7;
   background: linear-gradient(#ffffff, #f7f6f5);
-  background: -moz-linear-gradient(#ffffff, #f7f6f5);
   background: -webkit-linear-gradient(#ffffff, #cccccc);
 }
-.navbar.white a {
+.navbar.navbar-white a,
+.navbar.navbar-invert a {
   color: black;
 }
-.navbar.white a.active {
+.navbar.navbar-white a.active,
+.navbar.navbar-invert a.active {
   color: black;
   background-color: #999;
   background: linear-gradient(#999999, #ffffff);
-  background: -moz-linear-gradient(#999999, #ffffff);
   background: -webkit-linear-gradient(#aaaaaa, #ffffff);
 }
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
@@ -1324,6 +1410,20 @@ body > * {
   box-align: stretch;
 }
 .header {
+  -moz-box-flex: 0;
+  -webkit-box-flex: 0;
+  box-flex: 0;
+}
+.header .title,
+.header h1 {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+}
+.topbar {
   -moz-box-flex: 0;
   -webkit-box-flex: 0;
   box-flex: 0;
@@ -1345,12 +1445,14 @@ body > * {
   border-bottom: 1px solid #e0dede;
   background-image: url(../img/bar-bg-black_1x108.png);
 }
-.header .btn {
-  -webkit-box-flex: 0;
-  box-flex: 0;
+.topbar.topbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
-.header .title,
-.header h1 {
+.topbar .title,
+.topbar h1 {
   -webkit-box-flex: 1;
   box-flex: 1;
   padding: 0;
@@ -1358,7 +1460,7 @@ body > * {
   font-size: 18px;
   text-align: center;
 }
-.header.white {
+.topbar.white {
   border-bottom: 1px solid #e0dede;
   background-color: #f7f7f7;
   background: linear-gradient(#ffffff, #f7f6f5);
@@ -1368,11 +1470,9 @@ body > * {
   -moz-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0, 0, 0, 0.15);
   -webkit-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0, 0, 0, 0.15);
 }
-.topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+.topbar .btn {
+  -webkit-box-flex: 0;
+  box-flex: 0;
 }
 .content {
   -moz-box-flex: 1;
