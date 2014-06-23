@@ -12,23 +12,20 @@ p {
 .text-justify        { text-align: justify; }
 
 // Contextual colors
-.text-muted {
-  color: @text-muted;
-}
 .text-primary {
-  .text-emphasis-variant(@brand-primary);
+  color: @brand-primary;
 }
 .text-success {
-  .text-emphasis-variant(@state-success-text);
+  color: @state-success-text;
 }
 .text-info {
-  .text-emphasis-variant(@state-info-text);
+  color: @state-info-text;
 }
 .text-warning {
-  .text-emphasis-variant(@state-warning-text);
+  color: @state-warning-text;
 }
 .text-danger {
-  .text-emphasis-variant(@state-danger-text);
+  color: @state-danger-text;
 }
 
 // Contextual backgrounds
@@ -38,23 +35,20 @@ p {
   // Given the contrast here, this is the only class to have its color inverted
   // automatically.
   color: #fff;
-  .bg-variant(@brand-primary);
+  background-color: @brand-primary;
 }
 .bg-success {
-  .bg-variant(@state-success-bg);
+  background-color: @state-success-bg;
 }
 .bg-info {
-  .bg-variant(@state-info-bg);
+  background-color: @state-info-bg;
 }
 .bg-warning {
-  .bg-variant(@state-warning-bg);
+  background-color: @state-warning-bg;
 }
 .bg-danger {
-  .bg-variant(@state-danger-bg);
+  background-color: @state-danger-bg;
 }
-
-
-
 
 // Lists
 // --------------------------------------------------
