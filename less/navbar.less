@@ -1,21 +1,9 @@
 .navbar{
-    -webkit-box-flex: 0;
-    box-flex: 0;
+    .box-flex(0);
+    .box-model(horizontal);
 
-    display: -webkit-box;
-    -webkit-box-orient: horizontal;
-    -webkit-box-align: stretch;
-
-    display: -moz-box;
-    -moz-box-orient: horizontal;
-    -moz-box-align: stretch;
-
-    display: box;
-    box-orient: horizontal;
-    box-align: stretch;
-
-    height:54px;
-    line-height:54px;
+    height: @bar-height;
+    line-height: @bar-line-height;
 
     a{
         display: block;
@@ -31,15 +19,15 @@
         }
     }
 
-  &,&.black{
-    background-size:1px 54px;
-    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABsCAIAAAFTGn/MAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIxJREFUeNpiYAICS0tLpl+/foHx79+/mX7+BLF/MoDkGBgY0DEzAwMjQAAx2NnZoegB0T9//gSxcekDCCCGtLQ0Zi4uLqa/f/+C8Z8/f+Dsf//+YYhDxXCZhxX/B9H/GQACDKzH3d2d6evXr2Bz/v//D6aR2dhoXHL//oHk/mFTzwxkk+RGUjDUPzA+AFfkmbVAuC0WAAAAAElFTkSuQmCC); 
+  &,&.navbar-black{
+    background-size:1px @bar-height;
+    background-image: @bar-black-background; 
     background-repeat:repeat-x;
   }
 
   &.navbar-white, &.navbar-invert{
       border-top:1px solid #e0dede;
-      background-color:#f7f7f7;
+      background-color: @bar-white-background;
       background:linear-gradient(#fff, #f7f6f5);
       background:-webkit-linear-gradient(#fff, #ccc);
       a{
@@ -53,4 +41,5 @@
       }
   }
 }
+
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */

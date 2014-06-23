@@ -14,5 +14,17 @@
             //callback      
     //    },300);
     //});
+    $(".tap")
+    .live('touchstart',function(){
+        $(this).data('background', $(this).css('background'));
+        $(this).css('background','#D9E9FF')
+    }).live('touchend', function(){
+        var background = $(this).data('background');
+        if(background){
+            $(this).css('background',background);
+        }else{
+            $(this).css('background','transparent')
+        }
+    })
 }($, window, document));
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
