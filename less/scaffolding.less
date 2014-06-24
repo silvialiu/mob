@@ -7,14 +7,8 @@
 }
 
 body{
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-box-align: stretch;
-	display: box;
-	box-orient: vertical;
-	box-align: stretch;
+    .box-model('vertical');
 }
-
 
 body > * {
 	.box-flex(0);
@@ -22,11 +16,6 @@ body > * {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     // remove outline effects in elements
     outline: none;  
-}
-
-//@TODO remove container
-.container,.content{ 
-	.box-flex(1);
 }
 
 // Images  
@@ -54,4 +43,20 @@ body > * {
 .img-circle {
     width:54px;
     .border-radius(500px); // crank the border-radius so it works with most reasonably sized images
+}
+
+.box{
+    .box-model('horizontal');
+}
+.box-vertical{
+    .box-model('vertical');
+}
+.flex0 {
+    .box-flex(0);
+}
+.flex {
+    .box-flex(1);
+}
+.flex2 {
+    .box-flex(2);
 }

@@ -71,7 +71,11 @@ module.exports = function(grunt) {
           sourceMapFilename: 'release/css/novel.css.map'
         },
         files: {
+<<<<<<< HEAD
           'release/css/novel.css': 'less/novel.less'
+=======
+          'dist/css/<%= pkg.name %>-novel.theme.css': 'less/theme.less'
+>>>>>>> master
         }
       },
 	  /*
@@ -142,12 +146,19 @@ module.exports = function(grunt) {
             }
         },
         copy: {
+            font: {
+                expand: true,
+                src: [
+                    'fonts/*'    
+                ],
+                dest: 'release/'
+            },
             docs: {
                 expand: true,
                 cwd: './release',
                 src: [
                   '{css,js}/*',
-                  //'fonts/*'
+                  'fonts/*'
                 ],
                 dest: 'docs/'
             }
@@ -162,8 +173,9 @@ module.exports = function(grunt) {
     // CSS distribution task.
     //grunt.registerTask('dist-css', ['less', 'cssmin', 'csscomb', 'usebanner']);
     grunt.registerTask('dist-css', ['less', 'cssmin']);
+    grunt.registerTask('dist-font', ['copy:font']);
 
-    grunt.registerTask('build', ['dist-js', 'dist-css', 'copy']);
+    grunt.registerTask('build', ['dist-js', 'dist-css', 'dist-font', 'copy:docs']);
 
 	grunt.registerTask('default', ['build']);
 

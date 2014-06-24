@@ -104,6 +104,12 @@
 ##Carousel
     首页新功能介绍的滚动
 
-##Webapp
-    载入时向上滚动
+##点击延迟
+    移动浏览器因为支持双击事件会有一个点击穿透现象。该组件会给浏览器加一个点击延迟，解决点击穿透现象。
 
+    <a href='test.html' class='click'>test</a>
+
+
+##返回顶部
+
+    <div class='nav-top'>返回顶部</div>
