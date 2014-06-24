@@ -19,12 +19,29 @@
         <div class='example'>
             <div class='btn btn-primary' onclick='dialog1.show()'>打开示例1</div>
         </div>
-        <div class="modal hide">
+
+        <div class="modal hide" id="offlineTipsDialog">
             <div class="modal-dialog">
-                <div class="modal-body">
-                    <p class="hilight offline-tip-title">离线提醒</p>
-                    <div class="btn-confirm">立即下载</div>
-					<div class="btn-cancel">取消</div>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">离线整本小说</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p>离线到本地,断网也能阅读哦~</p>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="modal-footer-left">
+                            <button class="btn-confirm">
+                                立即下载(3.0M)
+                            </button>
+                        </div>
+
+                        <div class="modal-footer-right">
+                            <button class="btn-cancel">
+                                取消
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

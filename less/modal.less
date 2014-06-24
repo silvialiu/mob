@@ -5,8 +5,6 @@
 @import 'mixins.less';
 
 @zindexModal: 999;
-@widthModal: 280px;
-@heightModal: 216px;
 @zindexModalBackdrop: 1;
 @zindexModalBody: 2;
 
@@ -19,43 +17,24 @@
     text-align:center;
     left: 0;
     top:0;
-    
-    &::after{
-        content: " ";
-        display: inline-block;
-        vertical-align: middle;
-        text-align: center;
-        width: 0;
-        height: 100%; 
-    }
 
-    .modal-dialog{
-        display: inline-block;
-        height: @heightModal;
-        width: @widthModal;
-        margin: 0 auto;
+  .modal-dialog{
         font-size: 14px;
         background-color: @white;
         vertical-align: middle;
-        .box-shadow(0 3px 7px rgba(0,0,0,0.3));
-        // Remove focus outline from opened modal
-        .btn-close{
-            color:gray;
-            font-weight:bold;
-            float:right;
-            content: 'x';
-        }
+    margin: 0 18px;
+    .box-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
     }
 
+  .modal-content {
+    padding: 27px 17px 30px;
+  }
+
     .modal-header {
-      padding: 9px 15px;
-      border-bottom: 1px solid #eee;
-      // Close icon
-      .close { margin-top: 2px; }
-      // Heading
-      h3 {
-        margin: 0;
-        line-height: 30px;
+      text-align: center;
+      .modal-title {
+        font-size: 20px;
+        line-height: 22px;
       }
     }
 
@@ -63,20 +42,30 @@
     .modal-body {
       position: relative;
       overflow-y: auto;
-      padding: 15px;
+      padding: 6px 0;
+      font-size: 16px;
       z-index: @zindexModalBody;
       vertical-align: top; 
-      text-align: left;
     }
 
     // Footer (for actions)
     .modal-footer {
-      padding: 14px 15px 15px;
-      margin-bottom: 0;
-      text-align: right; // right align buttons
-      border-top: 1px solid #ddd;
-      .box-shadow(inset 0 1px 0 @white);
-      
+      margin-top: 18px;
+      display: -webkit-box;
+      display: box;
+
+      .modal-footer-left {
+        box-flex: 3;
+        -webkit-box-flex: 3;
+        text-align: center;
+      }
+      .modal-footer-right {
+        box-flex: 2;
+        -webkit-box-flex: 2;
+        width: 108px;
+        text-align: center;
+      }
+
       // Properly space out buttons
       .btn + .btn {
         margin-left: 5px;

@@ -73,7 +73,7 @@ module.exports = function(grunt) {
         files: {
           'release/css/novel.css': 'less/novel.less'
         }
-      },
+      }
 	  /*
       minify: {
         options: {
@@ -177,6 +177,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('dev', 'Start a developing envirment', [
         'open',
-        'watch',
+        'watch'
     ]); 
 }
