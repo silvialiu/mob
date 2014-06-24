@@ -199,14 +199,14 @@ th {
   min-width: 10px;
   padding: 3px 7px;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: normal;
   color: #ffffff;
-  line-height: 1;
+  line-height: 15px;
   vertical-align: baseline;
   white-space: nowrap;
   text-align: center;
-  background-color: #999999;
-  border-radius: 10px;
+  background-color: #65b12c;
+  border-radius: 2px;
 }
 .badge:empty {
   display: none;
@@ -214,10 +214,6 @@ th {
 .btn .badge {
   position: relative;
   top: -1px;
-}
-.btn-xs .badge {
-  top: 0;
-  padding: 1px 5px;
 }
 a.badge:hover,
 a.badge:focus {
