@@ -1196,26 +1196,12 @@ body {
   box-orient: 'vertical';
   box-align: stretch;
 }
-<<<<<<< HEAD
-.modal .modal-dialog {
-  display: inline-block;
-  height: 216px;
-  width: 280px;
-  margin: 0 auto;
-  font-size: 14px;
-  background-color: #ffffff;
-  vertical-align: middle;
-  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-=======
 body > * {
   -moz-box-flex: 0;
   -webkit-box-flex: 0;
   box-flex: 0;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   outline: none;
->>>>>>> master
 }
 .img-rounded {
   width: 54px;
@@ -1791,7 +1777,6 @@ body > * {
   font-size: 14px;
   background-color: #ffffff;
   vertical-align: middle;
-  border: 1px solid rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 }

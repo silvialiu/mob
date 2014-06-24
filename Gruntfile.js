@@ -71,11 +71,7 @@ module.exports = function(grunt) {
           sourceMapFilename: 'release/css/novel.css.map'
         },
         files: {
-<<<<<<< HEAD
           'release/css/novel.css': 'less/novel.less'
-=======
-          'dist/css/<%= pkg.name %>-novel.theme.css': 'less/theme.less'
->>>>>>> master
         }
       },
 	  /*
