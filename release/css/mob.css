@@ -178,6 +178,121 @@ td,
 th {
   padding: 0;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small,
+.h1 small,
+.h2 small,
+.h3 small,
+.h4 small,
+.h5 small,
+.h6 small,
+h1 .small,
+h2 .small,
+h3 .small,
+h4 .small,
+h5 .small,
+h6 .small,
+.h1 .small,
+.h2 .small,
+.h3 .small,
+.h4 .small,
+.h5 .small,
+.h6 .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999999;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+h1 small,
+.h1 small,
+h2 small,
+.h2 small,
+h3 small,
+.h3 small,
+h1 .small,
+.h1 .small,
+h2 .small,
+.h2 .small,
+h3 .small,
+.h3 .small {
+  font-size: 65%;
+}
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h4 small,
+.h4 small,
+h5 small,
+.h5 small,
+h6 small,
+.h6 small,
+h4 .small,
+.h4 .small,
+h5 .small,
+.h5 .small,
+h6 .small,
+.h6 .small {
+  font-size: 75%;
+}
+h1,
+.h1 {
+  font-size: 20px;
+}
+h2,
+.h2 {
+  font-size: 18px;
+}
+h3,
+.h3 {
+  font-size: 16px;
+}
+h4,
+.h4 {
+  font-size: 14px;
+}
+h5,
+.h5 {
+  font-size: 13px;
+}
+h6,
+.h6 {
+  font-size: 11px;
+}
 p {
   margin: 0 0 10px;
 }
@@ -280,11 +395,9 @@ ol ol {
   top: 0;
   padding: 1px 5px;
 }
-a.badge:hover,
 a.badge:focus {
   color: #ffffff;
   text-decoration: none;
-  cursor: pointer;
 }
 a.list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
@@ -1455,8 +1568,8 @@ body > * {
 }
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
 .page {
-  height: 100%;
-  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-box-align: stretch;
