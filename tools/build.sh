@@ -20,3 +20,5 @@ cp -r img release/
 #cp -r img docs/
 cp -r img docs/examples/
 
+
+lessc config.less mob.css
