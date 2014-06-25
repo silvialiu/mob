@@ -5,8 +5,6 @@
 // Base styles
 // -------------------------
 
-@import "mixins/alerts.less";
-
 
 @alert-width:200px;
 @alert-height:38px;
@@ -55,6 +53,21 @@
     top: -2px;
     right: -21px;
     color: inherit;
+  }
+}
+
+// Alerts
+
+.alert-variant(@background; @border; @text-color) {
+  background-color: @background;
+  border-color: @border;
+  color: @text-color;
+
+  hr {
+    border-top-color: darken(@border, 5%);
+  }
+  .alert-link {
+    color: darken(@text-color, 10%);
   }
 }
 
