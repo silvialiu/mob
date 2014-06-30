@@ -29,6 +29,49 @@ content 用来表示page中navbar, topbar,aside以外的主要内容
 
 ##Tables
 
+普通表格
+
+    <table class="table">
+        <tr>
+            <th> TH1 </th><th> TH2 </th><th> TH3 </th>
+        </tr>
+        <tr>
+            <td> TD1 </td><td> TD2 </td><td> TD3 </td>
+        </tr>
+        <tr>
+            <td> TD1 </td><td> TD2 </td><td> TD3 </td>
+        </tr>
+    </table>
+
+有边框的表格
+
+    <table class="table-bordered">
+        <tr>
+            <th> TH1 </th><th> TH2 </th><th> TH3 </th>
+        </tr>
+        <tr>
+            <td> TD1 </td><td> TD2 </td><td> TD3 </td>
+        </tr>
+        <tr>
+            <td> TD1 </td><td> TD2 </td><td> TD3 </td>
+        </tr>
+    </table>
+
+有背景颜色条的表格
+
+    <table class="table-striped">
+        <tr>
+            <th> TH1 </th><th> TH2 </th><th> TH3 </th>
+        </tr>
+        <tr>
+            <td> TD1 </td><td> TD2 </td><td> TD3 </td>
+        </tr>
+        <tr>
+            <td> TD1 </td><td> TD2 </td><td> TD3 </td>
+        </tr>
+    </table>
+
+
 ##Forms
 
 ##Grids (九宫格)
