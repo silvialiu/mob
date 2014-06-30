@@ -49,59 +49,62 @@ module.exports = function(grunt) {
                 dest: 'release/js/<%= pkg.name %>.js'
             }
         },
-    less: {// compile less codes into css codes.
-      compileCore: {
-        options: {
-          strictMath: true,
-          sourceMap: true,
-          outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>.css.map',
-          sourceMapFilename: 'release/css/<%= pkg.name %>.css.map'
+        less: {// compile less codes into css codes.
+            compileCore: {
+            options: {
+              strictMath: true,
+              sourceMap: true,
+              outputSourceFiles: true,
+              sourceMapURL: '<%= pkg.name %>.css.map',
+              sourceMapFilename: 'release/css/<%= pkg.name %>.css.map'
+            },
+            files: {
+              'release/css/<%= pkg.name %>.css': 'less/mob.less'
+            }
         },
-        files: {
-          'release/css/<%= pkg.name %>.css': 'less/mob.less'
-        }
-      },
-      compileNovelTheme: {
-        options: {
-          strictMath: true,
-          sourceMap: true,
-          outputSourceFiles: true,
-          sourceMapURL: 'novel.css.map',
-          sourceMapFilename: 'release/css/novel.css.map'
+        /*
+           lesslint:{
+           },
+         */
+        compileNovelTheme: {
+            options: {
+                strictMath: true,
+                sourceMap: true,
+                outputSourceFiles: true,
+                sourceMapURL: 'novel.css.map',
+                sourceMapFilename: 'release/css/novel.css.map'
+            },
+            files: {
+                       'release/css/novel.css': 'less/novel.less'
+                   }
+            }
+                /*
+                   minify: {
+                   options: {
+                   cleancss: true,
+                   report: 'min'
+                   },
+                   files: {
+                   'release/css/<%= pkg.name %>.min.css': 'release/css/<%= pkg.name %>.css',
+                   'release/css/<%= pkg.name %>-theme.min.css': 'release/css/<%= pkg.name %>-theme.css'
+                   }
+                   }
+                   */
         },
-        files: {
-          'release/css/novel.css': 'less/novel.less'
-        }
-      }
-	  /*
-      minify: {
-        options: {
-          cleancss: true,
-          report: 'min'
+        cssmin: {
+            compress: {
+                options: {
+                keepSpecialComments: '*',
+                noAdvanced: true, // turn advanced optimizations off until the issue is fixed in clean-css
+                report: 'min',
+                selectorsMergeMode: 'ie8'
+                },
+            src: [
+                'release/css/mob.css',
+                ],
+            dest: 'release/css/mob.min.css'
+            }
         },
-        files: {
-          'release/css/<%= pkg.name %>.min.css': 'release/css/<%= pkg.name %>.css',
-          'release/css/<%= pkg.name %>-theme.min.css': 'release/css/<%= pkg.name %>-theme.css'
-        }
-      }
-      */
-    },
-    cssmin: {
-      compress: {
-        options: {
-          keepSpecialComments: '*',
-          noAdvanced: true, // turn advanced optimizations off until the issue is fixed in clean-css
-          report: 'min',
-          selectorsMergeMode: 'ie8'
-        },
-        src: [
-          'release/css/mob.css',
-        ],
-        dest: 'release/css/mob.min.css'
-      }
-    },
-
         watch: {  // watch任务，实时监听文件的变化，并进行编译
             src: {
                 files: '<%= jshint.src.src %>',
@@ -162,21 +165,17 @@ module.exports = function(grunt) {
     });
 
     require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
-
     // JS distribution task.
     grunt.registerTask('dist-js', ['concat', 'uglify']);
-
     // CSS distribution task.
-    //grunt.registerTask('dist-css', ['less', 'cssmin', 'csscomb', 'usebanner']);
+    //grunt.registerTask('dist-css', ['lesslint', 'less', 'cssmin', 'csscomb', 'usebanner']);
     grunt.registerTask('dist-css', ['less', 'cssmin']);
     grunt.registerTask('dist-font', ['copy:font']);
-
     grunt.registerTask('build', ['dist-js', 'dist-css', 'dist-font', 'copy:docs']);
-
 	grunt.registerTask('default', ['build']);
-
     grunt.registerTask('dev', 'Start a developing envirment', [
         'open',
         'watch'
     ]); 
 }
+/* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
