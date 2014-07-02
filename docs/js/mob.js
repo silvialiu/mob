@@ -1,54 +1,81 @@
 /**
  * method: 
- *  - html:
- *      data-sidebar = "hide|show|toggle" 
+ *  - data api:
+ *      data-aside = "hide|show|toggle" 
  *  - js:
- *      $(this).sidebar("toggle"|"show"|"hide")
+ *      $(this).aside("toggle"|"show"|"hide")
  *
- * fire sidebar-show,sidebar-shown, sidebar-hide event 
+ * fire aside-show,aside-shown, aside-hide event 
  */
 
 ;(function ($, window, document) {
     "use strict"; 
-    var Sidebar = function(element){
-        var $element = $(element);
-        this.page = $element.closest(".page");
-        this.target = $element.attr("href") || $element.data("target");
+    var Aside = function(element){
+        var $btn = $(element);
+        this.$el = $($btn.attr("href") || $btn.data("target"));
     }
-    Sidebar.prototype={
+
+    Aside.prototype={
         "show": function(){
-            $(this.target)
-            .removeClass("slideout")
-            .addClass("show")
-            .addClass("slidein");
-            this.page.removeClass("slidein").addClass("slideout");
+            var me = this;
+            this.$el
+                .removeClass("slideout")
+                .addClass("show")
+                .addClass("slidein")
+                .after("<div class='aside-backdrop'></div>")            
+            this.$el.siblings('.aside-backdrop').bind('click', function(){
+                this.remove();
+                me.hide();
+            })
+
+ //           if(this.$el.hasClass('aside-push')){
+ //               this.$el.closest(".page")
+ //                   .removeClass("slidein")
+  //                  .addClass("slideout");
+   //         }
         },
         "hide": function(){
-            $(this.target)
-            .removeClass("show")
-            .removeClass("slidein")
-            .addClass("slideout");
-            this.page.removeClass("slideout").addClass("slidein");
+            this.$el
+                .removeClass("show")
+                .removeClass("slidein")
+                .addClass("slideout");
+
+            this.$el.siblings('.aside-backdrop').remove();
+
+     //       if(this.$el.hasClass('aside-push')){
+    //            this.$el.closest(".page")
+     //               .removeClass("slideout")
+      //              .addClass("slidein");
+       //     }
         },
         "toggle": function(){
-            $(this.target).hasClass("show") ? this.hide() : this.show();
+            this.$el.hasClass("show") ? this.hide() : this.show();
         }
     }
 
     /*
-     * TAB PLUGIN DEFINITION
+     * ASIDE PLUGIN DEFINITION
      */
-    $.fn.sidebar = function ( option ) {
+
+    $.fn.aside = function ( option ) {
         return this.each(function () {
-            var sidebar = new Sidebar(this);
-            if (typeof option == 'string') sidebar[option]();
+            var aside = new Aside(this);
+            if (typeof option == 'string') aside[option]();
         });
     }
-    $(document).on('click.tap.data-api', '[data-sidebar="toggle"]', function (e) {
+
+    /*
+     * ASIDE DATA API
+     */
+
+    $(document).on('click.data-api', '[data-aside="toggle"]', function (e) {
         e.preventDefault();
-        $(this).sidebar('toggle');
-  });
+        $(this).aside('toggle');
+    });
+
 }($, window, document));
+
+/* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
 
 ;(function (window, document) {
     $(".aside").on("tap",function(){
@@ -353,24 +380,29 @@
 // http://phonegap-tips.com/articles/essential-phonegap-css-webkit-tap-highlight-color.html
 
 ;(function(){
-    //tap 点击延时绑定
+    //@TODO tap 点击延时绑定
     //$(".tap").live('click', function(e){
     //    e.preventDefault();
     //    setTimeout(function(){
             //callback      
     //    },300);
     //});
-    $(".tap")
-    .live('touchstart',function(){
-        $(this).data('background', $(this).css('background'));
-        $(this).css('background','#D9E9FF')
-    }).live('touchend', function(){
-        var background = $(this).data('background');
-        if(background){
-            $(this).css('background',background);
-        }else{
-            $(this).css('background','transparent')
-        }
-    })
+
+    //tap highlight
+    if($.os.android){
+        $(".tap")
+            .live('touchstart',function(){
+                $(this).data('background', $(this).css('background'));
+                $(this).css('background','#D9E9FF')
+            }).live('touchend', function(){
+                var background = $(this).data('background');
+                if(background){
+                    $(this).css('background',background);
+                }else{
+                    $(this).css('background','transparent')
+                }
+            })
+    }
+    //@TODO data api
 }($, window, document));
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */

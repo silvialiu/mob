@@ -2,19 +2,21 @@
 
 ##页面布局
 
-###Page
+###Page Container
 
 page 用来显示一个满屏页面的架子.
 
-    <section class="page"></section>
+    <section class="page"> ... </section>
 
 也可用div元素实现
 
-    <div class="page"></div>
-
-###Container
+    <div class="page"> ... </div>
 
 ###Topbar
+
+top bar 为页面顶部的工具栏, 有随页面固定和随页面滚动两种。要注意其与 Header 的区别
+
+    <div class="toolbar"><span class="icon-list"><span class="title">TOOLBAR</span><span class="icon-cog"></span></div>
 
 ###Header
 

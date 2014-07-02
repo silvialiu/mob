@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="webapp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="format-detection" content="telephone=no"/>
+        <link href="../css/mob.css" rel="stylesheet" type="text/css" >
+    </head>
+    <body>
+        <div class="page">
+
+            <div class='toolbar topbar'>
+                <button class="btn btn-primary" id="btn"  data-target=".aside-left" >
+                    <span class="icon icon-cog"></span>
+                </button>
+                <button class="btn btn-primary" id="btn4"  data-target=".aside-top" >
+                    <span class="icon icon-arrow-down"></span>
+                </button>
+                <h1 class='title'> ASIDE EXAMPLE</h1>
+                <button class="btn" id="btn2"  data-target=".aside-right" >
+                    <span class="icon icon-list"></span>
+                </button>
+            </div>
+
+             <header class="page-header">ASIDE EXAMPLE</header>
+
+             <article class="content">
+                this is a ASIDE example
+             </article>
+
+             <footer class="page-footer">&copy;mob</footer>
+
+             <div class='navbar bottombar bottombar-fixed'>
+                <button class="btn btn-primary" id="btn3"  data-target=".aside-bottom" >
+                    <span class="icon icon-arrow-up"></span>
+                </button>
+             </div>
+        </div>
+
+        <aside class="aside aside-right">
+            <nav class="list-group">
+                <a href="#index" class='list-group-item'>首页</a>
+                <a href="#result" class='list-group-item'>结果页</a>
+                <a href="#setting" class='list-group-item'>设置</a>
+            </nav>
+        </aside>
+
+        <aside class="aside aside-left">
+            <ul class="list-group">
+                <li class="list-group-item"> <a href="#index" class='list-group-item'>首页</a> </li>
+                <li class="list-group-item"> <a href="#result" class='list-group-item'>结果页</a> </li>
+                <li class="list-group-item"> <a href="#setting" class='list-group-item'>设置</a> </li>
+            </ul>
+        </aside>
+
+        <aside class="aside aside-top">
+            aside3
+        </aside>
+
+        <aside class="aside aside-bottom">
+            aside4
+        </aside>
+        <script src="../js/zepto.js"></script>
+        <script src='../js/mob.js'></script>
+
+        <script>
+            $(".btn").on("click",function(e){
+                e.stopPropagation();
+                e.preventDefault();
+                $(this).aside('toggle');
+            });
+        </script>
+    </body>
+</html>

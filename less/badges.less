@@ -1,12 +1,6 @@
 //
 // Badges
 // --------------------------------------------------
-@font-size-small:12px;
-@badge-border-radius:2px;
-@badge-font-weight:normal;
-@badge-color:#fff;
-@badge-line-height:15px;
-@badge-bg:#65B12C;
 
 // Base classes
 .badge {
@@ -23,7 +17,7 @@
   background-color: @badge-bg;
   border-radius: @badge-border-radius;
 
-  // Empty badges collapse automatically (not available in IE8)
+  // Empty badges collapse automatically
   &:empty {
     display: none;
   }
@@ -37,10 +31,7 @@
 
 // Hover state, but only for links
 a.badge {
-  &:focus {
-    color: @badge-link-hover-color;
     text-decoration: none;
-  }
 }
 
 .nav-pills > li > a > .badge {

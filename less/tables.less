@@ -1,0 +1,68 @@
+//
+// Tables
+// --------------------------------------------------
+
+// Baseline styles
+
+.table {
+    border: 0;
+    width: 100%;
+    margin-bottom: @line-height-computed;
+    th, td{
+        line-height: @line-height-computed;
+        height: @line-height-computed;
+    }
+    td{
+        padding: @table-cell-padding;
+    }
+    th, td{
+        text-align:center;
+        &:first-child{
+            padding-left:@line-height-computed;
+            text-align: left;
+        }
+        &:last-child{
+            padding-right:@line-height-computed;
+            text-align: right;
+        } 
+    }
+}
+
+
+// Bordered version
+//
+// Add borders all around the table and between all the columns.
+
+.table-bordered {
+  border: 1px solid @table-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid @table-border-color;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+.table-striped {
+  > tbody > tr:nth-child(odd) {
+    > td,
+    > th {
+      background-color: @table-bg-accent;
+    }
+  }
+}

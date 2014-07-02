@@ -37,6 +37,9 @@
     background-size:1px @bar-height;
     background-image: @bar-black-background;
     background-repeat:repeat-x;
+    .title, h1 {
+        color: white;
+    }
 }
 
 .white-bar() {
@@ -46,6 +49,9 @@
     background:-webkit-linear-gradient(#fff, #f7f6f5);
     box-shadow:0 -1px 0 #fefcfc inset,0 0 4px rgba(0,0,0,.15);
     -webkit-shadow:0 -1px 0 #fefcfc inset,0 0 4px rgba(0,0,0,.15);
+    .title, h1 {
+        color: black;
+    }
 }
 
 // Topbar
@@ -65,13 +71,14 @@
     border-bottom:1px solid #e0dede;
     /* &.black default */
     .black-bar();
-    .title,h1{
+    .title, h1{
         -webkit-box-flex: 1;
         box-flex: 1;
         padding:0;
         margin:0;
         font-size:18px;
         text-align:center;
+        line-height: 40px;
     }
 
     .btn{
@@ -94,7 +101,7 @@
 // Page content
 // -------------------------
 
-.content{ 
+.page-content{ 
 	.box-flex(1);
 }
 

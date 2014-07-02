@@ -1,0 +1,185 @@
+//
+// aside
+// --------------------------------------------------
+
+//
+// Common transition method
+// --------------------------------------------------
+
+.tansition(@effect) {
+    -webkit-transition: -webkit-transform @effect;
+    transition: transform @effect;
+}
+
+// @TODO add comments
+.aside{
+
+    // Baseline styles
+
+    color: @aside-color;
+    background-color: @aside-background;
+    font-size: @font-size-base;
+    position: absolute;
+    display: none;
+
+    &.aside-right{
+        width: @aside-width;
+        height: 100%;
+        top: 0;
+        right: -@aside-width;
+        bottom: 0;
+    }
+
+    &.aside-left{
+        width: @aside-width;
+        height: 100%;
+        left: -@aside-width;
+        top: 0;
+        bottom: 0;
+    }
+
+    &.aside-top{
+        right: 0;
+        top: -@aside-height;
+        height: @aside-height;
+        left: 0;
+    }
+    
+    &.aside-bottom{
+        right: 0;
+        bottom: -@aside-height;
+        height: @aside-height;
+        left: 0;
+    }
+    
+    // Overlay style aside
+
+    &,&.aside-overlay{
+        z-index: 1000;    
+    }
+    
+    &.aside-push{
+        
+    }
+
+
+    &.aside-left.slidein{
+        .transition('200ms ease');
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+    
+    &.aside-left.slideout{
+        .transition('200ms ease');
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+   
+    &.aside-right.slidein{
+        .transition('200ms ease');
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    &.aside-right.slideout{
+        .transition('200ms ease');
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    
+    &.aside-top.slidein{
+        .transition('200ms ease');
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        top: @aside-height;
+    }
+
+    &.aside-top.slideout{
+        .transition('200ms ease');
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    &.aside-bottom.slidein{
+        .transition('200ms ease');
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        bottom: -@aside-height;
+    }
+
+    &.aside-bottom.slideout{
+        .transition('200ms ease');
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    
+
+    // Nav styles
+
+    .nav, nav{
+        a{
+            text-decoration: none;
+            display:block;
+            line-height: 42px;
+            border-top: 1px solid #343336;
+            border-bottom: 1px solid #171618;
+            -webkit-background-size: 22px 22px;
+            background-size: 22px 22px;
+        
+            &.active{
+                border-top: 1px solid #1e1d20;
+                background-color: #1e1d20;
+                background-position: 234px 50%;
+                -webkit-background-size: 7px 12px;
+                background-size: 7px 11.5px;
+            }
+        }
+
+        -webkit-background-size: 22px 22px;
+        background-size: 22px 22px;
+
+        &.active{
+            border-top: 1px solid #1e1d20;
+            background-color: #1e1d20;
+            background-position: 234px 50%;
+            -webkit-background-size: 7px 12px;
+            background-size: 7px 11.5px;
+        }
+    }
+}
+
+// After content
+
+.aside-backdrop{
+    content: '';
+    display: block;
+    height: 100%;
+    opacity: 0.8;
+    background-color: #000000;
+    position: absolute;
+    top:0;
+    //left:@aside-width;
+    left: 0;
+    bottom: 0;
+    //width: (100% - @aside-width);
+    width: 100%;
+    z-index:1;
+}
+
+/* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
