@@ -13,6 +13,26 @@
     var Aside = function(element){
         var $btn = $(element);
         this.$el = $($btn.attr("href") || $btn.data("target"));
+        if(this.$el.hasClass('aside-push')){
+            var bindEl = this.bindEl = $(this.$el.data("bind"))
+                bindEl.addClass('aside-push-obj')
+                    .removeClass('aside-push-obj-right')
+                    .removeClass('aside-push-obj-left')
+                    .removeClass('aside-push-obj-top')
+                    .removeClass('aside-push-obj-bottom')
+
+            if (this.$el.hasClass('aside-right')){
+                this.bindClass = "aside-push-obj-right"
+            }else if (this.$el.hasClass('aside-left')){
+                this.bindClass = "aside-push-obj-left"
+            }else if (this.$el.hasClass('aside-top')){
+                this.bindClass = "aside-push-obj-top"
+            }else if (this.$el.hasClass('aside-bottom')){
+                this.bindClass = "aside-push-obj-bottom"
+            }
+            bindEl.addClass(this.bindClass)
+        }
+
     }
 
     Aside.prototype={
@@ -22,31 +42,36 @@
                 .removeClass("slideout")
                 .addClass("show")
                 .addClass("slidein")
-                .after("<div class='aside-backdrop'></div>")            
-            this.$el.siblings('.aside-backdrop').bind('click', function(){
-                this.remove();
-                me.hide();
-            })
 
- //           if(this.$el.hasClass('aside-push')){
- //               this.$el.closest(".page")
- //                   .removeClass("slidein")
-  //                  .addClass("slideout");
-   //         }
+            if(this.$el.hasClass('aside-push')){
+                this.bindEl.removeClass("slideout")
+                    .addClass("slidein")
+                    .one('click', function(){
+                        me.hide.call(me)                
+                    })
+                    
+            } else { // if $el has class aside-overlay
+                this.$el.after("<div class='aside-backdrop'></div>")            
+                this.$el.siblings('.aside-backdrop').bind('click', function(){
+                    this.remove();
+                    me.hide();
+                })
+            }
+
         },
         "hide": function(){
             this.$el
-                .removeClass("show")
                 .removeClass("slidein")
-                .addClass("slideout");
+                .addClass("slideout")
+                .removeClass("show")
 
-            this.$el.siblings('.aside-backdrop').remove();
+            if(this.$el.hasClass('aside-push')){
+                this.bindEl.removeClass("slidein")
+                    .addClass("slideout")
+            }else{ // if $el has class aside=-overlay
+                this.$el.siblings('.aside-backdrop').remove();
+            }
 
-     //       if(this.$el.hasClass('aside-push')){
-    //            this.$el.closest(".page")
-     //               .removeClass("slideout")
-      //              .addClass("slidein");
-       //     }
         },
         "toggle": function(){
             this.$el.hasClass("show") ? this.hide() : this.show();
