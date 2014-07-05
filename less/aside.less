@@ -7,7 +7,7 @@
 // --------------------------------------------------
 
 .transformX(@distance){
-    .transition-transform(200ms ease);
+    .transition-transform(300ms ease);
     -webkit-transform: translateX(@distance);
     transform: translateX(@distance);
     -webkit-transform: translate3d(@distance, 0, 0);
@@ -15,7 +15,7 @@
 }
 
 .transformY(@distance){
-    .transition-transform(200ms ease);
+    .transition-transform(300ms ease);
     -webkit-transform: translateY(@distance);
     transform: translateY(@distance);
     -webkit-transform: translate3d(0, @distance, 0);
@@ -33,7 +33,6 @@
 
     &.aside-left{
         width: @aside-width;
-        height: 100%;
         left: -@aside-width;
         top: 0;
         bottom: 0;
@@ -55,6 +54,7 @@
         
         &.slidein, &.slideout{
             opacity: 1;
+            top:0;
         }
 
         &.slidein {
@@ -63,8 +63,11 @@
         }
 
         &.slideout {
-            top: -100%;
             .transformX(0);
+        }
+
+        &.disapear{
+            top: -100%;
         }
     }
 
@@ -90,14 +93,16 @@
         height: @aside-height;
         &.slidein, &.slideout{
             opacity: 1;
+            left:0;
         }
         &.slidein{
-            left:0;
             .transformY(-100%);
         }
         &.slideout{
-            left: -100%;
             .transformY(0);
+        }
+        &.disapear{
+            left: -100%;
         }
     }
     
@@ -110,7 +115,7 @@
     // Push style aside 
 
     &.aside-push{
-        z-index: 0;    
+        z-index: 0;
     }
     
     // Nav styles
@@ -157,13 +162,12 @@
 }
 
 .aside-push-obj{
-
     &.aside-push-obj-right{
         &.slidein{
             .transformX(-@aside-width);
         }
         &.slideout{
-            .transformX(0);
+            .transition-transform(300ms ease);
         }
     }
 
@@ -172,16 +176,21 @@
             .transformX(@aside-width);
         }
         &.slideout{
-            .transformX(0);
+            .transition-transform(300ms ease);
+            // no .transformX(@aside-width), it will cause bug
         }
     }
 
     &.aside-push-obj-top{
         &.slidein{
             .transformY(@aside-height);
+            .page-header{ //trick to fix bug
+                margin:0;
+            }
         }
         &.slideout{
-            .transformX(0);
+            .transition-transform(300ms ease);
+            // no .transformY(0), it will cause bug
         }
     }
 
@@ -190,10 +199,10 @@
             .transformY(-@aside-height);
         }
         &.slideout{
-            .transformX(0);
+            .transition-transform(300ms ease);
+            //.transformY(0);
         }
     }
-
+    
 }
-
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
