@@ -44,8 +44,8 @@
                 .addClass("show")
                 .addClass("slidein")
 
+            this._apear(this.$el)
             if(this.isPush){
-                this.$el.removeClass("disapear")
                 this.bindEl.removeClass("slideout")
                     .addClass("slidein")
                     .one('click', function(e){
@@ -63,20 +63,25 @@
                 .addClass("slideout")
                 .removeClass("show")
 
+            this._disapear(this.$el)
             if(this.isPush){
                 this.bindEl.removeClass("slidein")
                     .addClass("slideout")
                     .off('touchmove', this.bindEl, this._preventMove)
-                    var me =this
-                    setTimeout(function(){
-                        me.$el.addClass('disapear');
-                    },300); //trick for right bar display 
             }else{ // if $el has class aside=-overlay
                 this._removeBackdrop()
             }
         },
         "toggle": function(){
             this.$el.hasClass("show") ? this.hide() : this.show();
+        },
+        "_disapear": function(el){
+                setTimeout(function(){
+                    el.addClass('disapear');
+                },300); //trick for side bar 
+        },
+        "_apear": function(el){
+                el.removeClass('disapear');
         },
         "_addBackdrop": function(){
             var me = this;

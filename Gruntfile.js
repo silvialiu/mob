@@ -66,18 +66,7 @@ module.exports = function(grunt) {
            lesslint:{
            },
          */
-        compileNovelTheme: {
-            options: {
-                strictMath: true,
-                sourceMap: true,
-                outputSourceFiles: true,
-                sourceMapURL: 'novel.css.map',
-                sourceMapFilename: 'release/css/novel.css.map'
-            },
-            files: {
-                       'release/css/novel.css': 'less/novel.less'
-                   }
-            }
+        
                 /*
                    minify: {
                    options: {
