@@ -350,6 +350,7 @@ circle img, polaroid img, rounded img
     <span class="icon icon-cloud-upload"></span>
     <span class="icon icon-tree-conifer"></span>
     <span class="icon icon-tree-deciduous"></span>
+    <span class="icon icon-close"></span>
 
 ##Helper classes
 

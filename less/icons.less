@@ -231,3 +231,20 @@
 .icon-cloud-upload           { &:before { content: "\e198"; } }
 .icon-tree-conifer           { &:before { content: "\e199"; } }
 .icon-tree-deciduous         { &:before { content: "\e200"; } }
+.icon-close                  {
+  font-family: @font-family-sans-serif;
+  &:before { 
+    content: "&times;"; 
+  } 
+  text-shadow: @icon-text-shadow;
+
+  // Additional properties for button version
+  // iOS requires the button element instead of an anchor tag.
+  // If you want the anchor version, it requires `href="#"`.
+  button& {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+  }
+}

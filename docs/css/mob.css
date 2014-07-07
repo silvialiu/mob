@@ -1322,6 +1322,19 @@ a.badge {
 .icon-tree-deciduous:before {
   content: "\e200";
 }
+.icon-close {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow: 0 1px 0 #ffffff;
+}
+.icon-close:before {
+  content: "&times;";
+}
+button.icon-close {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
 .list {
   padding: 0;
   margin: 0;
