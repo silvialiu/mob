@@ -384,5 +384,45 @@ circle img, polaroid img, rounded img
 	</div>
 
 
+##Code
+
+###Inline
+Wrap inline snippets of code with <code>.
+
+<pre>
+For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+</pre>
+
+###User input
+Use the <kbd> to indicate input that is typically entered via keyboard.
+
+<pre>
+To switch directories, type <kbd>cd</kbd> followed by the name of the directory.
+</pre>
+
+###Basic block
+Use <pre> for multiple lines of code. Be sure to escape any angle brackets in the code for proper rendering.
+
+<pre>
+<pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
+</pre>
+
+You may optionally add the <code>.pre-scrollable</code> class, which will set a max-height of 350px and provide a y-axis scrollbar.
+
+###Variables
+For indicating variables use the <var> tag.
+
+<pre>
+<var>y</var> = <var>m</var><var>x</var> + <var>b</var>
+</pre>
+
+###aSample output
+For indicating blocks sample output from a program use the <samp> tag.
+
+<pre>
+<samp>This text is meant to be treated as sample output from a computer program.</samp>
+</pre>
+
+
 ##Badge
 	<span class="badge">read</span>

@@ -9,9 +9,9 @@
 </head>
 <body>
     <nav class="toolbar topbar topbar-fixed">
-        <button class="btn btn-primary" id="btn"  data-target=".aside-left" >
+        <div class="btn btn-primary" id="aside-left" data-toggle=true  data-target=".aside-left" >
             <span class="icon icon-cog"></span>
-        </button>
+        </div>
     </nav>
     <section class="page">
         <header class="page-header">
@@ -25,6 +25,15 @@
             </ul>
         </div>
     </section>
+    <aside class="aside aside-left">
+        <div id="mune-list" class="list-group">
+            <div class="pull-right list-group-item">
+                <div class="tap" id="aside-return">
+                    <span class="icon icon-arrow-right"></span>
+                </div>
+            </div>
+        </div>
+    </aside>
     <nav class="navbar bottombar bottombar-fixed" id="navbar">
         <a href="#home" class="active">Home</a>
         <a href="#personal">Personal</a>
@@ -34,5 +43,13 @@
 </body>
 <script src="../js/zepto.js"></script>
 <script src="../js/mob.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $("#aside-left").on("click", function(e){
+        $(this).aside('toggle')
+        });
+    $('#aside-return').on("click",function(e){
+        $("#aside-left").aside('hide')
+    })
+</script>
 </html>
 
