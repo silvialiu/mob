@@ -9,6 +9,7 @@
  * methods:
  *     show
  *     activate
+ *     hide
  *
  * @todo 
  *  动画 

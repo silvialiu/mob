@@ -1,5 +1,6 @@
 /**
  * method: 
+ *
  *  - data api:
  *      data-aside = "hide|show|toggle" 
  *  - js:
@@ -14,6 +15,7 @@
         var $btn = $(element);
         this.$el = $($btn.attr("href") || $btn.data("target"));
         if(this.$el.hasClass('aside-push')){
+
             this.isPush = true;
             var bindEl = this.bindEl = $(this.$el.data("bind"))
                 bindEl.addClass('aside-push-obj')
@@ -330,6 +332,7 @@
 
 }($, window, document));
 
+
 /**
  * nav:
  *     (class)
@@ -341,6 +344,7 @@
  * methods:
  *     show
  *     activate
+ *     hide
  *
  * @todo 
  *  动画 
@@ -429,15 +433,7 @@
 
 ;(function(){
     // tap 点击延时绑定
-    $(".tap").live('click', function(e){
-        console.log(e)
-        e.preventDefault();
-        e.stopPropagation();
-        setTimeout(function(){
-            //callback      
-        },300);
-    });
-
+ 
     //tap highlight
     if($.os.android){
         $(".tap")
@@ -453,6 +449,32 @@
                 }
             })
     }
-    //@TODO data api
+
+    //data api
+    
+    $(document).on('click.tap', '[data-url]', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var url = $(this).data('url');
+        setTimeout(function(){
+            location.href = url;
+        },300);
+    });
+
+    $(document).on('click.tap', '[data-openurl]', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var url = $(this).data('openurl');
+        setTimeout(function(){
+            window.open(url);
+        },300);
+    });
+
 }($, window, document));
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
+
+if ($.os.iphone){
+    setTimeout(function() {
+        window.scrollTo(0, 0);
+    },0);
+}

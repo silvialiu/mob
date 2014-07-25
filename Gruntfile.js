@@ -97,8 +97,7 @@ module.exports = function(grunt) {
         watch: {  // watch任务，实时监听文件的变化，并进行编译
             src: {
                 files: '<%= jshint.src.src %>',
-                //tasks: ['jshint:src', 'qunit'],
-                tasks: ['dist-js', 'copy:docs'],
+                tasks: ['dist-js', 'copy:docs'], //'jshint:src', 'qunit'],
                 options: {
                     livereload: true
                 }
@@ -111,7 +110,10 @@ module.exports = function(grunt) {
             */
             less: {
                 files: 'less/*.less',
-                tasks: ['dist-css','copy:docs']
+                tasks: ['dist-css','copy:docs'],
+                options: {
+                    livereload: true
+                }
             }
         },
         open: { // open the url through browser
@@ -150,6 +152,15 @@ module.exports = function(grunt) {
                 ],
                 dest: 'docs/'
             }
+        },
+        concurrent: {
+            dev: {
+                tasks: ['connect', 'watch', 'open'],
+                options: {
+                    limit: 3,
+                    logConcurrentOutput: true
+                }
+            }
         }
     });
 
@@ -163,8 +174,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build', ['dist-js', 'dist-css', 'dist-font', 'copy:docs']);
 	grunt.registerTask('default', ['build']);
     grunt.registerTask('dev', 'Start a developing envirment', [
-        'open',
-        'watch'
+        'concurrent:dev'
     ]); 
 }
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */

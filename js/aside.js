@@ -1,5 +1,6 @@
 /**
  * method: 
+ *
  *  - data api:
  *      data-aside = "hide|show|toggle" 
  *  - js:
@@ -14,6 +15,7 @@
         var $btn = $(element);
         this.$el = $($btn.attr("href") || $btn.data("target"));
         if(this.$el.hasClass('aside-push')){
+
             this.isPush = true;
             var bindEl = this.bindEl = $(this.$el.data("bind"))
                 bindEl.addClass('aside-push-obj')

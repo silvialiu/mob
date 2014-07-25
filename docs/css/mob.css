@@ -1655,8 +1655,7 @@ button.icon-close {
 .navbar,
 .navbar.navbar-black {
   background-size: 1px 40px;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABsCAIAAAFTGn/MAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIxJREFUeNpiYAICS0tLpl+/foHx79+/mX7+BLF/MoDkGBgY0DEzAwMjQAAx2NnZoegB0T9//gSxcekDCCCGtLQ0Zi4uLqa/f/+C8Z8/f+Dsf//+YYhDxXCZhxX/B9H/GQACDKzH3d2d6evXr2Bz/v//D6aR2dhoXHL//oHk/mFTzwxkk+RGUjDUPzA+AFfkmbVAuC0WAAAAAElFTkSuQmCC);
-  background-repeat: repeat-x;
+  background-color: #222222;
 }
 .navbar.navbar-white,
 .navbar.navbar-invert {
@@ -1718,11 +1717,11 @@ button.icon-close {
   line-height: 40px;
   font-size: 16px;
   text-align: center;
+  background-repeat: repeat-x;
   border-bottom: 1px solid #e0dede;
   /* &.black default */
   background-size: 1px 40px;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABsCAIAAAFTGn/MAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIxJREFUeNpiYAICS0tLpl+/foHx79+/mX7+BLF/MoDkGBgY0DEzAwMjQAAx2NnZoegB0T9//gSxcekDCCCGtLQ0Zi4uLqa/f/+C8Z8/f+Dsf//+YYhDxXCZhxX/B9H/GQACDKzH3d2d6evXr2Bz/v//D6aR2dhoXHL//oHk/mFTzwxkk+RGUjDUPzA+AFfkmbVAuC0WAAAAAElFTkSuQmCC);
-  background-repeat: repeat-x;
+  background-color: #222222;
 }
 .topbar .title,
 .topbar h1 {
@@ -1764,13 +1763,18 @@ button.icon-close {
   -webkit-box-flex: 1;
   box-flex: 1;
 }
+.topbar-fixed ~ .page {
+  padding-top: 40px;
+}
+.bottombar-fixed ~ .page {
+  padding-bottom: 40px;
+}
 .bottombar {
   height: 40px;
   line-height: 40px;
   /* &.black default */
   background-size: 1px 40px;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABsCAIAAAFTGn/MAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIxJREFUeNpiYAICS0tLpl+/foHx79+/mX7+BLF/MoDkGBgY0DEzAwMjQAAx2NnZoegB0T9//gSxcekDCCCGtLQ0Zi4uLqa/f/+C8Z8/f+Dsf//+YYhDxXCZhxX/B9H/GQACDKzH3d2d6evXr2Bz/v//D6aR2dhoXHL//oHk/mFTzwxkk+RGUjDUPzA+AFfkmbVAuC0WAAAAAElFTkSuQmCC);
-  background-repeat: repeat-x;
+  background-color: #222222;
 }
 .bottombar.bottombar-fixed {
   position: fixed;
@@ -1803,6 +1807,7 @@ html.webapp,
 .webapp .page {
   overflow-x: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .aside {
   color: #ffffff;
