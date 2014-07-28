@@ -21,6 +21,7 @@
         margin:0;
         font-size:18px;
     }
+    .box-flex(1);
 }
 
 // Page footer
@@ -37,23 +38,19 @@
 // -------------------------
 
 .black-bar(){
+    color: white;
     background-size:1px @bar-height;
     background-color: @bar-black-background;
-    .title, h1 {
-        color: white;
-    }
-}
+   }
 
 .white-bar() {
+    color: black;
     border-bottom:1px solid #e0dede;
     background-color: @bar-white-background;
     background:linear-gradient(#fff, #f7f6f5);
     background:-webkit-linear-gradient(#fff, #f7f6f5);
     box-shadow:0 -1px 0 #fefcfc inset,0 0 4px rgba(0,0,0,.15);
     -webkit-shadow:0 -1px 0 #fefcfc inset,0 0 4px rgba(0,0,0,.15);
-    .title, h1 {
-        color: black;
-    }
 }
 
 // Topbar
@@ -69,20 +66,21 @@
     text-align: center;
     background-size:1px 40px;
     background-repeat:repeat-x;
-
     border-bottom:1px solid #e0dede;
+
     /* &.black default */
     .black-bar();
-    .title, h1{
-        -webkit-box-flex: 1;
-        box-flex: 1;
+    .topbar-title, h1{
+        .box-flex(3);
         padding:0;
         margin:0;
         font-size:18px;
         text-align:center;
         line-height: 40px;
     }
-
+    .topbar-left, .topbar-right{
+        .box-flex(1);
+    }
     .btn{
         -webkit-box-flex: 0;
         box-flex: 0;
@@ -128,6 +126,7 @@
 .bottombar{
     height: @bar-height;
     line-height: @bar-line-height;
+    .box-flex(0);
     &.bottombar-fixed {
         position: fixed;
         bottom: 0;

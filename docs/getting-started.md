@@ -1,4 +1,24 @@
-#Get Started
+# 开始
 
-##First: quickly build a hello world web app.
+## 页面类型
+
+在mob中，我们将页面类型分为两类，一类是<b>移动web页</b>, 一类是<b>webapp页</b>。
+
+## 页面布局
+
+mob支持多种页面布局方式
+
+### 普通布局
+
+### webapp 布局
+
+### 上下栏固定布局
+
+## 页面组件
+
+### 按钮
+
+### 对话框
+
+## 页面动画效果
 

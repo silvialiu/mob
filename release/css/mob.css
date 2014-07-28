@@ -635,7 +635,6 @@ a.badge {
 }
 .btn {
   padding: 0 15px;
-  border: 1px;
   background: #f5f5f5;
   border: 1px #d7d7d7 solid;
 }
@@ -685,6 +684,10 @@ a.badge {
   border: 1px;
   background: #f5f5f5;
   border: 1px #d7d7d7 solid;
+}
+.btn-text {
+  background: none;
+  border: 0;
 }
 .tap {
   -webkit-tap-highlight-color: #d9e9ff;
@@ -1677,8 +1680,10 @@ button.icon-close {
 }
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
 .page {
-  min-height: 100%;
-  min-width: 100%;
+  /*
+    min-height:100%;
+    min-width:100%;
+    */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-box-align: stretch;
@@ -1689,6 +1694,8 @@ button.icon-close {
 .page-header {
   padding: 20px 0 9px;
   border-bottom: 1px solid #eeeeee;
+  -webkit-box-flex: 1;
+  box-flex: 1;
 }
 .page-header .title,
 .page-header h1 {
@@ -1720,38 +1727,37 @@ button.icon-close {
   background-repeat: repeat-x;
   border-bottom: 1px solid #e0dede;
   /* &.black default */
+  color: white;
   background-size: 1px 40px;
   background-color: #222222;
 }
-.topbar .title,
+.topbar .topbar-title,
 .topbar h1 {
-  color: white;
-}
-.topbar .title,
-.topbar h1 {
-  -webkit-box-flex: 1;
-  box-flex: 1;
+  -webkit-box-flex: 3;
+  box-flex: 3;
   padding: 0;
   margin: 0;
   font-size: 18px;
   text-align: center;
   line-height: 40px;
 }
+.topbar .topbar-left,
+.topbar .topbar-right {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+}
 .topbar .btn {
   -webkit-box-flex: 0;
   box-flex: 0;
 }
 .topbar.topbar-white {
+  color: black;
   border-bottom: 1px solid #e0dede;
   background-color: #f7f7f7;
   background: linear-gradient(#ffffff, #f7f6f5);
   background: -webkit-linear-gradient(#ffffff, #f7f6f5);
   box-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0, 0, 0, 0.15);
   -webkit-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0, 0, 0, 0.15);
-}
-.topbar.topbar-white .title,
-.topbar.topbar-white h1 {
-  color: black;
 }
 .topbar.topbar-fixed {
   position: fixed;
@@ -1772,7 +1778,10 @@ button.icon-close {
 .bottombar {
   height: 40px;
   line-height: 40px;
+  -webkit-box-flex: 0;
+  box-flex: 0;
   /* &.black default */
+  color: white;
   background-size: 1px 40px;
   background-color: #222222;
 }
@@ -1782,21 +1791,14 @@ button.icon-close {
   left: 0;
   right: 0;
 }
-.bottombar .title,
-.bottombar h1 {
-  color: white;
-}
 .bottombar.bottombar-white {
+  color: black;
   border-bottom: 1px solid #e0dede;
   background-color: #f7f7f7;
   background: linear-gradient(#ffffff, #f7f6f5);
   background: -webkit-linear-gradient(#ffffff, #f7f6f5);
   box-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0, 0, 0, 0.15);
   -webkit-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0, 0, 0, 0.15);
-}
-.bottombar.bottombar-white .title,
-.bottombar.bottombar-white h1 {
-  color: black;
 }
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
 html.webapp,
