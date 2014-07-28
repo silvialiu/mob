@@ -1677,8 +1677,10 @@ button.icon-close {
 }
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
 .page {
-  min-height: 100%;
-  min-width: 100%;
+  /*
+    min-height:100%;
+    min-width:100%;
+    */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-box-align: stretch;
@@ -1844,6 +1846,7 @@ html.webapp,
   top: -100%;
   right: -73%;
   bottom: 0;
+  overflow-y: scroll;
 }
 .aside.aside-right.slidein,
 .aside.aside-right.slideout {

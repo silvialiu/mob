@@ -332,7 +332,6 @@
 
 }($, window, document));
 
-
 /**
  * nav:
  *     (class)
@@ -472,9 +471,3 @@
 
 }($, window, document));
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
-
-if ($.os.iphone){
-    setTimeout(function() {
-        window.scrollTo(0, 0);
-    },0);
-}
