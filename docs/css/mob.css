@@ -1866,6 +1866,7 @@ html.webapp,
   top: -100%;
   right: -73%;
   bottom: 0;
+  overflow-y: scroll;
 }
 .aside.aside-right.slidein,
 .aside.aside-right.slideout {
