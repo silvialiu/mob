@@ -2200,13 +2200,11 @@ html.webapp,
 .audio-player .audio-controls > * .icon {
   font-size: 1.25em;
 }
-.audio-player .audio-volumn {
+.audio-player .audio-volume {
   padding: 8px 0;
-}
-.audio-player .audio-volumn > * {
   text-align: center;
 }
-.audio-player .audio-volumn .icon {
+.audio-player .audio-volume .icon {
   color: gray;
 }
 /**
