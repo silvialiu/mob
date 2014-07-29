@@ -1,0 +1,50 @@
+// audio
+
+.audio-player {
+
+    .audio-progress {
+        .progress();
+        border-radius: 0;
+        background: none;
+        font-size: @font-size-small;
+        text-align: center;
+        padding-top: 8px;
+        margin: 0;
+        line-height: line-height-computed;
+        .audio-progress-bar {
+            &::-webkit-progress-value {
+                background: #bababa;
+            }
+            .progress-bar();
+            float: none;
+            width: 70%;
+            height: 10px;
+        }
+    }
+
+    // controls style
+
+    .audio-controls {
+        padding: 0.5em 0;
+        .box-model(horizontal);
+
+        & > * {
+            .box-flex(1);
+            text-align: center;
+            .icon {
+                font-size: 1.25em;
+            }
+        }
+    }
+
+    .audio-volume {
+        padding: 8px 0;
+        text-align: center;
+        .icon {
+            color: gray;
+        }
+    }
+}
+
+// video
+
