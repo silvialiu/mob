@@ -291,13 +291,18 @@ body > * {
   -webkit-box-flex: 0;
   box-flex: 0;
 }
-.flex {
+.flex,
+.flex1 {
   -webkit-box-flex: 1;
   box-flex: 1;
 }
 .flex2 {
   -webkit-box-flex: 2;
   box-flex: 2;
+}
+.flex3 {
+  -webkit-box-flex: 3;
+  box-flex: 3;
 }
 h1,
 h2,
@@ -1703,6 +1708,11 @@ button.icon-close {
   margin: 0;
   font-size: 18px;
 }
+.page-header-cover {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  background-size: cover;
+}
 .page-footer {
   font-size: 12px;
   text-align: center;
@@ -1724,12 +1734,12 @@ button.icon-close {
   line-height: 40px;
   font-size: 16px;
   text-align: center;
-  background-repeat: repeat-x;
-  border-bottom: 1px solid #e0dede;
   /* &.black default */
   color: white;
   background-size: 1px 40px;
   background-color: #222222;
+  background-repeat: repeat-x;
+  border-bottom: 1px solid #e0dede;
 }
 .topbar .topbar-title,
 .topbar h1 {
@@ -1739,12 +1749,6 @@ button.icon-close {
   margin: 0;
   font-size: 18px;
   text-align: center;
-  line-height: 40px;
-}
-.topbar .topbar-left,
-.topbar .topbar-right {
-  -webkit-box-flex: 1;
-  box-flex: 1;
 }
 .topbar .btn {
   -webkit-box-flex: 0;
@@ -1780,10 +1784,26 @@ button.icon-close {
   line-height: 40px;
   -webkit-box-flex: 0;
   box-flex: 0;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
   /* &.black default */
   color: white;
   background-size: 1px 40px;
   background-color: #222222;
+  background-repeat: repeat-x;
+}
+.bottombar .bottombar-title,
+.bottombar h1 {
+  -webkit-box-flex: 3;
+  box-flex: 3;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
 }
 .bottombar.bottombar-fixed {
   position: fixed;
@@ -2083,6 +2103,111 @@ html.webapp,
   background-color: #fffdf9;
   border-bottom: 1px solid #dadde1;
   box-shadow: 0 0 12px rgba(6, 0, 1, 0.5);
+}
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+.progress {
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+  background-color: #808080;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+}
+.progress.active .progress-bar {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+.audio-player .audio-progress {
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  background: none;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 8px;
+  margin: 0;
+  line-height: line-height-computed;
+}
+.audio-player .audio-progress .audio-progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+  background-color: #808080;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+  float: none;
+  width: 70%;
+  height: 10px;
+}
+.audio-player .audio-progress .audio-progress-bar::-webkit-progress-value {
+  background: #bababa;
+}
+.audio-player .audio-controls {
+  padding: 0.5em 0;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+}
+.audio-player .audio-controls > * {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  text-align: center;
+}
+.audio-player .audio-controls > * .icon {
+  font-size: 1.25em;
+}
+.audio-player .audio-volumn {
+  padding: 8px 0;
+}
+.audio-player .audio-volumn > * {
+  text-align: center;
+}
+.audio-player .audio-volumn .icon {
+  color: gray;
 }
 /**
  *  Modals

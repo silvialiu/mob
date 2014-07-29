@@ -24,6 +24,14 @@
     .box-flex(1);
 }
 
+// Page cover
+// -------------------------
+
+.page-header-cover {
+    .box-flex(1);
+    background-size: cover;
+}
+
 // Page footer
 // -------------------------
 
@@ -41,6 +49,7 @@
     color: white;
     background-size:1px @bar-height;
     background-color: @bar-black-background;
+    background-repeat:repeat-x;
    }
 
 .white-bar() {
@@ -64,22 +73,17 @@
     line-height: @bar-line-height;
     font-size: 16px;
     text-align: center;
-    background-size:1px 40px;
-    background-repeat:repeat-x;
-    border-bottom:1px solid #e0dede;
 
     /* &.black default */
     .black-bar();
+    border-bottom:1px solid #e0dede;
+
     .topbar-title, h1{
         .box-flex(3);
         padding:0;
         margin:0;
         font-size:18px;
         text-align:center;
-        line-height: 40px;
-    }
-    .topbar-left, .topbar-right{
-        .box-flex(1);
     }
     .btn{
         -webkit-box-flex: 0;
@@ -127,6 +131,14 @@
     height: @bar-height;
     line-height: @bar-line-height;
     .box-flex(0);
+    .box-model(horizontal);
+    .bottombar-title, h1{
+        .box-flex(3);
+        padding:0;
+        margin:0;
+        font-size:18px;
+        text-align:center;
+    }
     &.bottombar-fixed {
         position: fixed;
         bottom: 0;

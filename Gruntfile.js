@@ -62,10 +62,8 @@ module.exports = function(grunt) {
               'release/css/<%= pkg.name %>.css': 'less/mob.less'
             }
         },
-        /*
-           lesslint:{
-           },
-         */
+       lesslint:{
+       },
         
                 /*
                    minify: {
