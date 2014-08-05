@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/docs.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+<link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<title>新手指南</title>
+
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="./index.html"><b>Mob</b></a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        
+          <li>
+        
+          <a href="./index.html">Home</a>
+          </li>
+          <li class="">
+          <a href="./getting-started.html">Getting started</a>
+          </li>
+          <li>
+          <a href="./css.html">CSS</a>
+          </li>
+        
+          <li>
+        
+          <a href="./components.html">Components</a>
+          </li>
+          <li class="">
+          <a href="./javascript.html">JavaScript</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+    <header>
+      <div class="container">
+        <h1>新手指南</h1>
+        <h2>框架概览，下载使用，基本模板和样例</h2>
+      </div>
+    </header>
+    <div id="container" class="container">
+    <h3 id="section">概况</h3>
+
+<p>Mob 是参考 bootstrap 实现的移动版的前端框架。如果你会使用 bootstrap, 那么你早已知道怎么使用 Mob :)</p>
+
+<h3 id="section-1">下载</h3>
+
+<p>你可以从github下载Mob框架的源码.</p>
+
+<p><a href="https://github.com/mobframe/mob/zipball/master" class="btn btn-lg btn-outline" role="button">Download source</a></p>
+
+<h3 id="section-2">代码结构</h3>
+
+<p>Mob的代码结构参考了bootstrap的结构，在下载文件的release文件夹中有压缩后供线上产品使用的代码版本和未压缩供线下开发调试使用的版本</p>
+
+<h3 id="section-3">编译</h3>
+
+<p>Mob CSS采用less编写，编译采用grunt 编译</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">grunt build</code></pre></div>
+
+<h3 id="basic-template">基础模板(Basic template)</h3>
+
+<p>移动web页示例模板(Examples)如下：</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;apple-mobile-web-app-capable&quot;</span> <span class="na">content=</span><span class="s">&quot;yes&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;format-detection&quot;</span> <span class="na">content=</span><span class="s">&quot;telephone=no&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Mob 101 Template<span class="nt">&lt;/title&gt;</span>
+
+    <span class="c">&lt;!-- Mob --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;css/mob.min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Hello, world!<span class="nt">&lt;/h1&gt;</span>
+
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://zeptojs.com/zepto.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;js/mob.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+
+<h3 id="examples">示例(Examples)</h3>
+
+<ul>
+  <li><a href="examples/media-player.html">手机Media播放器页面</a></li>
+</ul>
+
+<!--
+
+### 页面布局
+
+mob支持多种页面布局方式
+
+#### 普通布局
+
+#### webapp 布局
+
+#### 上下栏固定布局
+
+### 页面组件
+
+#### 按钮
+
+#### 对话框
+
+### 页面动画效果
+-->
+
+<h3 id="customizing-mob">自定义(Customizing Mob)</h3>
+
+<p>可以通过修改less/mob.less里引入的Mob组件来定制属于您的专属框架</p>
+
+<h3 id="section-4">浏览器和设备支持</h3>
+
+<p>浏览器和设备支持(Browser and device support) </p>
+
+<ul>
+  <li>Android 2.3+ </li>
+  <li>iOS 5+ </li>
+</ul>
+
+<p>移动版Firefox和移动版IE不在支持范围内,如果后续市场情况变化再做相应考虑</p>
+
+
+
+    <div class="pagination">
+    
+    
+    <div class="next">
+        <a href='css.html'>下一篇:CSS文档</a>
+    </div>
+    
+    <div style="clear:both">
+        
+    </div>
+</div>
+
+    <footer>
+  &copy;MOB framework
+</footer>
+<script src="js/jquery-1.9.0.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+      </div>
+  </body>
+</html>

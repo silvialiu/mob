@@ -1,0 +1,15 @@
+<div class="pagination">
+    {% if page.previous %}
+    <div class="previous">
+        <a href='{{ page.previous }}'>上一篇:{{ page.previous_name }}</a>
+    </div>
+    {% endif %}
+    {% if page.next %}
+    <div class="next">
+        <a href='{{ page.next }}'>下一篇:{{ page.next_name }}</a>
+    </div>
+    {% endif %}
+    <div style="clear:both">
+        
+    </div>
+</div>
