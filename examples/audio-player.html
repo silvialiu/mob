@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="webapp">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+        <link href="../css/mob.css" rel="stylesheet" type="text/css" >
+        <style type="text/css">
+            #header {
+                background-image: url("../img/cover.jpg");
+            }
+            #audio-info{
+                text-align: center;
+            }
+            #topbar-left, #topbar-right, .bottombar{
+                color: red !important;
+            }
+            .btn-text{
+                margin: 0 0.25em;
+                padding: 0 0.25em;
+            }
+            .btn-text.active{
+                background-color: red;
+                color: white !important;
+            }
+            .page-content{
+                -webkit-box-flex: 0;
+                box-flex: 0;
+            }
+        </style>
+    </head>
+
+    <body class="page">
+
+        <div id="topbar" class="topbar topbar-white">
+            <div id="topbar-left" class="flex1">
+                <span class='icon icon-chevron-left'></span>
+            </div>
+            <div id="topbar-title" class="flex3">
+                <span class='number'>1/10</span>
+            </div>
+            <div id="topbar-right" class="flex1">
+                <span class='icon icon-list'></span>
+            </div>
+        </div>
+
+        <div id="header" class="page-header page-header-cover">
+        </div>
+
+        <div id="player" class="audio-player page-content">
+            <div id="process" class="audio-progress">
+                 0:00 <progress class="audio-progress-bar" max="100" value="10"></progress> -2:14
+            </div>
+            <div id="audio-info">
+                <h1 class="title">Por Una Cabeza</h1>
+                <p class="descript">汤马斯 纽曼 - 闻香识女人</p>
+            </div>
+            <div id="controls" class='audio-controls'>
+                <div>
+                    <span class="icon icon-backward"></span>
+                </div>
+                <div>
+                    <span class="icon icon-play"></span>
+                </div>
+                <div>
+                    <span class="icon icon-forward"></span>
+                </div>
+            </div>
+            <div id="volumn" class="audio-volume">
+                <span class="icon icon-volume-down"></span> 
+                <progress max="100" value="10" class="audio-volume-slidebar"></progress> 
+                <span class="icon icon-volume-up"></span>
+            </div>
+        </div>
+
+        <div id="buttons" class="bottombar bottombar-white">
+            <div class="btn btn-text flex1">重复播放</div>
+            <div class="flex3"></div>
+            <div class="btn btn-text active flex1">随机播放全部</div>
+        </div>
+
+    </body>
+
+    <script src="../js/zepto.js"></script>
+    <script src='../js/mob.js'></script>
+
+</html>
+<!--
+/* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
+-->

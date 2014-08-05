@@ -1,0 +1,35 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="./index.html"><b>Mob</b></a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        {% if params.name == 'index' %}
+          <li class="active">
+        {% else %}
+          <li>
+        {% endif %}
+          <a href="./index.html">Home</a>
+          </li>
+          <li class="">
+          <a href="./getting-started.html">Getting started</a>
+          </li>
+          <li>
+          <a href="./css.html">CSS</a>
+          </li>
+        {% if params.name == 'components' %}
+          <li  class="active">
+        {% else %}
+          <li>
+        {% endif %}
+          <a href="./components.html">Components</a>
+          </li>
+          <li class="">
+          <a href="./javascript.html">JavaScript</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 

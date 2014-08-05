@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Mob</h1>
+        <h2>mobile front-end framework</h2>
+        <a href="getting-started.html" class="button button1">新手入门</a>
+        <a href="css.html" class="button button2">css</a>
+        <a href="component.html" class="button button3">组件</a>
+        <a href="https://github.com/mobframe/mob" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+              <a name="mob" class="anchor" href="#mob">
+                  <span class="octicon octicon-link"></span>
+              </a>mob 
+          </h1>
+
+{{ page.content }}
+
+<p>Code released under the MIT license. Docs released under Creative Commons.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/mobframe/mob/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/mobframe/mob/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/mobframe/mob"></a> is maintained by <a href="https://github.com/mobframe">mobframe</a>.</p>
+
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>
