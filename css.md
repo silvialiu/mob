@@ -149,6 +149,60 @@ Grids 为九宫格自动排版的组件
 </div>
 {% endhighlight %}
 
+##Menu (菜单)
+Menu 适合作为 app 首屏显示. <a href="examples/menu.html"> 示例 </a>
+
+{% highlight html %}
+<ul id="menu" class="page-content menu">
+    <li class="menu-item">
+        <div class="menu-item-icon">
+            <span class="icon-expand icon"></span> 
+        </div>
+        <div class="menu-item-content">
+            <p>未播放的单集</p>
+            <p>
+                <small>快速找到尚未播放的单集。</small>
+            </p>
+        </div>
+    </li>
+    <li class="menu-item">
+        <div class="menu-item-icon">
+            <span class="icon-stats icon"></span> 
+        </div>
+        <div class="menu-item-content">
+            <p>浏览提要</p>
+            <p>
+                <small>流化可用的单集或者</small>
+            </p>
+        </div>
+    </li>
+    <li class="menu-item">
+        <div class="menu-item-icon">
+            <span class="icon-floppy-save icon"></span> 
+        </div>
+        <div class="menu-item-content">
+            <p>已存储的单集</p>
+            <p>
+                <small>存储喜爱的单集作为永久收藏。</small>
+            </p>
+        </div>
+    </li>
+    <li class="menu-item">
+        <div class="menu-item-icon">
+            <span class="icon-trash icon"></span> 
+        </div>
+        <div class="menu-item-content">
+            <p>删除已播放的单集</p>
+            <p>
+                <small>单集在播放后可被自动删除。</small>
+            </p>
+        </div>
+    </li>
+</ul>
+
+{% endhighlight %}
+
+
 ##Buttons
 
 ### 默认 button:
