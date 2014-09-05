@@ -57,7 +57,7 @@ grunt build
 
 ### 示例(Examples)
 
-   * [手机Media播放器页面](examples/media-player.html)
+   * [ios播放器页面](examples/audio-player.html)
 
 <!--
 
