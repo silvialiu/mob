@@ -1704,12 +1704,15 @@ button.icon-close {
   box-flex: 1;
 }
 .menu .menu-item .menu-item-icon {
-  -webkit-box-flex: 1;
-  box-flex: 1;
+  width: 74px;
+  text-align: center;
+}
+.menu .menu-item .menu-item-icon .icon {
+  font-size: 48px;
 }
 .menu .menu-item .menu-item-content {
-  -webkit-box-flex: 3;
-  box-flex: 3;
+  -webkit-box-flex: 1;
+  box-flex: 1;
 }
 .page {
   /*

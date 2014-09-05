@@ -1,14 +1,18 @@
 .menu {
     .box-vertical();
-    padding: 25px;
+    padding: @menu-padding;
     .menu-item {
         .box();
         .flex1();
         .menu-item-icon {
-            .flex1();
+            width: @menu-icon-width;
+            .text-center();
+            .icon {
+                font-size: @menu-icon-font; 
+            }
         }
         .menu-item-content {
-            .flex3();
+            .flex();
         }
 
     }
