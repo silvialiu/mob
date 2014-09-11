@@ -1,7 +1,5 @@
-@border-radius:3px;
-
 .btn, .btn-primary, .btn-confirm,.btn-cancel{
-    border-radius: @border-radius;
+    border-radius: @border-radius-small;
     height: 35px;
     line-height: 35px;
     font-size: 16px;
@@ -37,7 +35,7 @@
 	text-align:center;
 	color:#262626;
 	width:140px;
-	border-radius:@border-radius;
+	border-radius:@border-radius-small;
 	border:1px solid #dfdcd1;
 	font-size:16px;
 	&.active{
@@ -68,4 +66,101 @@
 .btn-text{
     background: none;   
     border:0;
+    outline: none; 
+    -webkit-appearance: none; 
+    appearance: none;
 }
+
+// switch button
+// code partly come from onsenui
+//===
+
+.switch{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    border: none;
+    z-index: 0;
+    text-align: left;
+    font-size: 17px;
+    width: 51px;
+    height: 32px; 
+    padding: 0 20px;
+
+    .btn-switch, .switch-toggle{
+        position: absolute;
+        top: 0px; 
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+    }
+
+    .btn-switch{
+        vertical-align: top;
+        overflow: hidden;
+        padding: 0; 
+        margin: 0;
+        margin-top: -6px;
+        opacity: 0.001;
+        border: 0;
+        z-index:1;
+        outline: none; 
+        -webkit-appearance: none; 
+        appearance: none;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        &:checked + .switch-toggle{
+            background-color: #4cd964;
+        }
+        &:checked + .switch-toggle:before { 
+            -webkit-transform: translateX(18px);
+            transform: translateX(18px);
+        }
+        &:not(:checked) + .switch-toggle:before { 
+            -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+        }
+        &:disabled + .switch-toggle {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+    }
+    
+    .switch-toggle{
+        background-color: #ddd;
+        .border-radius(30px);
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-duration: 0.35s;
+        transition-duration: 0.35s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+
+        &:before{
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            content:'';
+            -webkit-border-radius: 28px;
+            border-radius: 28px;
+            position: absolute;
+            height: 28px;
+            width: 28px;
+            left: 2px;
+            top: 2px;
+            background-color: #fff;
+            -webkit-transition-property: all;
+            transition-property: all;
+            -webkit-transition-duration: 0.35s;
+            transition-duration: 0.35s;
+            -webkit-transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+            transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+        }
+    }
+}
+

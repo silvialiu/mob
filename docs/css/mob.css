@@ -693,6 +693,95 @@ a.badge {
 .btn-text {
   background: none;
   border: 0;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.switch {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  border: none;
+  z-index: 0;
+  text-align: left;
+  font-size: 17px;
+  width: 51px;
+  height: 32px;
+  padding: 0 20px;
+}
+.switch .btn-switch,
+.switch .switch-toggle {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+.switch .btn-switch {
+  vertical-align: top;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  margin-top: -6px;
+  opacity: 0.001;
+  border: 0;
+  z-index: 1;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.switch .btn-switch:checked + .switch-toggle {
+  background-color: #4cd964;
+}
+.switch .btn-switch:checked + .switch-toggle:before {
+  -webkit-transform: translateX(18px);
+  transform: translateX(18px);
+}
+.switch .btn-switch:not(:checked) + .switch-toggle:before {
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+.switch .btn-switch:disabled + .switch-toggle {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.switch .switch-toggle {
+  background-color: #ddd;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.switch .switch-toggle:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  content: '';
+  -webkit-border-radius: 28px;
+  border-radius: 28px;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  left: 2px;
+  top: 2px;
+  background-color: #fff;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
 }
 .tap {
   -webkit-tap-highlight-color: #d9e9ff;
