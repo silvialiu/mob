@@ -820,6 +820,9 @@ a.badge {
   -webkit-transition: none;
   transition: none;
 }
+.segments .btn-segment input[type=radio]:disabled ~ .btn-segment {
+  opacity: 0.3;
+}
 .segments .btn-segment .btn-segment-content {
   color: #1284ff;
   border: 1px solid #1284ff;
