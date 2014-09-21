@@ -1,10 +1,6 @@
 // Page Components
 
 .page{
-/*
-    min-height:100%;
-    min-width:100%;
-    */
     .box-model(vertical);
 }
 
@@ -51,7 +47,7 @@
     background-size:1px @bar-height;
     background-color: @bar-black-background;
     background-repeat:repeat-x;
-   }
+}
 
 .white-bar() {
     color: black;
@@ -73,10 +69,8 @@
     height: @bar-height;
     line-height: @bar-line-height;
     font-size: 16px;
-    text-align: center;
-
-    /* &.black default */
-    .black-bar();
+    /* default bar style*/
+    .white-bar();
     border-bottom:1px solid #e0dede;
 
     .topbar-title, h1{
@@ -85,14 +79,15 @@
         margin:0;
         font-size:18px;
         text-align:center;
+        line-height: inherit;
     }
     .btn{
         -webkit-box-flex: 0;
         box-flex: 0;
     }
 
-    &.topbar-white{
-        .white-bar();
+    &.topbar-invert{
+        .black-bar();
     }
 
     &.topbar-fixed {
@@ -146,10 +141,10 @@
         left: 0;
         right: 0;
     }
-    /* &.black default */
-    .black-bar();
-    &.bottombar-white{
-        .white-bar();
+    /* default bar style*/
+    .white-bar();
+    &.bottombar-invert{
+        .black-bar();
     }
 }
 

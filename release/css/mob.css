@@ -1742,6 +1742,12 @@ button.icon-close {
 .table-striped > tbody > tr:nth-child(odd) > th {
   background-color: #f9f9f9;
 }
+.carousel {
+  overflow: auto;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
 .nav {
   margin: 0;
   padding: 0;
@@ -1806,31 +1812,28 @@ button.icon-close {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   box-flex: 1;
-  color: #eee;
   text-decoration: none;
+  color: #333;
 }
 .navbar a.active {
-  color: white;
+  color: black;
 }
 .navbar,
 .navbar.navbar-black {
   background-size: 1px 40px;
   background-color: #222222;
 }
-.navbar.navbar-white,
 .navbar.navbar-invert {
   border-top: 1px solid #e0dede;
   background-color: #f7f7f7;
   background: linear-gradient(#ffffff, #f7f6f5);
   background: -webkit-linear-gradient(#ffffff, #cccccc);
 }
-.navbar.navbar-white a,
 .navbar.navbar-invert a {
-  color: black;
+  color: #eee;
 }
-.navbar.navbar-white a.active,
 .navbar.navbar-invert a.active {
-  color: black;
+  color: white;
   background-color: #999;
   background: linear-gradient(#999999, #ffffff);
   background: -webkit-linear-gradient(#aaaaaa, #ffffff);
@@ -1867,10 +1870,6 @@ button.icon-close {
   box-flex: 1;
 }
 .page {
-  /*
-    min-height:100%;
-    min-width:100%;
-    */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-box-align: stretch;
@@ -1916,12 +1915,13 @@ button.icon-close {
   height: 40px;
   line-height: 40px;
   font-size: 16px;
-  text-align: center;
-  /* &.black default */
-  color: white;
-  background-size: 1px 40px;
-  background-color: #222222;
-  background-repeat: repeat-x;
+  /* default bar style*/
+  color: black;
+  background-color: #f7f7f7;
+  background: linear-gradient(#ffffff, #f7f6f5);
+  background: -webkit-linear-gradient(#ffffff, #f7f6f5);
+  box-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0, 0, 0, 0.15);
+  -webkit-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0, 0, 0, 0.15);
   border-bottom: 1px solid #e0dede;
 }
 .topbar .topbar-title,
@@ -1932,19 +1932,17 @@ button.icon-close {
   margin: 0;
   font-size: 18px;
   text-align: center;
+  line-height: inherit;
 }
 .topbar .btn {
   -webkit-box-flex: 0;
   box-flex: 0;
 }
-.topbar.topbar-white {
-  color: black;
-  border-bottom: 1px solid #e0dede;
-  background-color: #f7f7f7;
-  background: linear-gradient(#ffffff, #f7f6f5);
-  background: -webkit-linear-gradient(#ffffff, #f7f6f5);
-  box-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0, 0, 0, 0.15);
-  -webkit-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0, 0, 0, 0.15);
+.topbar.topbar-invert {
+  color: white;
+  background-size: 1px 40px;
+  background-color: #222222;
+  background-repeat: repeat-x;
 }
 .topbar.topbar-fixed {
   position: fixed;
@@ -1973,11 +1971,14 @@ button.icon-close {
   display: box;
   box-orient: horizontal;
   box-align: stretch;
-  /* &.black default */
-  color: white;
-  background-size: 1px 40px;
-  background-color: #222222;
-  background-repeat: repeat-x;
+  /* default bar style*/
+  color: black;
+  border-bottom: 1px solid #e0dede;
+  background-color: #f7f7f7;
+  background: linear-gradient(#ffffff, #f7f6f5);
+  background: -webkit-linear-gradient(#ffffff, #f7f6f5);
+  box-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0, 0, 0, 0.15);
+  -webkit-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0, 0, 0, 0.15);
 }
 .bottombar .bottombar-title,
 .bottombar h1 {
@@ -1994,14 +1995,11 @@ button.icon-close {
   left: 0;
   right: 0;
 }
-.bottombar.bottombar-white {
-  color: black;
-  border-bottom: 1px solid #e0dede;
-  background-color: #f7f7f7;
-  background: linear-gradient(#ffffff, #f7f6f5);
-  background: -webkit-linear-gradient(#ffffff, #f7f6f5);
-  box-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0, 0, 0, 0.15);
-  -webkit-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0, 0, 0, 0.15);
+.bottombar.bottombar-invert {
+  color: white;
+  background-size: 1px 40px;
+  background-color: #222222;
+  background-repeat: repeat-x;
 }
 /* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
 html.webapp,
@@ -2390,6 +2388,25 @@ html.webapp,
 }
 .audio-player .audio-volume .icon {
   color: gray;
+}
+.pull-refresh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 40px;
+  line-height: 40px;
+}
+.pull-refresh:after {
+  content: " ";
+  display: block;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+}
+.pull-refresh .pull-refresh-icon,
+.pull-refresh pull-refresh-text {
+  display: inline-block;
 }
 /**
  *  Modals

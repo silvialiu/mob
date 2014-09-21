@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-    // 项目配置信息，这里只是演示用，内容随便填的
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         banner: '/*!\n' +
@@ -51,32 +50,17 @@ module.exports = function(grunt) {
         },
         less: {// compile less codes into css codes.
             compileCore: {
-            options: {
-              strictMath: true,
-              sourceMap: true,
-              outputSourceFiles: true,
-              sourceMapURL: '<%= pkg.name %>.css.map',
-              sourceMapFilename: 'release/css/<%= pkg.name %>.css.map'
+                options: {
+                  strictMath: true,
+                  sourceMap: true,
+                  outputSourceFiles: true,
+                  sourceMapURL: '<%= pkg.name %>.css.map',
+                  sourceMapFilename: 'release/css/<%= pkg.name %>.css.map'
+                },
+                files: {
+                  'release/css/<%= pkg.name %>.css': 'less/mob.less'
+                }
             },
-            files: {
-              'release/css/<%= pkg.name %>.css': 'less/mob.less'
-            }
-        },
-       lesslint:{
-       },
-        
-                /*
-                   minify: {
-                   options: {
-                   cleancss: true,
-                   report: 'min'
-                   },
-                   files: {
-                   'release/css/<%= pkg.name %>.min.css': 'release/css/<%= pkg.name %>.css',
-                   'release/css/<%= pkg.name %>-theme.min.css': 'release/css/<%= pkg.name %>-theme.css'
-                   }
-                   }
-                   */
         },
         cssmin: {
             compress: {
@@ -115,11 +99,9 @@ module.exports = function(grunt) {
             }
         },
         open: { // open the url through browser
-            /*
             "docs" : {
-                path: 'http://localhost:3000/docs'
+                path: 'http://localhost:<%= connect.webserver.options.port %>/docs'
             },
-            */
             "examples" : {
                 path: 'http://localhost:<%= connect.webserver.options.port %>/docs/examples'
             }
@@ -166,7 +148,6 @@ module.exports = function(grunt) {
     // JS distribution task.
     grunt.registerTask('dist-js', ['concat', 'uglify']);
     // CSS distribution task.
-    //grunt.registerTask('dist-css', ['lesslint', 'less', 'cssmin', 'csscomb', 'usebanner']);
     grunt.registerTask('dist-css', ['less', 'cssmin']);
     grunt.registerTask('dist-font', ['copy:font']);
     grunt.registerTask('build', ['dist-js', 'dist-css', 'dist-font', 'copy:docs']);
