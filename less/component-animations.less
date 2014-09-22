@@ -21,9 +21,37 @@
     display: block;
   }
 }
+
 .collapsing {
   position: relative;
   height: 0;
   overflow: hidden;
   .transition(height .35s ease);
+}
+
+.rotating-keyframes() {
+    @-webkit-keyframes rotating{
+        0%{
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+        }
+        50%{
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+        }
+        100%{
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+        }
+    }
+}
+
+.rotating() {
+    .rotating-keyframes();
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -webkit-animation-name: rotating;
+    -webkit-animation-duration: 1.2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
 }

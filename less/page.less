@@ -95,7 +95,21 @@
         top: 0;
         left: 0;
         right: 0;
+        z-index: 10;
+        & + .page-content:before { // fill fixed bar blank
+            content: " ";
+            display: block;
+            height: @bar-height;
+            line-height: @bar-line-height;
+        }
     }
+    /*
+    .topbar-fixed ~ .page-content{
+        content: " ";
+        display: block;
+        height: @bar-height;
+        line-height: @bar-line-height;
+    }*/
 }
 
 // Page content

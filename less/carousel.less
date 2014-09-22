@@ -1,6 +1,15 @@
 .carousel {
-    overflow: auto;
-    &::-webkit-scrollbar { 
-        display: none; 
-    }
+    .scrollable();
+}
+
+.carousel-x {
+    .scrollable();
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.carousel-y {
+    .scrollable();
+    overflow-y: auto;
+    overflow-x: hidden;
 }

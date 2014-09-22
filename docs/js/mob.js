@@ -657,30 +657,30 @@ Camera.prototype = {
 ;
 (function ($, window, document) {
     "use strict"; // jshint ;_;
-    var PullRefresh = function(options){
+    var PullToRefresh = function(options){
         var me = this;
         this.heightRange = 40;
-        this.animationSpeed = 8;
         this.animationDuration = 80;
         this.done = false;
         this.startPos = {x: 0 , y: 0};
+        this.time = 0;
+        this.pulledClassName = "pull-to-refresh-status-pulled";
+        this.loadingClassName = "pull-to-refresh-status-loading";
+        if(options){
+            $.extend(this, options);
+        }
         $(document).on("touchstart", function(e){
             me.onTouchstart.apply(me, [e]);
         })
         .on("touchmove", function(e){
-            console.log(e);
             me.onTouchmove.apply(me, [e]);
         })
         .on("touchend", function(e){
             me.onTouchend.apply(me, [e]);
         });
-        if(options){
-            this.doneFunc = options.done;
-        }
-        this.time = 0;
     }
     
-    $.extend(PullRefresh.prototype, {
+    $.extend(PullToRefresh.prototype, {
         onTouchstart: function(e){
             if (e && e.touches){
                 var touch = e.touches[0];
@@ -695,7 +695,7 @@ Camera.prototype = {
             this.done = false;
         },
         onTouchmove: function(e){
-            if (e && e.touches){
+            if (e && e.touches && e.touches.length > 0){
                 var now = new Date().getTime();
                 if ((now - this.time) < this.animationDuration){
                     return;
@@ -710,54 +710,58 @@ Camera.prototype = {
                 'x': touch.pageX,
                 'y': touch.pageY
             }
-            console.log(this.pos.y, this.startPos.y, this.pos.y - this.startPos.y );
-            if (this.pos.y - this.startPos.y < 6) {
+            var scrollY = this.pos.y - this.startPos.y
+            if ( scrollY < 6) {
                 return;
             }
-            var top_ = parseInt($(".page").css('top')) || 0;
+
+            var top_ = parseInt(this.bind.css('top')) || 0;
             if( top_ < this.heightRange){
-                $(".page").css('top', top_ + this.animationSpeed);
+                this.bind.css('top', scrollY > this.heightRange ?
+                        this.heightRange : scrollY);
                 return;
             }else{
                 this.done = true;
+                $(".pull-to-refresh").addClass(this.pulledClassName)// change icon style
                 return;
             }
         },
         onTouchend: function(e){
-            if(this.done && this.doneFunc){
-                this.finishPull();
+            if(this.done && this.callback){
                 this.loading();
-                this.doneFunc.call(this);
+                this.callback.call(this);
             } else {
                 this.cancel();
             }
         },
-        finishPull: function(){
-             $(".pull-refresh-icon").addClass('finish')// change icon style
-        },
         loading: function(){
-             $(".pull-refresh-loading").show();
+            $(".pull-to-refresh").removeClass(this.pulledClassName)// change icon style
+                .addClass(this.loadingClassName)
         },
         back: function(){
-            $(".page").css('top', 0);
-            $(".pull-refresh-loading").hide();
-            $(".pull-refresh-icon").removeClass('finish')// change icon style       
+            this.bind.css('top', 0);
+            $(".pull-to-refresh").removeClass(this.pulledClassName)// change icon style       
+                .removeClass(this.loadingClassName)
         },
         cancel: function(){
-            $(".page").css('top', 0);
+            this.back();
         }
     });
 
-    $.fn.pullRefresh = function(options){
-        var done;
+    $.fn.pullToRefresh = function(options){
+        var callback;
         if (typeof options == "function"){
-            done = options;
-            options = {
-                "done": done
-            }
+            callback = options;
         }
-        var pullRefresh = new PullRefresh(options);
-        return pullRefresh;
+        var bind = this.parent('.pullable');
+        options = {
+            "callback": callback,
+            "target": this,
+            "bind": bind
+        }
+
+        var pullToRefresh = new PullToRefresh(options);
+        return pullToRefresh;
     }
 
 }($, window, document));
