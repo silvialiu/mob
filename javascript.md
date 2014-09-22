@@ -123,6 +123,43 @@ $().tab
     <div class="modal-backdrop"></div>
 {% endhighlight %}
 
+### 下拉刷新 (Pull To Refresh)
+
+实例请查看[example/pull-to-refresh.html](example/pull-to-refresh.html)
+
+步骤1：添加下拉组件HTML代码
+
+{% highlight html %}
+    <div class="pull-to-refresh">
+        <span class="pull-to-refresh-icon icon icon-arrow-up"></span>
+        <span class="pull-to-refresh-text">Pull To Refresh</span>
+        <span class="pull-to-refresh-done-text">Release To Refresh</span>
+        <div class="pull-to-refresh-loading">
+            <span class="pull-to-refresh-loading-icon icon icon-refresh"></span>
+            <span class="pull-to-refresh-loading-text">Loading...</span>
+        </div>
+    </div> 
+{% endhighlight %}
+
+步骤2：添加class使目标元素可下拉
+
+{% highlight html %}
+    <section class="page-content pullable">
+        ...
+    </section>
+{% endhighlight %}
+
+步骤3: 添加下拉刷新触发后要执行的函数
+
+{% highlight javascript %}
+    $("#pull-to-refresh").pullToRefresh(function(){
+        var me = this;  //下拉刷新完成后要执行的回调函数
+        setTimeout(function(){
+            me.back();
+            }, 500)
+    })
+{% endhighlight %}
+
 ### Carousel
 
     首页新功能介绍的滚动

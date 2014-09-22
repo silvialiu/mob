@@ -211,17 +211,40 @@ Menu 适合作为 app 首屏显示. <a href="examples/menu.html"> 示例 </a>
    	<button type="button" class="btn btn-default">button</button>
 {% endhighlight %}
     
-### 圆按钮(Circle button):
+### 圆按钮(Circle Button):
     
 {% highlight html %}
    	<div class="btn btn-circle">circle</div>
 {% endhighlight %}
 
-### 方形按钮(Square button):
+### 方形按钮(Square Button):
 
 {% highlight html %}
    	<div class="btn btn-square">square</div>
 {% endhighlight %}
+
+### 段落按钮(Segment Button):
+
+段落按钮是PC上 radio 类型的 input 在移动端UI上适配之后的结果之一。主要用来作为list的切换按钮。
+
+{% highlight html %}
+    <div class="segments">
+        <label class="btn-segment">
+            <input type="radio" name="segment-btn-input" checked>
+            <div class="btn-segment-content">One</div>
+        </label>
+        <label class="btn-segment">
+            <input type="radio" name="segment-btn-input">
+            <div class="btn-segment-content">Two</div>
+        </label>    
+            <label class="btn-segment">
+            <input type="radio" name="segment-btn-input">
+            <div class="btn-segment-content">Three</div>
+        </label>    
+    </div>
+{% endhighlight %}
+
+注意: 如果一个页面上有多个btn-segment组，请注意修改不同的radio 的name.
 
 ### 按钮大小(Sizes)
 

@@ -1,20 +1,63 @@
 <html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>Modal</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <link href="../css/mob.min.css" rel="stylesheet" type="text/css" >
-</head>
-<body>
-	<div class="btn btn-circle">圆</div>
-	<div class="btn btn-square">方</div>
-	<button class='btn-primary'>Confirm</div>
-	<button class='btn-cancel'>Cancel</div>
-</body>
-<script type="text/javascript" src="js/zepto.js" charset="utf-8"></script>
-<script src="../js/mob.min.js"></script> 
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Buttons</title>
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link href="../css/mob.min.css" rel="stylesheet" type="text/css" >
+    </head>
+    <body>
+        <div id="page" class="page">
+            <div id="nav" class="topbar">
+                <h1 class="title">Buttons</h1>
+            </div>
+            <div id="main" class="page-content">
+                <div id="inner" class="well">
+                    <div class="btn btn-circle">圆角按钮</div>
+                    <br>
+                    <div class="btn btn-square">方形按钮</div>
+                    <br>
+                    <button class='btn btn-primary'>Confirm</button>
+                    <button class='btn btn-cancel'>Cancel</button>
+                    <br>
+                    switch button
+                    <br>
+                    <label class="switch">
+                        <input type="checkbox" name="btn-switch" class="btn-switch" checked>
+                        <div class="switch-toggle"></div>
+                    </label>
+                    <br>
+                    <label class="switch">
+                        <input type="checkbox" name="btn-switch" class="btn-switch">
+                        <div class="switch-toggle"></div>
+                    </label>
+                    
+                    <br>
+                    segment button
+                    <br>
+                    <div id="segments" class="segments">
+                        <label class="btn-segment">
+                            <input type="radio" name="segment-btn-input" checked>
+                            <div class="btn-segment-content">One</div>
+                        </label>
+                        <label class="btn-segment">
+                            <input type="radio" name="segment-btn-input">
+                            <div class="btn-segment-content">Two</div>
+                        </label>    
+                        <label class="btn-segment">
+                            <input type="radio" name="segment-btn-input">
+                            <div class="btn-segment-content">Three</div>
+                        </label>    
+                    </div>
+                    <br>
+                    <button class="btn btn-text"> Text Button </button>        
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../js/zepto.js" charset="utf-8"></script>
+    <script src="../js/mob.min.js"></script> 
 </html>
