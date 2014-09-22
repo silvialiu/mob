@@ -125,7 +125,7 @@ $().tab
 
 ### 下拉刷新 (Pull To Refresh)
 
-实例请查看[example/pull-to-refresh.html](example/pull-to-refresh.html)
+实例请查看[examples/pull-to-refresh.html](examples/pull-to-refresh.html)
 
 步骤1：添加下拉组件HTML代码
 
