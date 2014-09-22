@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html class="webapp">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title> Pull-To-Refresh Example</title>
+    <link rel="stylesheet" type="text/css" href="../css/mob.css">
+</head>
+<body>
+    <div id="main" class="page">
+        <nav class="toolbar topbar topbar-fixed">
+            <h1> Pull To Refresh Example </h1>
+        </nav>
+
+        <section class="page-content pullable">
+
+            <!-- pull-to-refresh start -->
+            <div id="pull-to-refresh" class="pull-to-refresh" data-bind=".page-content">
+                <span class="pull-to-refresh-icon icon icon-arrow-up"></span>
+                <span class="pull-to-refresh-text">Pull To Refresh</span>
+                <span class="pull-to-refresh-done-text">Release To Refresh</span>
+                <div class="pull-to-refresh-loading">
+                    <span class="pull-to-refresh-loading-icon icon icon-refresh"></span>
+                    <span class="pull-to-refresh-loading-text">Loading...</span>
+                </div>
+            </div> 
+            <!-- pull-to-refresh end -->
+
+            <ul class="list-group">
+                <li class="list-group-item"> list 1 </li>
+                <li class="list-group-item"> list 2 </li>
+                <li class="list-group-item"> list 3 </li>
+                <li class="list-group-item"> list 4 </li>
+                <li class="list-group-item"> list 5 </li>
+                <li class="list-group-item"> list 6 </li>
+                <li class="list-group-item"> list 7 </li>
+                <li class="list-group-item"> list 8 </li>
+            </ul>
+        </section>
+
+        <nav class="navbar bottombar bottombar-fixed" id="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#personal">Personal</a>
+            <a href="#discover">Discover</a>
+            <a href="#more">More</a>
+        </nav>
+    </div>
+</body>
+<script src="../js/zepto.js"></script>
+<script src="../js/mob.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $("#pull-to-refresh").pullToRefresh(function(){
+            var me = this;
+            setTimeout(function(){
+                me.back();
+                }, 500)
+    });
+</script>
+</html>
