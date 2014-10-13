@@ -125,7 +125,7 @@ $().tab
 
 ### 下拉刷新 (Pull To Refresh)
 
-实例请查看[examples/pull-to-refresh.html](examples/pull-to-refresh.html)
+实例请查看[example/pull-to-refresh.html](example/pull-to-refresh.html)
 
 步骤1：添加下拉组件HTML代码
 
@@ -160,20 +160,18 @@ $().tab
     })
 {% endhighlight %}
 
+### Smart Bar
+
+Smart Bar 是一个智能显示工具栏的组件。当你往下滚动屏幕时，工具栏会收起隐藏。当你往上快速滚动屏幕时，工具栏会显示。这能给用户全屏的阅读体验，适用于阅读类的网页/App。
+示例: [examples/smartbar.html](examples/smartbar.html)
+
+{% highlight html %}
+    <nav class='topbar topbar-fixed toolbar smartbar'>
+        <h1>Mob Smartbar Example</h1>
+    </nav>
+{% endhighlight %}
+
 ### Carousel
 
     首页新功能介绍的滚动
 
-### 点击延迟
-    移动浏览器因为支持双击事件会有一个点击穿透现象。该组件会给浏览器加一个点击延迟，解决点击穿透现象。
-
-{% highlight html %}
-    <a href='test.html' class='delay-tap'>test</a>
-{% endhighlight %}
-
-
-### 返回顶部
-
-{% highlight html %}
-    <div class='nav-top'>返回顶部</div>
-{% endhighlight %}
