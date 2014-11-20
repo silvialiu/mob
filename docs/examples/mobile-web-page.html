@@ -95,6 +95,7 @@
         padding-left: 10px;
         -webkit-box-flex:1;
     }
+    /** 轮播图指示点 **/
     .shuffling-point-con{
         line-height: 26px;
         padding-right: 20px;
@@ -115,7 +116,7 @@
         border: 1px solid #051837;
     }
 
-    /*** 轮播图样式 ***/
+    /*** 轮播下列表样式 ***/
     .my-lists-con{
         margin-top: 20px;
         margin-left: 10px;
@@ -146,22 +147,25 @@
     }
 
     /*** 动漫+小说新闻样式 ***/
-    .my-cartoon-list .topbar{
+    .my-cartoon-list .header{
         margin-top: 20px;
         -webkit-box-flex: 0;
         -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
         background: linear-gradient( #F4F4F4,#E9E9E9);
         border-top: 1px dashed #909090;
         border-bottom: none;
+        display: -webkit-box;
+        height: 42px;
+        line-height: 42px;
     }
-    .my-cartoon-list .topbar h3{
+    .my-cartoon-list .header h3{
         width: 100px;
         height: 41px;
         line-height: 41px;
         text-align: center;
         color: #3E6C8A;
     }
-    .my-cartoon-list .topbar h3:before{
+    .my-cartoon-list .header h3:before{
         content: "";
         display: inline-block;
         width: 3px;
@@ -171,7 +175,7 @@
         vertical-align: middle;
         margin-right: 5px;
     }
-    .my-cartoon-list .topbar>div{
+    .my-cartoon-list .header>div{
         -webkit-box-flex:1;
         text-align: right;
     }
@@ -179,7 +183,7 @@
         color: #666;
         vertical-align: middle;
     }
-    .my-cartoon-list .topbar span{
+    .my-cartoon-list .header span{
         font-size: 14px;
         margin-right: 10px;
         color:#3E6C8A;
@@ -217,10 +221,10 @@
         color: #fff;
         opacity: 0.8;
     }
-    .my-novel .topbar{
+    .my-novel .header{
         border-color: #09682B; 
     }
-    .my-novel .topbar h3,.my-novel .topbar span{
+    .my-novel .header h3,.my-novel .header span{
         color:  #09682B;
     }
     .my-novel .cartoon-bottom{
@@ -234,13 +238,10 @@
     }
 
     /*** 脚部样式 ***/
-    .my-163-footer{
+    .page-footer{
         height: 40px;
         line-height: 40px;
-        width: 100%;
-        text-align: center;
-        margin-top: 20px;
-        font-size: 13px;
+        color: #333;
     }
 </style>
 </head>
@@ -279,7 +280,7 @@
         </div>
     </div>
     <div class="shuffling-con">
-        <img class="rem-163-img2" src="../../img/163/163-lx-b2.jpg">
+        <img class="rem-163-img2" src="mobile-web-page/163-lx-b2.jpg">
         <div class="shuffling-mask-con">
             <div class="shuffling-text">12月新作《狼与香辛料》</div>
             <div class="shuffling-point-con">
@@ -291,21 +292,21 @@
     </div>
     <ul class="my-lists-con">
         <li class="my-list">
-            <img src="../../img/163/list1.jpg">
+            <img src="mobile-web-page/list1.jpg">
             <div>
                 <h3>狼与香辛料</h3>
                 <p>日本作家支仓冻砂所著、文仓十插画的轻小说，由电击文库出版</p>
             </div>
         </li>
         <li class="my-list">
-            <img src="../../img/163/list2.jpg">
+            <img src="mobile-web-page/list2.jpg">
             <div>
                 <h3>Fate/Zero</h3>
                 <p>为了得到『圣杯』能实现一切愿望的奇迹之术，七名魔术师召唤七名英灵…</p>
             </div>
         </li>
         <li class="my-list">
-            <img src="../../img/163/list3.jpg">
+            <img src="mobile-web-page/list3.jpg">
             <div>
                 <h3>进击的巨人</h3>
                 <p>悠长的历史之中,人类曾一度因被巨人捕食而崩溃。幸存下来的人们建造了…</p>
@@ -313,7 +314,7 @@
         </li>
     </ul>
     <div class="my-cartoon-list">
-        <div class="toolbar topbar">
+        <div class="toolbar header">
             <h3>动漫</h3>
             <div>
                 <span>热门</span>
@@ -350,10 +351,10 @@
             </ul>
             <div class="cartoon-bottom">进入动漫频道</div>
         </div>
-            <img class="cartoon-ad" src="../../img/163/163-lx4.jpg">
+            <img class="cartoon-ad" src="mobile-web-page/163-lx4.jpg">
     </div>
     <div class="my-cartoon-list my-novel">
-        <div class="toolbar topbar">
+        <div class="toolbar header">
             <h3>小说</h3>
             <div>
                 <span>长篇</span>
@@ -391,6 +392,6 @@
             <div class="cartoon-bottom">进入小说频道</div>
         </div>
     </div>
-    <footer class="my-163-footer">2014 Mob@right</footer>
+    <footer class="page-footer">2014 Mob@right</footer>
 </body>
 </html>
