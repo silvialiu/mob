@@ -23,7 +23,7 @@ module.exports = function(grunt) {
             },
             */
             src: {
-                'src': ['js/*.js']
+                'src': ['js/**/*.js']
             },
             /*
             test: {
@@ -36,14 +36,14 @@ module.exports = function(grunt) {
                 report: 'min'
             },
             mobjs: {
-                src: '<%= concat.mob.dest %>',
+                src: '<%= concat.js.dest %>',
                 dest: 'release/js/<%= pkg.name %>.min.js'
             }
         },
         concat: {   // concat files into single one.
-            mob:{
+            js:{
                 src: [
-                    'js/*.js'
+                    'js/**/*.js'
                 ],
                 dest: 'release/js/<%= pkg.name %>.js'
             }
@@ -91,7 +91,7 @@ module.exports = function(grunt) {
             },
             */
             less: {
-                files: 'less/*.less',
+                files: '<%= less.compileCore.files %>',
                 tasks: ['dist-css','copy:docs'],
                 options: {
                     livereload: true
@@ -99,9 +99,6 @@ module.exports = function(grunt) {
             }
         },
         open: { // open the url through browser
-            "docs" : {
-                path: 'http://localhost:<%= connect.webserver.options.port %>/docs'
-            },
             "examples" : {
                 path: 'http://localhost:<%= connect.webserver.options.port %>/docs/examples'
             }
@@ -127,8 +124,7 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: './release',
                 src: [
-                  '{css,js}/*',
-                  'fonts/*'
+                  '{css,js,fonts}/*'
                 ],
                 dest: 'docs/'
             }
