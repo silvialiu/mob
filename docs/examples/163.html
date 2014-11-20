@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="white">
+<link rel="stylesheet" href="../../release/css/mob.css" type="text/css">
+<style type="text/css">
+    *{
+        font-family: "微软雅黑";
+        margin: 0px 0px;
+        padding: 0px 0px;
+    }
+    body{
+        background-color: #E7E7E7;
+    }
+    h3,p{
+        margin: 0px 0px;
+        padding: 0px 0px;
+    }
+    /*** 导航栏样式 ***/
+    .navbar{
+        height: 45px;
+        background-color: #092249;
+        display: -webkit-box;
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    }
+    .navbar-title-con{
+        width: 100px;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        color: #fff;
+    }
+    .navbar-btn-con{
+        height: 45px;
+        line-height: 45px;
+        box-sizing: border-box;
+        text-align: right;
+        -webkit-box-flex: 1;
+    }
+    .icon-con{
+        width: 20px;
+        height: 45px;
+        display: inline-block;
+        line-height: 45px;
+        margin-right: 13px;
+        color: #fff;
+    }
+
+    /*** 15宫格样式 ***/
+    .my-grids-con{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .my-grids-row{
+        width: 100%;
+        display: -webkit-box
+    }
+    .my-grids-grid{
+        width: 50px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        -webkit-box-flex:1;
+        font-size: 12px;
+    }
+
+    /*** 轮播图样式 ***/
+    .shuffling-con{
+        position: relative;
+        height: 200px;
+    }
+    .rem-163-img2{
+        height: 200px;
+        width: 100%;
+    }
+    .shuffling-mask-con{
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 28px;
+        background-color: rgba(255,255,255,0.7);
+        font-size: 13px;
+        line-height: 28px;
+        color: #1D1D1D;
+        display: -webkit-box;
+    }
+    .shuffling-text{
+        width: 200px;
+        padding-left: 10px;
+        -webkit-box-flex:1;
+    }
+    .shuffling-point-con{
+        line-height: 26px;
+        padding-right: 20px;
+        padding-left: 10px;
+        display: inline-block;
+    }
+    .shuffling-point{
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #EFEFEF;
+        border: 1px solid #999;
+        display: inline-block;
+        margin-right: 5px;
+    }
+    .shuffling-point-current{
+        background-color: #092249;
+        border: 1px solid #051837;
+    }
+
+    /*** 轮播图样式 ***/
+    .my-lists-con{
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .my-list{
+        display: -webkit-box;
+        margin-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px dashed #ccc;
+    }
+    .my-list:last-child{
+        border-bottom: none;
+        padding-bottom: 5px;
+    }
+    .my-list img{
+        width: 90px;
+        height: 60px;
+        margin-right: 10px;
+    }
+    .my-list>div{
+        -webkit-box-flex:1;
+    }
+    .my-list p{
+        color: #666;
+        line-height: 18px;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    /*** 动漫+小说新闻样式 ***/
+    .my-cartoon-list .topbar{
+        margin-top: 20px;
+        -webkit-box-flex: 0;
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        background: linear-gradient( #F4F4F4,#E9E9E9);
+        border-top: 1px dashed #909090;
+        border-bottom: none;
+    }
+    .my-cartoon-list .topbar h3{
+        width: 100px;
+        height: 41px;
+        line-height: 41px;
+        text-align: center;
+        color: #3E6C8A;
+    }
+    .my-cartoon-list .topbar h3:before{
+        content: "";
+        display: inline-block;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: #3E6C8A;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+    .my-cartoon-list .topbar>div{
+        -webkit-box-flex:1;
+        text-align: right;
+    }
+    .my-cartoon-list .icon-chevron-down{
+        color: #666;
+        vertical-align: middle;
+    }
+    .my-cartoon-list .topbar span{
+        font-size: 14px;
+        margin-right: 10px;
+        color:#3E6C8A;
+    }
+    .my-cartoon-list .item{
+        height: 38px;
+        line-height: 38px;
+        display: -webkit-box;
+        border-bottom: 1px solid #ccc;
+        font-size: 13px;
+    }
+    .my-cartoon-list .item:last-child{
+        border-bottom: none;
+    }
+    .cartoon-content-con{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .my-cartoon-list p{
+        width: 250px;
+    }
+    .my-cartoon-list .list-comment{
+        display: block;
+        -webkit-box-flex:1;
+        text-align: right;
+        color: #333;
+    }
+    .my-cartoon-list .cartoon-bottom{
+        width: 100%;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        background-color: #3E6C8A;
+        font-size: 14px;
+        color: #fff;
+        opacity: 0.8;
+    }
+    .my-novel .topbar{
+        border-color: #09682B; 
+    }
+    .my-novel .topbar h3,.my-novel .topbar span{
+        color:  #09682B;
+    }
+    .my-novel .cartoon-bottom{
+        background-color: #09682B;
+    }
+    .cartoon-ad{
+        width: 100%;
+        height: 50px;
+        margin-top: 15px;
+        opacity: 0.6;
+    }
+
+    /*** 脚部样式 ***/
+    .my-163-footer{
+        height: 40px;
+        line-height: 40px;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 13px;
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="navbar-title-con">
+            Mob
+        </div>
+        <div class="navbar-btn-con">
+            <div class="icon-con"><span class="icon icon-search"></span></div>
+            <div class="icon-con"><span class="icon icon-heart"></span></div>
+            <div class="icon-con"><span class="icon icon-user"></span></div>
+        </div>
+    </nav>
+    <div class="my-grids-con">
+        <div class="my-grids-row">
+            <div class="my-grids-grid">PHP</div>
+            <div class="my-grids-grid">Java</div>
+            <div class="my-grids-grid">C#</div>
+            <div class="my-grids-grid">CSS</div>
+            <div class="my-grids-grid">HTML</div>
+        </div>
+        <div class="my-grids-row">
+            <div class="my-grids-grid">C++</div>
+            <div class="my-grids-grid">Perl</div>
+            <div class="my-grids-grid">Ada</div>
+            <div class="my-grids-grid">C</div>
+            <div class="my-grids-grid">GO</div>
+        </div>
+        <div class="my-grids-row">
+            <div class="my-grids-grid">VB</div>
+            <div class="my-grids-grid">Ada</div>
+            <div class="my-grids-grid">O-C</div>
+            <div class="my-grids-grid">Ruby</div>
+            <div class="my-grids-grid">Lisp</div>
+        </div>
+    </div>
+    <div class="shuffling-con">
+        <img class="rem-163-img2" src="../../img/163/163-lx-b2.jpg">
+        <div class="shuffling-mask-con">
+            <div class="shuffling-text">12月新作《狼与香辛料》</div>
+            <div class="shuffling-point-con">
+                <div class="shuffling-point shuffling-point-current"></div>
+                <div class="shuffling-point"></div>
+                <div class="shuffling-point"></div>
+            </div>
+        </div>
+    </div>
+    <ul class="my-lists-con">
+        <li class="my-list">
+            <img src="../../img/163/list1.jpg">
+            <div>
+                <h3>狼与香辛料</h3>
+                <p>日本作家支仓冻砂所著、文仓十插画的轻小说，由电击文库出版</p>
+            </div>
+        </li>
+        <li class="my-list">
+            <img src="../../img/163/list2.jpg">
+            <div>
+                <h3>Fate/Zero</h3>
+                <p>为了得到『圣杯』能实现一切愿望的奇迹之术，七名魔术师召唤七名英灵…</p>
+            </div>
+        </li>
+        <li class="my-list">
+            <img src="../../img/163/list3.jpg">
+            <div>
+                <h3>进击的巨人</h3>
+                <p>悠长的历史之中,人类曾一度因被巨人捕食而崩溃。幸存下来的人们建造了…</p>
+            </div>
+        </li>
+    </ul>
+    <div class="my-cartoon-list">
+        <div class="toolbar topbar">
+            <h3>动漫</h3>
+            <div>
+                <span>热门</span>
+                <span>新番</span>
+                <span class="icon icon-chevron-down"></span>
+            </div>
+        </div>
+        <div class="cartoon-content-con">
+            <ul class="list-group">
+                 <li class="item">
+                    <p>时间退回到第五次圣杯战争的10年前</p>
+                    <span class="list-comment">1024评论</span>
+                </li>
+                <li class="item">
+                    <p>到处旅行靠贩卖一些小商品为生</p>
+                    <span class="list-comment">424评论</span>
+                </li>
+                <li class="item">
+                    <p>狼女与商人“完全没有剑与魔法的”</p>
+                    <span class="list-comment">546评论</span>
+                </li>
+                <li class="item">
+                    <p>过去顺从命运，最终为对错烦恼的人</p>
+                    <span class="list-comment">78评论</span>
+                </li>
+                <li class="item">
+                    <p>过去反抗命运，最终偿还代价的人</p>
+                    <span class="list-comment">231评论</span>
+                </li>
+                <li class="item">
+                    <p>过去直视命运，最终寻问理由的人</p>
+                    <span class="list-comment">434评论</span>
+                </li>
+            </ul>
+            <div class="cartoon-bottom">进入动漫频道</div>
+        </div>
+            <img class="cartoon-ad" src="../../img/163/163-lx4.jpg">
+    </div>
+    <div class="my-cartoon-list my-novel">
+        <div class="toolbar topbar">
+            <h3>小说</h3>
+            <div>
+                <span>长篇</span>
+                <span>短篇</span>
+                <span class="icon icon-chevron-down"></span>
+            </div>
+        </div>
+        <div class="cartoon-content-con">
+            <ul class="list-group">
+                 <li class="item">
+                    <p>时间退回到第五次圣杯战争的10年前</p>
+                    <span class="list-comment">1024评论</span>
+                </li>
+                <li class="item">
+                    <p>到处旅行靠贩卖一些小商品为生</p>
+                    <span class="list-comment">424评论</span>
+                </li>
+                <li class="item">
+                    <p>狼女与商人“完全没有剑与魔法的”</p>
+                    <span class="list-comment">546评论</span>
+                </li>
+                <li class="item">
+                    <p>过去顺从命运，最终为对错烦恼的人</p>
+                    <span class="list-comment">78评论</span>
+                </li>
+                <li class="item">
+                    <p>过去反抗命运，最终偿还代价的人</p>
+                    <span class="list-comment">231评论</span>
+                </li>
+                <li class="item">
+                    <p>过去直视命运，最终寻问理由的人</p>
+                    <span class="list-comment">434评论</span>
+                </li>
+            </ul>
+            <div class="cartoon-bottom">进入小说频道</div>
+        </div>
+    </div>
+    <footer class="my-163-footer">2014 Mob@right</footer>
+</body>
+</html>
