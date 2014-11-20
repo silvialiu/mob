@@ -134,175 +134,22 @@
 
 ;
 (function(window, $){
-    function Snap(conf){
-        "use strict"; 
-        var me = this;
-        this.conf = conf || {};
-        this.os = null;
-        this.camera = new Camera();
-        this.checkEnv();
-        this.maskEl="#mask";
-        this.action = 'vis.topgen';
-        this.handlers = {
-          
-            'vis.flower': function(){
-                if(typeof detector != undefined){
-                    detector.abortCurrent();
-                }
-                var canvas = $("#preview").get(0);
-                var imgData = canvas.toDataURL("image/jpeg"); 
-                me.send(imgData);
-            },
-            'vis.topgen': function(){
-                if(typeof detector != undefined){
-                    detector.abortCurrent();
-                }
-                var canvas = $("#preview").get(0);
-                var imgData = canvas.toDataURL("image/jpeg"); 
-                me.send(imgData);
-            }
-        }
-    }
-
-    Snap.prototype = {
-        'snap': function(event){
-            $(this.conf.snap_image).trigger('click');
-        },
-        'localSnap': function(event){
-            $(this.conf.local_snap_image).trigger('click');
-        },
-        'detect': function(event, first){
-            var me = this;
-            this.step.snap.end();
-            this.maskShow();
-            this.step.detect.start();
-            var img = this.camera.getImage(function(img){
-                if(first){
-                    drawToCanvas(img);
-                }
-                me.handlers[me.action]();
-                setTimeout(function(){
-                    me.maskHide();
-                    if(me.resultCallback){
-                        me.resultCallback();
-                    }
-                }, 1000);
-            });
-
-        },
-        'checkEnv': function(){
-            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-                this.os = "ios";
-            }   
-        },
-        'bindEvents': function(){
-            var me = this,
-            handling = false;
-            $(this.conf.snap_btn).on('click', function(event){
-                me.snap.call(me, event)
-            });
-            
-            $(this.conf.local_snap_btn).on('click', function(event){
-                me.localSnap.call(me, event)
-            });
-
-            $(this.conf.snap_image).on('change', function(event){
-                me.camera.capture(event);
-                me.detect.call(me, event, true);
-            });
-
-            $(this.conf.local_snap_image).on('change', function(event){
-                me.camera.capture(event);
-                me.detect.call(me, event, true);
-            });
-        },
-        'bindClickTo': function(ele){
-            this.conf.snap_btn = ele;
-            return this;
-        },
-        'bindLocalSnapTo': function(ele){
-            this.conf.local_snap_btn = ele;
-            return this;
-        },
-        'setCameraInput': function(ele){
-            this.conf.snap_image = ele;
-            return this;
-        },
-        'setLocalInput': function(ele){
-            this.conf.local_snap_image = ele;
-            return this;
-        },
-        'setTabs': function(el){
-            var me = this;
-            $(el).on('click', function(event){
-                me.action = $(this).data("action");
-                me.detect(event);
-            });
-            return this;
-        },
-        'start': function(){
-            this.bindEvents();
-            return this;
-        },
-        'step': {
-            'snap': {
-                'start': function(){
-                    return this.step;
-                },
-                'end': function(){
-                    $("#camera").addClass("hide");
-                    return this.step;
-                }
-            },
-            'detect': {
-                'start': function(){
-                    $("#detect").removeClass("hide");
-                    return this.step;
-                },
-                'end': function(){
-                    return this.step;
-                }
-            }
-        },
-        'send': function(img){
-            var options = {
-                img : img
-            }
-            var me = this;
-            $.post('/api/' + this.action , options, function(res){
-                //console.log(res);
-                switch(me.action){
-                    case 'vis.topgen':
-                        showVisTopgenResult(res);
-                        break;
-                    case 'vis.flower':
-                        showVisFlowerResult(res);
-                        break;
-                }
-            }, 'json')
-        },
-        'onReady': function(callback){
-            this.resultCallback = callback;
-            return this;
-        }
-    }
-
-    var createSnap = function(){
-        return new Snap();
-    }
-
-    
-    //////////////////////////////////////////////////////  camrea model
-
-    var Camera = function(){
+    "use strict"; 
+   
+    var Camera = function(el, callback){
         this.event = null;
+        //this.imgType = 'image/png';
+        this.imgType = 'image/jpeg';
+        var me = this;
+        $(el).on('change', function(event){
+            me.capture(event);
+            callback.apply(me, [event]);
+        });
     }
 
     Camera.prototype = {
         'capture': function(event){
             this.event = event;
-            //this.imgType = 'image/png';
-            this.imgType = 'image/jpeg';
             return this;
         },
         'getImage': function(callback){
