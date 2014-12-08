@@ -1916,6 +1916,9 @@ button.icon-close {
   box-flex: 1;
   background-size: cover;
 }
+.page-header-blur {
+  -webkit-filter: blur(40px);
+}
 .page-footer {
   font-size: 12px;
   text-align: center;
