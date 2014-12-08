@@ -293,3 +293,9 @@ setting
         </div>
     </div>
 {% endhighlight %}
+
+### 图片模糊效果
+
+{% highlight html %}
+    <div class="page-header-blur"></div>
+{% endhighlight %}
