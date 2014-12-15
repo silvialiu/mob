@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html class="webapp">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title> MOB TEST APP</title>
+<link rel="stylesheet" type="text/css" href="../css/mob.css">
+<style type="text/css">
+    *{
+        font-family: "微软雅黑";
+        margin: 0px 0px;
+        padding: 0px 0px;
+    }
+    body{
+        background-color: #E7E7E7;
+    }
+    h3,p{
+        margin: 0px 0px;
+        padding: 0px 0px;
+    }
+    html.webapp, .webapp body{
+        overflow: auto;
+    }
+    .webapp .page{
+        overflow-y: scroll;
+        padding-bottom: 50px;
+    }
+
+    .topbar .topbar-title, .topbar h1{
+        text-align: left;
+        padding-left: 20px;
+    }
+    #aside-left{
+        margin-right: 10px;
+    }
+    
+    /*** 下部切换tab ***/
+    .active{
+        border-top: 1px solid red;
+    }
+    
+    /*** 轮播图样式 ***/
+    .shuffling-con{
+        position: relative;
+        height: 200px;
+    }
+    .rem-163-img2{
+        height: 200px;
+        width: 100%;
+    }
+    .shuffling-mask-con{
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 28px;
+        background-color: rgba(255,255,255,0.7);
+        font-size: 13px;
+        line-height: 28px;
+        color: #1D1D1D;
+        display: -webkit-box;
+    }
+    .shuffling-text{
+        width: 200px;
+        padding-left: 10px;
+        -webkit-box-flex:1;
+    }
+    /** 轮播图指示点 **/
+    .shuffling-point-con{
+        line-height: 26px;
+        padding-right: 20px;
+        padding-left: 10px;
+        display: inline-block;
+    }
+    .shuffling-point{
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #EFEFEF;
+        border: 1px solid #999;
+        display: inline-block;
+        margin-right: 5px;
+    }
+    .shuffling-point-current{
+        background-color: #092249;
+        border: 1px solid #051837;
+    }
+    
+    /*** 轮播下列表样式 ***/
+    .my-lists-con{
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .my-list{
+        display: -webkit-box;
+        margin-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px dashed #ccc;
+    }
+    .my-list:last-child{
+        border-bottom: none;
+        padding-bottom: 5px;
+    }
+    .my-list img{
+        width: 90px;
+        height: 60px;
+        margin-right: 10px;
+    }
+    .my-list>div{
+        -webkit-box-flex:1;
+    }
+    .my-list p{
+        color: #666;
+        line-height: 18px;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+    
+    /*** 内容切换 ***/
+    section.page .page-list{
+        display: none;
+    }
+    section.page .active{
+        display: block;
+    }
+    
+    /*** aside ***/
+    .aside-title{
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    #mune-list{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+    .aside-left>ul>li{
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px dashed #595959;
+    }
+    .aside-left>ul>li:nth-of-type(1){
+        border-top: 1px dashed #595959;
+    }
+</style>
+</head>
+<body>
+    <nav class="toolbar topbar topbar-fixed">
+        <h1>Mob</h1>
+        <div class="btn btn-primary" id="aside-left" data-toggle=true  data-target=".aside-left" >
+            <span class="icon icon-cog"></span>
+        </div>
+    </nav>
+    <section class="page" id="my-page">
+        <div class="page-list active">
+            <div class="shuffling-con">
+                <img class="rem-163-img2" src="mobile-web-page/list1.jpg">
+                <div class="shuffling-mask-con">
+                    <div class="shuffling-text">12月新作《狼与香辛料》</div>
+                    <div class="shuffling-point-con">
+                        <div class="shuffling-point shuffling-point-current"></div>
+                        <div class="shuffling-point"></div>
+                        <div class="shuffling-point"></div>
+                    </div>
+                </div>
+            </div>
+            <ul class="my-lists-con">
+                <li class="my-list">
+                    <img src="mobile-web-page/list5.jpg">
+                    <div>
+                        <h3>狼与香辛料</h3>
+                        <p>日本作家支仓冻砂所著、文仓十插画的轻小说，由电击文库出版</p>
+                    </div>
+                </li>
+                <li class="my-list">
+                    <img src="mobile-web-page/list4.jpg">
+                    <div>
+                        <h3>Fate/Zero</h3>
+                        <p>为了得到『圣杯』能实现一切愿望的奇迹之术，七名魔术师召唤七名英灵…</p>
+                    </div>
+                </li>
+                <li class="my-list">
+                    <img src="mobile-web-page/list3.jpg">
+                    <div>
+                        <h3>进击的巨人</h3>
+                        <p>悠长的历史之中,人类曾一度因被巨人捕食而崩溃。幸存下来的人们建造了…</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="page-list">
+            <div class="shuffling-con">
+                <img class="rem-163-img2" src="mobile-web-page/list2.jpg">
+                <div class="shuffling-mask-con">
+                    <div class="shuffling-text">电影大片《星际穿越》</div>
+                    <div class="shuffling-point-con">
+                        <div class="shuffling-point shuffling-point-current"></div>
+                        <div class="shuffling-point"></div>
+                        <div class="shuffling-point"></div>
+                    </div>
+                </div>
+            </div>
+            <ul class="my-lists-con">
+                <li class="my-list">
+                    <img src="mobile-web-page/list1.jpg">
+                    <div>
+                        <h3>狼与香辛料</h3>
+                        <p>日本作家支仓冻砂所著、文仓十插画的轻小说，由电击文库出版</p>
+                    </div>
+                </li>
+                <li class="my-list">
+                    <img src="mobile-web-page/list2.jpg">
+                    <div>
+                        <h3>Fate/Zero</h3>
+                        <p>为了得到『圣杯』能实现一切愿望的奇迹之术，七名魔术师召唤七名英灵…</p>
+                    </div>
+                </li>
+                <li class="my-list">
+                    <img src="mobile-web-page/list3.jpg">
+                    <div>
+                        <h3>进击的巨人</h3>
+                        <p>悠长的历史之中,人类曾一度因被巨人捕食而崩溃。幸存下来的人们建造了…</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="page-list">
+            <div class="shuffling-con">
+                <img class="rem-163-img2" src="mobile-web-page/list5.jpg">
+                <div class="shuffling-mask-con">
+                    <div class="shuffling-text">最新小说《塞纳河》</div>
+                    <div class="shuffling-point-con">
+                        <div class="shuffling-point shuffling-point-current"></div>
+                        <div class="shuffling-point"></div>
+                        <div class="shuffling-point"></div>
+                    </div>
+                </div>
+            </div>
+            <ul class="my-lists-con">
+                <li class="my-list">
+                    <img src="mobile-web-page/list3.jpg">
+                    <div>
+                        <h3>狼与香辛料</h3>
+                        <p>日本作家支仓冻砂所著、文仓十插画的轻小说，由电击文库出版</p>
+                    </div>
+                </li>
+                <li class="my-list">
+                    <img src="mobile-web-page/list5.jpg">
+                    <div>
+                        <h3>Fate/Zero</h3>
+                        <p>为了得到『圣杯』能实现一切愿望的奇迹之术，七名魔术师召唤七名英灵…</p>
+                    </div>
+                </li>
+                <li class="my-list">
+                    <img src="mobile-web-page/list1.jpg">
+                    <div>
+                        <h3>进击的巨人</h3>
+                        <p>悠长的历史之中,人类曾一度因被巨人捕食而崩溃。幸存下来的人们建造了…</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="page-list">
+            <div class="shuffling-con">
+                <img class="rem-163-img2" src="mobile-web-page/list4.jpg">
+                <div class="shuffling-mask-con">
+                    <div class="shuffling-text">最热单曲《if i die young》</div>
+                    <div class="shuffling-point-con">
+                        <div class="shuffling-point shuffling-point-current"></div>
+                        <div class="shuffling-point"></div>
+                        <div class="shuffling-point"></div>
+                    </div>
+                </div>
+            </div>
+            <ul class="my-lists-con">
+                <li class="my-list">
+                    <img src="mobile-web-page/list4.jpg">
+                    <div>
+                        <h3>狼与香辛料</h3>
+                        <p>日本作家支仓冻砂所著、文仓十插画的轻小说，由电击文库出版</p>
+                    </div>
+                </li>
+                <li class="my-list">
+                    <img src="mobile-web-page/list5.jpg">
+                    <div>
+                        <h3>Fate/Zero</h3>
+                        <p>为了得到『圣杯』能实现一切愿望的奇迹之术，七名魔术师召唤七名英灵…</p>
+                    </div>
+                </li>
+                <li class="my-list">
+                    <img src="mobile-web-page/list2.jpg">
+                    <div>
+                        <h3>进击的巨人</h3>
+                        <p>悠长的历史之中,人类曾一度因被巨人捕食而崩溃。幸存下来的人们建造了…</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <nav class="navbar bottombar bottombar-fixed" id="navbar">
+        <a href="#home" class="active">动漫</a>
+        <a href="#personal">电影</a>
+        <a href="#discover">小说</a>
+        <a href="#more">音乐</a>
+    </nav>
+    <aside class="aside aside-left">
+        <div id="mune-list" class="list-group">
+            <div class="pull-right list-group-item">
+                <div class="tap" id="aside-return">
+                    <span class="icon icon-arrow-right"></span>
+                </div>
+            </div>
+        </div>
+        <div class="aside-title">Web开发语言</div>
+        <ul>
+            <li>PHP</li>
+            <li>C#</li>
+            <li>HTML5</li>
+            <li>Python</li>
+            <li>C++</li>
+            <li>Javascript</li>
+            <li>Perl</li>
+            <li>Java</li>
+            <li>Ruby</li>
+            <li>Lisp</li>
+        </ul>
+    </aside>
+</body>
+<script src="../js/zepto.js"></script>
+<script src="../js/mob.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $("#aside-left").on("click", function(e){
+        $(this).aside('toggle')
+        });
+    $('#aside-return').on("click",function(e){
+        $("#aside-left").aside('hide')
+    })
+
+    $("#navbar>a").on("click",function(e,index){
+        var index = $(this).index();
+        $("#navbar>a.active").removeClass("active");
+        $("#my-page>div.active").removeClass("active");
+        $(this).addClass("active");
+        $("#my-page>div").eq(index).addClass("active");
+    });
+</script>
+</html>
+
