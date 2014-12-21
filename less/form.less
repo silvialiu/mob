@@ -1,0 +1,130 @@
+//
+// Form
+// -------------------------------------
+
+// Base class
+// -------------------------------------
+
+form{
+	margin: @form-margin;
+}
+.form-item {
+	.clearfix;
+	&.has-error{
+		input, select, area{
+			border-color: @state-warning-border;
+		}
+	}
+	.block-help-text{
+		dislay: block;
+		margin-top: -0.2em;
+		margin-bottom: @form-elem-margin-bottom;
+		color: @gray;
+		font-size: @font-size-small;
+	}
+	.inline-help-text{
+		padding: 0 4px;
+		display: inline-block;
+		margin-bottom: @form-elem-margin-bottom;
+		margin-right: 5px;
+	}
+}
+label {
+	display: block;
+	margin: @label-margin;
+}
+input[type=text], input[type=email], input[type=number], input[type=password], input[type=search], input[type=tel], select, textarea{
+	display: block;
+	width: @form-elem-width;
+	height: 35px;
+	padding: 4px 6px;
+	margin-bottom: @form-elem-margin-bottom;
+	background-color: @white;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	outline: 0;
+	line-height: 1;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	&:inline{
+		displaly: inline-block;
+	}
+}
+input, select, textarea{
+	-webkit-font-smoothing: antialiased;
+}
+textarea{
+	min-height: @textarea-height;
+}
+input[type=radio], input[type=checkbox]{
+	padding: 0;
+	float: left;
+	margin: 1px 7px 0 0;
+}
+input[type=submit].block, button[type=submit].block{
+	width: @form-elem-width;
+}
+.checkbox-wrap, .radio-wrap{
+	min-width: 20px;
+	margin-bottom: @form-elem-margin-bottom;
+	padding: 0 20px 0 1px;
+}
+label.inline{
+	display: inline-block;
+}
+/**  单行表单样式  **/
+.form-inline{
+	display: -webkit-box;
+	-webkit-box-origin: horizontal;
+	-webkit-box-align: center;
+	overflow: hidden;
+	.form-item{
+		display: block;
+		-webkit-box-flex:1;
+		padding-right: 4px;
+		&:last-of-type{
+			padding-right: @form-elem-last-margin;
+		}
+	}
+	input, select{
+		margin-bottom: @form-elem-last-margin;
+	}
+	input[type=button], input[type=submit], button{
+		width: @form-elem-width;
+	}
+}
+
+/**  水平排列的表单样式  **/
+.form-horizontal{
+	.form-item{
+		display: -webkit-box;
+		-webkit-box-orient: horizontal;
+		-webkit-box-align: center;
+		label{
+			text-align: right;
+			min-width: 3em;
+			margin-right: 5px;
+		}
+		&.align-top{
+			-webkit-box-align: start;
+			label:first-of-type{
+				padding-top: 5px;
+			}
+		}
+	}
+	input[type=text], input[type=email], input[type=number], input[type=password], input[type=search], input[type=tel], select, textarea{
+		-webkit-box-flex: 1;
+		margin-right: 5px;
+		&:last-of-type{
+			margin-right: @form-elem-last-margin;
+		}
+	}
+	.wd4, .wd6, .wd8{
+		width: 9em;
+	}
+	.wd6{
+		width: 7em;
+	}
+	.wd4{
+		width: 5em;
+	}
+}

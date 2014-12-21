@@ -12,6 +12,17 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:before,
+:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 body,
 div,
 dl,
@@ -178,12 +189,14 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
+/*
 input[type="search"] {
-  -webkit-appearance: textfield;
+  -webkit-appearance: textfield; // 1
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
+  -webkit-box-sizing: content-box; // 2
   box-sizing: content-box;
 }
+*/
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -2441,6 +2454,177 @@ html.webapp,
   margin: 8px 10px 0;
   padding: 12px 12px;
   color: #333333;
+}
+form {
+  margin: 15px 0;
+}
+.form-item:before,
+.form-item:after {
+  content: " ";
+  display: table;
+}
+.form-item:after {
+  clear: both;
+}
+.form-item:before,
+.form-item:after {
+  content: " ";
+  display: table;
+}
+.form-item:after {
+  clear: both;
+}
+.form-item.has-error input,
+.form-item.has-error select,
+.form-item.has-error area {
+  border-color: #faebcc;
+}
+.form-item .block-help-text {
+  dislay: block;
+  margin-top: -0.2em;
+  margin-bottom: 10px;
+  color: #aaaaaa;
+  font-size: 12px;
+}
+.form-item .inline-help-text {
+  padding: 0 4px;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+label {
+  display: block;
+  margin: 0 0 0.5em;
+}
+input[type=text],
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  height: 35px;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: 0;
+  line-height: 1;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+input[type=text]:inline,
+input[type=email]:inline,
+input[type=number]:inline,
+input[type=password]:inline,
+input[type=search]:inline,
+input[type=tel]:inline,
+select:inline,
+textarea:inline {
+  displaly: inline-block;
+}
+input,
+select,
+textarea {
+  -webkit-font-smoothing: antialiased;
+}
+textarea {
+  min-height: 90px;
+}
+input[type=radio],
+input[type=checkbox] {
+  padding: 0;
+  float: left;
+  margin: 1px 7px 0 0;
+}
+input[type=submit].block,
+button[type=submit].block {
+  width: 100%;
+}
+.checkbox-wrap,
+.radio-wrap {
+  min-width: 20px;
+  margin-bottom: 10px;
+  padding: 0 20px 0 1px;
+}
+label.inline {
+  display: inline-block;
+}
+/**  单行表单样式  **/
+.form-inline {
+  display: -webkit-box;
+  -webkit-box-origin: horizontal;
+  -webkit-box-align: center;
+  overflow: hidden;
+}
+.form-inline .form-item {
+  display: block;
+  -webkit-box-flex: 1;
+  padding-right: 4px;
+}
+.form-inline .form-item:last-of-type {
+  padding-right: 0;
+}
+.form-inline input,
+.form-inline select {
+  margin-bottom: 0;
+}
+.form-inline input[type=button],
+.form-inline input[type=submit],
+.form-inline button {
+  width: 100%;
+}
+/**  水平排列的表单样式  **/
+.form-horizontal .form-item {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: center;
+}
+.form-horizontal .form-item label {
+  text-align: right;
+  min-width: 3em;
+  margin-right: 5px;
+}
+.form-horizontal .form-item.align-top {
+  -webkit-box-align: start;
+}
+.form-horizontal .form-item.align-top label:first-of-type {
+  padding-top: 5px;
+}
+.form-horizontal input[type=text],
+.form-horizontal input[type=email],
+.form-horizontal input[type=number],
+.form-horizontal input[type=password],
+.form-horizontal input[type=search],
+.form-horizontal input[type=tel],
+.form-horizontal select,
+.form-horizontal textarea {
+  -webkit-box-flex: 1;
+  margin-right: 5px;
+}
+.form-horizontal input[type=text]:last-of-type,
+.form-horizontal input[type=email]:last-of-type,
+.form-horizontal input[type=number]:last-of-type,
+.form-horizontal input[type=password]:last-of-type,
+.form-horizontal input[type=search]:last-of-type,
+.form-horizontal input[type=tel]:last-of-type,
+.form-horizontal select:last-of-type,
+.form-horizontal textarea:last-of-type {
+  margin-right: 0;
+}
+.form-horizontal .wd4,
+.form-horizontal .wd6,
+.form-horizontal .wd8 {
+  width: 9em;
+}
+.form-horizontal .wd6 {
+  width: 7em;
+}
+.form-horizontal .wd4 {
+  width: 5em;
 }
 .pull-to-refresh {
   position: absolute;
