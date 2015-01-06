@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link href="../css/mob.min.css" rel="stylesheet" type="text/css" >
+	<style>
+		html,body{height: 100%;}
+		.page{height:100%;}
+		.page-content{height:100%;}
+		.main{margin: 20px 15px;}
+		.desc-area{background:rgba(255,210,230, 0.5);border:1px solid #ffbedb;border-radius:3px;padding:7px 5px;margin-bottom:10px;}
+		.doc{color:#66585e;font-size:13px;line-height:17px;}
+		p.title{color:#843a5b;font-weight:bold;letter-spacing: 2px;}
+		p.sub-title{color:#a81657;font-size:14px;}
+	</style>
+</head>
+<body>
+	<section class="page through-topbar through-bottombar">
+		<div class="topbar topbar-fixed">
+		    <span>MOB Form 示例文档</span>
+		</div>
+		<div class="page-content">
+			<div class="main">
+				<div class="desc-area">
+					<p class="title">【常规表单】</p>
+					<div class="doc">每个元素都默认表现为块级元素; 用.form-item 包裹</div>
+				</div>
+				<form action="">
+					<div class="form-item">
+						<label for="username">用户名</label>
+						<input id="username" type="text" value="" placeholder="请输入用户名"/>
+						<p class="block-help-text">请使用邮箱作为用户名</p>
+					</div>
+					<div class="form-item">
+						<label>星座</label>
+						<select name="" id="">
+							<option value="1">天蝎座</option>
+							<option value="2">天秤座</option>
+							<option value="3">白羊座</option>
+						</select>
+					</div>
+					<div class="form-item">
+						<label class="checkbox-wrap">
+							<input type="checkbox" value="rem_pwd" checked="checked">
+							记住密码
+						</label>
+						<label class="checkbox-wrap">
+							<input type="checkbox" value="rem_pwd" checked="checked">
+							我就是记不住哇					</label>
+					</div>
+				<div class="desc-area">
+					<p class="sub-title">内联样式</p>
+					<div class="doc">但可以为表单元素添加.inline 样式，使其在同一行展示</div>
+				</div>
+					<div class="form-item">
+						<label class="checkbox-wrap inline"> 
+							<input type="checkbox" value="option1" checked="checked">多选11
+        				</label>
+        				<label class="checkbox-wrap inline"> 
+        					<input type="checkbox" value="option2">多选 22
+        				</label> 
+        				<label class="checkbox-wrap inline"> 
+        					<input type="checkbox" value="option3">多选 33
+        				</label>
+					</div>
+					<div>
+						<button type="submit" class="btn btn-primary block">提交</button>
+					</div>
+				</form>
+				<div class="desc-area">
+					<p class="title">【单行表单】</p>
+					<div class="doc">所有表单元素都展现在一行内; 为form 添加.form-inline</div>
+				</div>
+				<form class="form-inline">
+					<div class="form-item">
+			            <select>
+			                <option value="1">水果</option>
+			                <option value="2">蔬菜</option>
+			            </select>
+			        </div>
+					<div class="form-item">
+			            <select>
+			                <option value="1">苹果</option>
+			                <option value="2">草莓</option>
+			            </select>
+			        </div>
+			        <!--
+			        <div class="form-item">
+			            <input type="search" placeholder="名称" />
+			        </div>
+			        -->
+			        <div class="form-item">
+			            <input type="submit" class="btn btn-primary" value="搜索"/>
+			        </div>
+				</form>
+				<div class="desc-area">
+					<p class="title">【水平排列的表单】</p>
+					<div class="doc">.form-item 内的元素水平排列； 为form 添加.form-horizontal</div>
+				</div>
+				<form action="" class="form-horizontal">
+					<div class="form-item">
+						<label class="wd4">性别</label>
+						<select name="" id="">
+							<option value="1">男</option>
+							<option value="2">女</option>
+						</select>
+					</div>
+					<div class="form-item">
+						<label  class="wd4" for="">邮箱</label>
+						<input type="email">
+					</div>
+					<div class="form-item">
+						<label class="wd4" for="">联系电话</label>
+						<input type="number">
+						<span class="inline-help-text">-</span> 
+						<input type="tel">
+					</div>
+					<div class="form-item">
+						<label class="wd4" for=""></label>
+						<div class="block-help-text">-固定电话请加区号</div>
+					</div>
+					<div class="form-item align-top">
+						<label class="wd4" for="">留言</label>
+						<textarea></textarea>
+					</div>
+					<div class="form-item">
+						<label class="wd4" for=""></label>
+						<label class="radio-wrap">
+							<input type="radio" value="rem_pwd" name="remember" checked="checked">
+							记住密码
+						</label>
+						<label class="radio-wrap">
+							<input type="radio" value="rem_pwd" name="remember">
+							别理我
+						</label>
+					</div>
+					<div class="form-item">
+						<label class="wd4" for=""></label>
+						<input type="button" class="btn btn-primary" value="提交">
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<script src="../js/zepto.js"></script>
+	<script src="../js/mob.min.js"></script>
+</body>
+</html>
